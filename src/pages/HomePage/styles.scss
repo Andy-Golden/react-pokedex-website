@@ -1,8 +1,11 @@
 $bg-filtering: #424242;
 $sort-by-text: #a4a4a4;
+$bg-wrapper: #ffff;
+$bg-btn-shuffle: #30a7d7;
+$bg-btn-select: #313131;
 
-.wrapper {
-  background-color: white;
+.container {
+  background: $bg-wrapper url("../../img/container_bg.png");
   width: 90%;
   margin-left: auto;
   margin-right: auto;
@@ -18,22 +21,56 @@ $sort-by-text: #a4a4a4;
     height: 60px;
   }
 
-  .action {
+  .action-wrapper {
     width: 100%;
-    background-color: rgb(205, 187, 164);
-    padding:20px;
+    background-color: transparent;
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
+
+    .actions {
+      width: 70%;
+      height: 70px;
+      background-color: white;
+      display: flex;
+      align-items: center;
+
+      .button {
+        border-radius: 5px;
+        border: none;
+        outline: none;
+        clear: both;
+        font-size: 105%;
+        padding: 0.75em 1.25em 0.675em;
+        text-align: center;
+      }
+
+      .btn-shuffle {
+        color: white;
+        background-color: $bg-btn-shuffle;
+      }
+
+      .btn-select {
+        color: white;
+        background-color: $bg-btn-select;
+        align-self: flex-end;
+      }
+    }
   }
 
-  .filtered-selection {
+  .list-wrapper {
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
     display: flex;
-    align-items: center;
-  }
+    justify-content: center;
 
-  .filtered-selection h3 {
-    margin-right: 10px;
-    color: $sort-by-text;
+    .list-poke {
+      width: 70%;
+      height: 100%;
+      background-color: white;
+      display: flex;
+      flex-wrap: wrap;
+    }
   }
 }

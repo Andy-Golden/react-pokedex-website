@@ -19,4 +19,4 @@ interface PokeDetail {
   types: PokeType[];
 }
 
-export type { PokeDetail };
+export type { PokeDetail, PokeType };
