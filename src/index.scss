@@ -1,0 +1,9 @@
+$bg-color: #424242;
+
+body {
+  margin: 0;
+  padding: 0;
+  background: $bg-color url("body_bg.png");
+  flex-direction: column;
+  font-family: "Flexo-Regular",arial,sans-serif;
+}
