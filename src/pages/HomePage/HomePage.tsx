@@ -1,23 +1,11 @@
+import React from "react";
 import "./styles.scss";
-import React, { useEffect, useState } from "react";
-import { getListPokeDetails } from "apis/pokemon.api";
-import { NUMBERS_OF_POKE } from "./constants";
 import PokeCard from "components/PokeCard";
-import type { PokeDetail } from "interfaces/PokeDetail.interface";
 import Button from "components/Button";
+import { usePokemons } from "./helper";
 
 function HomePage(): JSX.Element {
-  const [pokemons, setPokemons] = useState<PokeDetail[]>([]);
-
-  useEffect(() => {
-    getListPokeDetails(NUMBERS_OF_POKE)
-      .then((data) => {
-        setPokemons(data);
-      })
-      .catch((err) => {
-        console.log("err: ", err);
-      });
-  }, []);
+  const pokemons = usePokemons();
 
   return (
     <div className="container">
