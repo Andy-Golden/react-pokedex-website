@@ -98,3 +98,7 @@ $bg-water: #4592c4;
   //   background: $bg-water;
   // }
 }
+
+.poke-type::first-letter {
+  text-transform: uppercase;
+}
