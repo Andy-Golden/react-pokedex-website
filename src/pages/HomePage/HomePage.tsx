@@ -1,11 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import "./styles.scss";
 import PokeCard from "components/PokeCard";
 import Button from "components/Button";
 import { usePokemons } from "./helper";
+import { VISIBLE_OF_POKE } from "./constants";
 
 function HomePage(): JSX.Element {
   const pokemons = usePokemons();
+
+  const [visible, setVisible] = useState(VISIBLE_OF_POKE);
+
+  const handleLoadMore = (): void => {
+    const moreItems = visible + VISIBLE_OF_POKE;
+    setVisible(moreItems);
+  };
 
   return (
     <div className="container">
@@ -19,7 +27,7 @@ function HomePage(): JSX.Element {
       <div className="list-wrapper">
         <div className="list-poke">
           {pokemons?.length > 0 &&
-            pokemons.map((poke, index) => (
+            pokemons.slice(0, visible).map((poke, index) => (
               <div key={index}>
                 <PokeCard
                   id={poke.id}
@@ -33,7 +41,11 @@ function HomePage(): JSX.Element {
       </div>
       <div className="action-under-wrapper">
         <div className="action-under-content">
-          <Button className="btn-load" content={"Load more"} />
+          <Button
+            className="btn-load"
+            content={"Load more"}
+            onClick={handleLoadMore}
+          />
         </div>
       </div>
     </div>
