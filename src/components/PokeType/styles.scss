@@ -1,0 +1,101 @@
+$bg-bug: #729f3f;
+$bg-dragon: linear-gradient(180deg, #53a4cf 50%, #f16e57 50%);
+$bg-fairy: #fdb9e9;
+$bg-fire: #fd7d24;
+$bg-ghost: #7b62a3;
+$bg-ground: linear-gradient(180deg, #f7de3f 50%, #ab9842 50%);
+$bg-normal: #a4acaf;
+$bg-psychic: #f366b9;
+$bg-steel: #9eb7b8;
+$bg-dark: #707070;
+$bg-electric: #eed535;
+$bg-fighting: #d56723;
+$bg-flying: linear-gradient(180deg, #3dc7ef 50%, #bdb9b8 50%);
+$bg-grass: #9bcc50;
+$bg-ice: #51c4e7;
+$bg-poison: #b97fc9;
+$bg-rock: #a38c21;
+$bg-water: #4592c4;
+
+.poke-type {
+  padding: 5px;
+  border-radius: 3px;
+  font-size: 11px;
+  text-align: center;
+  width: 38.4375%;
+  font-weight: bold;
+
+  .bug {
+    background: $bg-bug;
+    color: #fff;
+  }
+
+  .dragon {
+    background: $bg-dragon;
+  }
+
+  .fairy {
+    background: $bg-fairy;
+  }
+
+  .fire {
+    background: $bg-fire;
+  }
+
+  .ghost {
+    background: $bg-ghost;
+  }
+
+  .ground {
+    background: $bg-ground;
+  }
+
+  .normal {
+    background: $bg-normal;
+  }
+
+  .psychic {
+    background: $bg-psychic;
+  }
+
+  .steel {
+    background: $bg-steel;
+  }
+
+  .dark {
+    background: $bg-dark;
+  }
+
+  .electric {
+    background: $bg-electric;
+  }
+
+  .fighting {
+    background: $bg-fighting;
+  }
+
+  .flying {
+    background: $bg-flying;
+  }
+
+  .grass {
+    background: $bg-grass;
+    color: black;
+  }
+
+  .ice {
+    background: $bg-ice;
+  }
+
+  .poison {
+    background: $bg-poison;
+  }
+
+  .rock {
+    background: $bg-rock;
+  }
+
+  .water {
+    background: $bg-water;
+  }
+}

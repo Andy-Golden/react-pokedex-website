@@ -1,60 +1,40 @@
 import { instance } from "utils/axios/instance";
-import type { PokeDetailApi } from "interface/PokeDetailApi.interface";
-import type { PokeDetail } from "interface/PokeDetail.interface";
+import type { PokeDetailApi } from "interfaces/PokeDetailApi.interface";
+import type { PokeData } from "interfaces/PokeData.interface";
+import type { PokeDetail } from "interfaces/PokeDetail.interface";
 
-// eslint-disable-next-line @typescript-eslint/explicit-function-return-type
-const getPokemons = async (num: number) => {
-  try {
-    const pokemons = await instance.get(
-      `https://pokeapi.co/api/v2/pokemon/?limit=${num}`,
-    );
+const getPokemons = async (num: number): Promise<PokeData> => {
+  const pokemons = await instance.get(
+    `https://pokeapi.co/api/v2/pokemon/?limit=${num}`,
+  );
 
-    return pokemons;
-  } catch (err) {
-    console.log("🚀 ~ file: pokemon.api.ts:9 ~ getPokemons ~ err:", err);
-  }
+  return pokemons.data;
 };
 
-// eslint-disable-next-line @typescript-eslint/explicit-function-return-type
-const getPokeDetails = async (url: string) => {
-  try {
-    const data = await instance.get(url);
-    return data;
-  } catch (err) {
-    console.log("🚀 ~ file: pokemon.api.ts:24 ~ getPokeDetails ~ err:", err);
-  }
+const getPokeDetails = async (url: string): Promise<PokeDetail> => {
+  const pokemon = await instance.get(url);
+
+  const poke: PokeDetail = {
+    id: pokemon.data.id,
+    name: pokemon.data.name,
+    sprites: { frontDefault: pokemon.data.sprites.front_default },
+    types: [...pokemon.data.types],
+  };
+
+  return poke;
 };
 
-// eslint-disable-next-line @typescript-eslint/explicit-function-return-type
-const getListPokeDetails = async (num: number) => {
-  try {
-    const pokemons = await getPokemons(num);
+const getListPokeDetails = async (num: number): Promise<PokeDetail[]> => {
+  const pokemons = await getPokemons(num);
 
-    // eslint-disable-next-line @typescript-eslint/promise-function-async
-    const promises = pokemons?.data.results.map((item: PokeDetailApi) =>
-      getPokeDetails(item.url),
-    );
+  const promises = pokemons?.results.map(
+    async (item: PokeDetailApi): Promise<PokeDetail> =>
+      await getPokeDetails(item.url),
+  );
 
-    const responses = await Promise.all(promises);
-    const data = responses.map((item) => item.data);
+  const listPokeDetail = await Promise.all(promises);
 
-    const listPokeDetail = data.map((item) => {
-      const poke: PokeDetail = {
-        name: item.name,
-        id: item.id,
-        sprites: { frontDefault: item.sprites.front_default },
-        types: [...item.types],
-      };
-      return poke;
-    });
-
-    return listPokeDetail;
-  } catch (err) {
-    console.log(
-      "🚀 ~ file: pokemon.api.ts:53 ~ getListPokeDetails ~ err:",
-      err,
-    );
-  }
+  return listPokeDetail;
 };
 
 export { getPokemons, getListPokeDetails };

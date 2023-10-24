@@ -3,7 +3,7 @@ $bg-color: #424242;
 body {
   margin: 0;
   padding: 0;
-  background: $bg-color url("./img/body_bg.png");
+  background: $bg-color url("../public/img/body_bg.png");
   flex-direction: column;
   font-family: "Flexo-Regular",arial,sans-serif;
 }
