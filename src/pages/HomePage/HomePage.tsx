@@ -2,17 +2,30 @@ import React, { useState } from "react";
 import "./styles.scss";
 import PokeCard from "components/PokeCard";
 import Button from "components/Button";
-import { usePokemons } from "./helper";
+import { usePokemons, getRandomInt } from "./helper";
 import { VISIBLE_OF_POKE } from "./constants";
 
 function HomePage(): JSX.Element {
   const pokemons = usePokemons();
 
   const [visible, setVisible] = useState(VISIBLE_OF_POKE);
+  const [start, setStart] = useState(0);
 
   const handleLoadMore = (): void => {
     const moreItems = visible + VISIBLE_OF_POKE;
+
+    if (moreItems > pokemons.length) {
+      return;
+    }
+
     setVisible(moreItems);
+  };
+
+  const handleSurpriseMe = (): void => {
+    const startIndex = getRandomInt(0, 100);
+
+    setStart(startIndex);
+    setVisible(startIndex + 25);
   };
 
   return (
@@ -20,14 +33,17 @@ function HomePage(): JSX.Element {
       <div className="filtering"></div>
       <div className="action-above-wrapper">
         <div className="action-above-content">
-          <Button className="btn-shuffle" content={"Surprise Me!"} />
-          <Button className="btn-select" content={"Surprise Me!"} />
+          <Button className="btn-shuffle" onClick={handleSurpriseMe}>
+            <i className="fas fa-sync-alt icon"></i>
+            <span>&nbsp; &nbsp;Surprise Me!</span>
+          </Button>
+          <Button className="btn-select">Surprise Me!</Button>
         </div>
       </div>
       <div className="list-wrapper">
         <div className="list-poke">
           {pokemons?.length > 0 &&
-            pokemons.slice(0, visible).map((poke, index) => (
+            pokemons.slice(start, visible).map((poke, index) => (
               <div key={index}>
                 <PokeCard
                   id={poke.id}
@@ -41,11 +57,9 @@ function HomePage(): JSX.Element {
       </div>
       <div className="action-under-wrapper">
         <div className="action-under-content">
-          <Button
-            className="btn-load"
-            content={"Load more"}
-            onClick={handleLoadMore}
-          />
+          <Button className="btn-load" onClick={handleLoadMore}>
+            Load more Pokemon
+          </Button>
         </div>
       </div>
     </div>

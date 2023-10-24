@@ -46,6 +46,10 @@ $bg-btn-select: #313131;
         color: white;
         background-color: $bg-btn-shuffle;
         margin-left: 15px;
+
+        .icon {
+          transform: rotate(45deg);
+        }
       }
 
       .btn-select {

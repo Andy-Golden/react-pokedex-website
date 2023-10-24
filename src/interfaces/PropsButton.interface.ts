@@ -1,5 +1,7 @@
+import type { ReactNode } from "react";
+
 interface PropsButton {
-  content: string;
+  children: ReactNode;
   className: string;
   onClick: () => void;
 }

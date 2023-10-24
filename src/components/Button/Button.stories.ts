@@ -11,6 +11,6 @@ type Story = StoryObj<typeof Button>;
 
 export const FirstStory: Story = {
   args: {
-    content: "Button",
+    children: "Button",
   },
 };
