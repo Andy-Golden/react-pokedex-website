@@ -2,7 +2,7 @@ $bg-filtering: #424242;
 $sort-by-text: #a4a4a4;
 $bg-wrapper: #ffff;
 $bg-btn-shuffle: #30a7d7;
-$bg-btn-select: #313131;
+$bg-select-input: #313131;
 
 .container {
   background: $bg-wrapper url("../../../public/img/container_bg.png");
@@ -32,30 +32,41 @@ $bg-btn-select: #313131;
       justify-content: space-between;
       background: #fff;
 
-      .button {
-        border-radius: 5px;
-        border: none;
-        outline: none;
-        clear: both;
-        font-size: 105%;
-        padding: 0.75em 1.25em 0.675em;
-        text-align: center;
+      .btn-shuffle-wrapper {
+        width: 50%;
+        display: flex;
+        align-items: center;
       }
 
       .btn-shuffle {
         color: white;
         background-color: $bg-btn-shuffle;
         margin-left: 15px;
+        width: 70%;
 
         .icon {
           transform: rotate(45deg);
         }
       }
 
-      .btn-select {
-        color: white;
-        background-color: $bg-btn-select;
-        margin-right: 12px;
+      .select-input-wrapper {
+        width: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+
+        .label-select {
+          margin-right: 10px;
+          font-size: 125%;
+          color: #a4a4a4;
+        }
+
+        .select-input-filter {
+          color: white;
+          background-color: $bg-select-input;
+          width: 70%;
+          margin-right: 20px;
+        }
       }
     }
   }

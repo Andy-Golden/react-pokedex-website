@@ -1,8 +1,6 @@
 $bg-image: #f2f2f2;
 $poke-id-color: #919191;
 
-
-
 .card {
   width: 205px;
   background-color: #fff;
@@ -55,5 +53,19 @@ $poke-id-color: #919191;
       gap: 5px;
       margin-bottom: 28px;
     }
+  }
+}
+
+.card:hover {
+  position: relative;
+  animation: move 0.2s linear;
+}
+
+@keyframes move {
+  0% {
+    top: -10px;
+  }
+  100% {
+    top: 0;
   }
 }
