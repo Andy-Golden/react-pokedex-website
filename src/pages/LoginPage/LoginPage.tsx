@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-misused-promises */
-import React from "react";
+import React, { useEffect } from "react";
 import "./styles.scss";
 import { useForm } from "react-hook-form";
 import { useDispatch, useSelector } from "react-redux";
@@ -7,10 +7,18 @@ import { type RootState } from "store";
 import type { ILoginFormInput } from "interfaces/ILoginFormInput.interface";
 import { createUser } from "./user.reducer";
 import { type User } from "./user";
+import { useNavigate } from "react-router-dom";
 
 function LoginPage(): JSX.Element {
   const user = useSelector((state: RootState) => state.userReducer.user);
-  console.log("user: ", user);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    // eslint-disable-next-line @typescript-eslint/strict-boolean-expressions
+    if (user.email && user.password) {
+      navigate("/");
+    }
+  }, [user]);
 
   const dispatch = useDispatch();
 

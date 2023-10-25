@@ -1,7 +1,7 @@
 interface User {
-  email: string;
-  password: string;
+  email: string | null;
+  password: string | null;
 }
 
-export const initialUser: User = { email: "", password: "" };
+export const initialUser: User = { email: null, password: null };
 export type { User };

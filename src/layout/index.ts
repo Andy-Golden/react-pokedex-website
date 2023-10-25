@@ -1,1 +1,1 @@
-export { default as ToggleButtonLayout } from "./ToggleButtonLayout";
+export { default as ToggleButtonLayout } from "./ToggleButtonLayout/ToggleButtonLayout";
