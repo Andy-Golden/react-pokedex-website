@@ -53,8 +53,8 @@ function HomePage(): JSX.Element {
       <div className="list-wrapper">
         <div className="list-poke">
           {pokemons?.length > 0 &&
-            pokemons.slice(start, visible).map((poke, index) => (
-              <div key={index}>
+            pokemons.slice(start, visible).map((poke) => (
+              <div key={poke.id}>
                 <PokeCard
                   id={poke.id}
                   name={poke.name}

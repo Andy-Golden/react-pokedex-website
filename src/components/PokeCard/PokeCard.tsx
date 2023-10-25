@@ -17,8 +17,8 @@ function PokeCard({ id, name, image, types }: PropsPokeCard): JSX.Element {
         </p>
         <p className="poke-name">{name}</p>
         <div className="poke-types">
-          {types.map((item, index) => (
-            <PokeType key={index} name={item.type.name} />
+          {types.map((item) => (
+            <PokeType key={item.slot} name={item.type.name} />
           ))}
         </div>
       </div>
