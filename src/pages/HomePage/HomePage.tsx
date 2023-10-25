@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import "./styles.scss";
 import { usePokemons, getRandomInt } from "./helper";
 import {
@@ -7,20 +7,12 @@ import {
   typeColor,
   typeTextColor,
 } from "./constants";
-import {
-  Button,
-  PokeCard,
-  SelectMenu,
-  PokeType,
-  SelectMenu1,
-} from "components";
+import { Button, PokeCard, PokeType, SelectBox } from "components";
 
 function HomePage(): JSX.Element {
   const [pokemons, setPokemons] = usePokemons();
-
   const [visible, setVisible] = useState(VISIBLE_OF_POKE);
   const [start, setStart] = useState(0);
-  const [indexFilterOption, setIndexFilterOption] = useState(0);
 
   const handleLoadMore = (): void => {
     const moreItems = visible + VISIBLE_OF_POKE;
@@ -40,15 +32,17 @@ function HomePage(): JSX.Element {
   };
 
   const handleFilter = (index: number): void => {
+    const clonedPokemons = [...pokemons];
+
     switch (index) {
       case 0: {
-        const lowestPokemons = pokemons.sort((poke1, poke2) => {
+        const lowestPokemons = clonedPokemons.sort((poke1, poke2) => {
           if (poke1.id < poke2.id) {
-            return 1;
+            return -1;
           }
 
           if (poke1.id > poke2.id) {
-            return -1;
+            return 1;
           }
 
           return 0;
@@ -57,13 +51,13 @@ function HomePage(): JSX.Element {
         break;
       }
       case 1: {
-        const highestPokemons = pokemons.sort((poke1, poke2) => {
+        const highestPokemons = clonedPokemons.sort((poke1, poke2) => {
           if (poke1.id < poke2.id) {
-            return -1;
+            return 1;
           }
 
           if (poke1.id > poke2.id) {
-            return 1;
+            return -1;
           }
 
           return 0;
@@ -72,13 +66,13 @@ function HomePage(): JSX.Element {
         break;
       }
       case 2: {
-        const aToZPokemons = pokemons.sort((poke1, poke2) => {
+        const aToZPokemons = clonedPokemons.sort((poke1, poke2) => {
           if (poke1.name < poke2.name) {
-            return 1;
+            return -1;
           }
 
           if (poke1.name > poke2.name) {
-            return -1;
+            return 1;
           }
 
           return 0;
@@ -87,13 +81,13 @@ function HomePage(): JSX.Element {
         break;
       }
       case 3: {
-        const aToZPokemons = pokemons.sort((poke1, poke2) => {
+        const aToZPokemons = clonedPokemons.sort((poke1, poke2) => {
           if (poke1.name < poke2.name) {
-            return -1;
+            return 1;
           }
 
           if (poke1.name > poke2.name) {
-            return 1;
+            return -1;
           }
 
           return 0;
@@ -107,9 +101,11 @@ function HomePage(): JSX.Element {
     }
   };
 
-  useEffect(() => {
-    handleFilter(indexFilterOption);
-  }, [indexFilterOption]);
+  const handleSortByChange = (
+    e: React.ChangeEvent<HTMLSelectElement>,
+  ): void => {
+    handleFilter(+e.target.value);
+  };
 
   return (
     <div className="container">
@@ -124,13 +120,17 @@ function HomePage(): JSX.Element {
           </div>
           <div className="select-input-wrapper">
             <span className="label-select">Sort by</span>
-            <SelectMenu
+            {/* <SelectMenu
               className={"select-input-filter"}
               choices={SORT_BY_CHOICES}
               indexFilterOption={indexFilterOption}
               setIndexFilterOption={setIndexFilterOption}
+            /> */}
+            <SelectBox
+              className={"select-input-filter1"}
+              options={SORT_BY_CHOICES}
+              onChange={handleSortByChange}
             />
-            <SelectMenu1 className={"select-input-filter1"} />
           </div>
         </div>
       </div>

@@ -1,18 +1,13 @@
-import React, { type ReactNode } from "react";
+import React from "react";
 import "./styles.scss";
-
-interface SelectProps {
-  children?: ReactNode;
-  value?: string | number;
-  defaultValue?: string | number;
-  className?: string;
-}
+import { type SelectProps } from "interfaces/SelectProps.interface";
 
 function Select({
   className,
   children,
   value,
   defaultValue,
+  onChange,
 }: SelectProps): JSX.Element {
   return (
     <>
@@ -20,6 +15,7 @@ function Select({
         className={`select ${className}`}
         value={value}
         defaultValue={defaultValue}
+        onChange={onChange}
       >
         {children}
       </select>

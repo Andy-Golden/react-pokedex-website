@@ -1,11 +1,5 @@
-import React, { type ReactNode } from "react";
-
-interface MenuItemProps {
-  className?: string;
-  value?: string | number;
-  selected?: boolean;
-  children?: ReactNode;
-}
+import React from "react";
+import { type MenuItemProps } from "interfaces/MenuItemProps.interface";
 
 function MenuItem({
   className,
