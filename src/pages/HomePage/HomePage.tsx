@@ -7,7 +7,13 @@ import {
   typeColor,
   typeTextColor,
 } from "./constants";
-import { Button, PokeCard, SelectMenu, PokeType } from "components";
+import {
+  Button,
+  PokeCard,
+  SelectMenu,
+  PokeType,
+  SelectMenu1,
+} from "components";
 
 function HomePage(): JSX.Element {
   const [pokemons, setPokemons] = usePokemons();
@@ -116,7 +122,7 @@ function HomePage(): JSX.Element {
               <span>&nbsp; &nbsp;Surprise Me!</span>
             </Button>
           </div>
-          <div className="select-input-wrapper ">
+          <div className="select-input-wrapper">
             <span className="label-select">Sort by</span>
             <SelectMenu
               className={"select-input-filter"}
@@ -124,6 +130,7 @@ function HomePage(): JSX.Element {
               indexFilterOption={indexFilterOption}
               setIndexFilterOption={setIndexFilterOption}
             />
+            <SelectMenu1 className={"select-input-filter1"} />
           </div>
         </div>
       </div>

@@ -1,0 +1,33 @@
+.select-menu1 {
+  background-color: #313131;
+  font-size: 105%;
+  color: #ffff;
+  border-radius: 5px;
+  position: relative;
+
+  .select {
+    padding-left: 44px;
+    padding-right: 10px;
+    padding-bottom: 12px;
+    padding-top: 12px;
+    position: relative;
+    border: none;
+    outline: none;
+
+    appearance: none;
+    background-image: url("./down-arrow.png");
+    background-repeat: no-repeat;
+    background-position: right 0.7rem top 50%;
+    background-size: 0.65rem auto;
+  }
+
+  img {
+    position: absolute;
+    z-index: 1000;
+    top: 15%;
+    left: 3%;
+    width: 28px;
+    height: 28px;
+    object-fit: cover;
+  }
+}

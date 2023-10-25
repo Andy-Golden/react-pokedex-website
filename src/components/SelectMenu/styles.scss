@@ -13,13 +13,14 @@
   outline: none;
   clear: both;
   font-size: 105%;
-  width: 60%;
+  // width: 60%;
   display: flex;
   align-items: center;
   gap: 5px;
   position: relative;
   background-color: var(--bg-select-input);
   color: var(--text-select-input);
+  width: 200px;
 
   .btn-show-dropdown {
     background-color: transparent;
@@ -70,8 +71,9 @@
     visibility: visible;
   }
 
-  .selection-hidden {
-    visibility: hidden;
-    position: absolute;
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
   }
 }

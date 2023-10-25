@@ -33,32 +33,13 @@ function SelectMenu({
           className={`${isShow ? "rotate-img" : ""}`}
         />
       </button>
-      <div className={`selection ${isShow ? "selection-show" : ""}`}>
+      <ul className={`selection ${isShow ? "selection-show" : ""}`}>
         {choices.map((item, index) => (
-          <option
-            key={index + 1}
-            className="option"
-            onClick={handleSelect(index)}
-          >
+          <li key={index + 1} className="option" onClick={handleSelect(index)}>
             {item}
-          </option>
+          </li>
         ))}
-      </div>
-      {/* <select
-        className="selection-hidden"
-        value={choices[indexFilterOption]}
-        onChange={handleChange}
-      >
-        {choices.map((item, index) => (
-          <option
-            selected={index === indexFilterOption}
-            key={index + 1}
-            value={item}
-          >
-            {item}
-          </option>
-        ))}
-      </select> */}
+      </ul>
     </div>
   );
 }
