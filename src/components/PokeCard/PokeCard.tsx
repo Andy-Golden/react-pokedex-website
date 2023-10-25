@@ -1,9 +1,8 @@
 import React from "react";
 import "./styles.scss";
 import { type PokeCardProps } from "interfaces/PokeCardProps.interface";
-import PokeType from "components/PokeType/PokeType";
 
-function PokeCard({ id, name, image, types }: PokeCardProps): JSX.Element {
+function PokeCard({ id, name, image, children }: PokeCardProps): JSX.Element {
   return (
     <div className="card">
       <div className="poke-image">
@@ -16,11 +15,7 @@ function PokeCard({ id, name, image, types }: PokeCardProps): JSX.Element {
           {`${"0".repeat(4 - id.toString().length)}${id}`}
         </p>
         <p className="poke-name">{name}</p>
-        <div className="poke-types">
-          {types.map((item) => (
-            <PokeType key={item.slot} name={item.type.name} />
-          ))}
-        </div>
+        {children}
       </div>
     </div>
   );

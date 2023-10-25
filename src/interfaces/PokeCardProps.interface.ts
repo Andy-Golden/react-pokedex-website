@@ -1,10 +1,10 @@
-import { type PokeType } from "interfaces/PokeDetail.interface";
+import { type ReactNode } from "react";
 
 interface PokeCardProps {
   id: number;
   name: string;
   image: string;
-  types: PokeType[];
+  children: ReactNode;
 }
 
 export { type PokeCardProps };

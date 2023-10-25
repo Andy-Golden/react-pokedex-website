@@ -1,19 +1,21 @@
 import "./styles.scss";
 import React from "react";
 import type { PokeTypeProps } from "interfaces/PokeTypeProps.interface";
-import { typeColor } from "./constants";
 
-function PokeType({ name }: PokeTypeProps): JSX.Element {
+function PokeType({
+  content,
+  className,
+  background,
+  textColor,
+  width,
+  height,
+}: PokeTypeProps): JSX.Element {
   return (
     <div
-      className="poke-type"
-      style={{
-        background: `${
-          typeColor[`${name.toUpperCase() as keyof typeof typeColor}`]
-        }`,
-      }}
+      className={`poke-type ${className}`}
+      style={{ backgroundColor: background, color: textColor, width, height }}
     >
-      {name}
+      {content}
     </div>
   );
 }

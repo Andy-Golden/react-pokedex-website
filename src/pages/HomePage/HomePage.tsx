@@ -2,7 +2,8 @@ import React, { useEffect, useState } from "react";
 import "./styles.scss";
 import { usePokemons, getRandomInt } from "./helper";
 import { SORT_BY_CHOICES, VISIBLE_OF_POKE } from "./constants";
-import { Button, PokeCard, SelectMenu } from "components";
+import { Button, PokeCard, SelectMenu, PokeType } from "components";
+import { typeColor, typeTextColor } from "components/PokeType/constants";
 
 function HomePage(): JSX.Element {
   const [pokemons, setPokemons] = usePokemons();
@@ -131,8 +132,27 @@ function HomePage(): JSX.Element {
                   id={poke.id}
                   name={poke.name}
                   image={poke.sprites.frontDefault}
-                  types={poke.types}
-                />
+                >
+                  {" "}
+                  <div className="poke-types">
+                    {poke.types.map((item) => (
+                      <PokeType
+                        key={item.slot}
+                        content={item.type.name}
+                        background={
+                          typeColor[
+                            item.type.name.toUpperCase() as keyof typeof typeColor
+                          ]
+                        }
+                        textColor={
+                          typeTextColor[
+                            item.type.name.toUpperCase() as keyof typeof typeTextColor
+                          ]
+                        }
+                      />
+                    ))}
+                  </div>
+                </PokeCard>
               </div>
             ))}
         </div>

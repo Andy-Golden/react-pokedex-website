@@ -15,9 +15,5 @@ export const FirstStory: Story = {
     name: "Bulbasaur",
     image:
       "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png",
-    types: [
-      { slot: 1, type: { name: "grass", url: "" } },
-      { slot: 2, type: { name: "poison", url: "" } },
-    ],
   },
 };
