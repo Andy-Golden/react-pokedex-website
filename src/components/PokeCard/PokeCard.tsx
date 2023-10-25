@@ -26,11 +26,4 @@ function PokeCard({ id, name, image, types }: PropsPokeCard): JSX.Element {
   );
 }
 
-PokeCard.defaultProps = {
-  id: 1,
-  name: "",
-  image: "",
-  types: [],
-};
-
 export default PokeCard;

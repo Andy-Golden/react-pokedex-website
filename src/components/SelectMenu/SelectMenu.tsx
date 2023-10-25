@@ -4,16 +4,13 @@ import type { PropsSelectInput } from "interfaces/PropsSelecInput.interface";
 import pokeImage from "./pokeball_white.png";
 import downArrow from "./down-arrow.png";
 
-const choices = [
-  "Lowest number (First)",
-  "Highest number (First)",
-  "A-Z",
-  "Z-A",
-];
-
-function SelectInput({ className }: PropsSelectInput): JSX.Element {
+function SelectMenu({
+  className,
+  choices,
+  indexFilterOption,
+  setIndexFilterOption,
+}: PropsSelectInput): JSX.Element {
   const [isShow, setIsShow] = useState(false);
-  const [filterOptionIndex, setFilterOptionIndex] = useState(0);
 
   const handleShowDropdown = (): void => {
     const notIsShow = !isShow;
@@ -22,13 +19,13 @@ function SelectInput({ className }: PropsSelectInput): JSX.Element {
 
   const handleSelect = (index: number) => (): void => {
     setIsShow(false);
-    setFilterOptionIndex(index);
+    setIndexFilterOption(index);
   };
 
   return (
     <div className={`${className} select-input`}>
       <img src={pokeImage} alt="pokeball" />
-      <span>{choices[filterOptionIndex]}</span>
+      <span>{choices[indexFilterOption]}</span>
       <button className="btn-show-dropdown" onClick={handleShowDropdown}>
         <img
           src={downArrow}
@@ -51,8 +48,4 @@ function SelectInput({ className }: PropsSelectInput): JSX.Element {
   );
 }
 
-SelectInput.defaultProps = {
-  className: "",
-};
-
-export default SelectInput;
+export default SelectMenu;

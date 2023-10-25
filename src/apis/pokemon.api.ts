@@ -1,4 +1,4 @@
-import { instance } from "utils/axios/instance";
+import { instance } from "server/axios/instance";
 import type { PokeDetailApi } from "interfaces/PokeDetailApi.interface";
 import type { PokeData } from "interfaces/PokeData.interface";
 import type { PokeDetail } from "interfaces/PokeDetail.interface";

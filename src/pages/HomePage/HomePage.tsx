@@ -1,16 +1,15 @@
 import React, { useState } from "react";
 import "./styles.scss";
-import PokeCard from "components/PokeCard";
-import Button from "components/Button";
 import { usePokemons, getRandomInt } from "./helper";
-import { VISIBLE_OF_POKE } from "./constants";
-import SelectInput from "components/SelectInput";
+import { SORT_BY_CHOICES, VISIBLE_OF_POKE } from "./constants";
+import { Button, PokeCard, SelectMenu } from "components";
 
 function HomePage(): JSX.Element {
   const pokemons = usePokemons();
 
   const [visible, setVisible] = useState(VISIBLE_OF_POKE);
   const [start, setStart] = useState(0);
+  const [indexFilterOption, setIndexFilterOption] = useState(0);
 
   const handleLoadMore = (): void => {
     const moreItems = visible + VISIBLE_OF_POKE;
@@ -42,7 +41,12 @@ function HomePage(): JSX.Element {
           </div>
           <div className="select-input-wrapper ">
             <span className="label-select">Sort by</span>
-            <SelectInput className={"select-input-filter"} />
+            <SelectMenu
+              className={"select-input-filter"}
+              choices={SORT_BY_CHOICES}
+              indexFilterOption={indexFilterOption}
+              setIndexFilterOption={setIndexFilterOption}
+            />
           </div>
         </div>
       </div>

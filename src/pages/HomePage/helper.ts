@@ -7,13 +7,16 @@ const usePokemons = (): PokeDetail[] => {
   const [pokemons, setPokemons] = useState<PokeDetail[]>([]);
 
   const getPokemons = async (): Promise<void> => {
-    const data = await getListPokeDetails(NUMBERS_OF_POKE);
-    setPokemons(data);
+    try {
+      const data = await getListPokeDetails(NUMBERS_OF_POKE);
+      setPokemons(data);
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   useEffect(() => {
-    // eslint-disable-next-line @typescript-eslint/no-floating-promises
-    getPokemons();
+    void getPokemons();
   }, []);
 
   return pokemons;
