@@ -1,9 +1,13 @@
 import React, { useEffect, useState } from "react";
 import "./styles.scss";
 import { usePokemons, getRandomInt } from "./helper";
-import { SORT_BY_CHOICES, VISIBLE_OF_POKE } from "./constants";
+import {
+  SORT_BY_CHOICES,
+  VISIBLE_OF_POKE,
+  typeColor,
+  typeTextColor,
+} from "./constants";
 import { Button, PokeCard, SelectMenu, PokeType } from "components";
-import { typeColor, typeTextColor } from "components/PokeType/constants";
 
 function HomePage(): JSX.Element {
   const [pokemons, setPokemons] = usePokemons();
