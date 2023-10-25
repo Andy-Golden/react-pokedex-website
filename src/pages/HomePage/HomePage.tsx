@@ -35,9 +35,11 @@ function HomePage(): JSX.Element {
           if (poke1.id < poke2.id) {
             return 1;
           }
+
           if (poke1.id > poke2.id) {
             return -1;
           }
+
           return 0;
         });
         setPokemons(lowestPokemons);
@@ -48,9 +50,11 @@ function HomePage(): JSX.Element {
           if (poke1.id < poke2.id) {
             return -1;
           }
+
           if (poke1.id > poke2.id) {
             return 1;
           }
+
           return 0;
         });
         setPokemons(highestPokemons);
@@ -61,9 +65,11 @@ function HomePage(): JSX.Element {
           if (poke1.name < poke2.name) {
             return 1;
           }
+
           if (poke1.name > poke2.name) {
             return -1;
           }
+
           return 0;
         });
         setPokemons(aToZPokemons);
@@ -74,9 +80,11 @@ function HomePage(): JSX.Element {
           if (poke1.name < poke2.name) {
             return -1;
           }
+
           if (poke1.name > poke2.name) {
             return 1;
           }
+
           return 0;
         });
         setPokemons(aToZPokemons);

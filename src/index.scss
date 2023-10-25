@@ -4,6 +4,12 @@ body {
   margin: 0;
   padding: 0;
   background: $bg-color url("../public/img/body_bg.png");
-  flex-direction: column;
   font-family: "Flexo-Regular",arial,sans-serif;
+}
+
+#root {
+  width: 100%;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
 }
