@@ -4,13 +4,16 @@ import "./index.scss";
 import reportWebVitals from "reportWebVitals";
 import router from "router";
 import { RouterProvider } from "react-router-dom";
+import { ToggleButtonLayout } from "layout";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement,
 );
 root.render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <ToggleButtonLayout>
+      <RouterProvider router={router} />
+    </ToggleButtonLayout>
   </React.StrictMode>,
 );
 

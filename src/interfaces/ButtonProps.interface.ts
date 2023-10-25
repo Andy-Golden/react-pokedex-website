@@ -1,9 +1,9 @@
 import type { ReactNode } from "react";
 
-interface PropsButton {
+interface ButtonProps {
   children: ReactNode;
   className: string;
   onClick: () => void;
 }
 
-export type { PropsButton };
+export type { ButtonProps };

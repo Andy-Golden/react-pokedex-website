@@ -1,10 +1,10 @@
 import type { PokeType } from "interfaces/PokeDetail.interface";
 
-interface PropsPokeCard {
+interface PokeCardProps {
   id: number;
   name: string;
   image: string;
   types: PokeType[];
 }
 
-export type { PropsPokeCard };
+export type { PokeCardProps };

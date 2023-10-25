@@ -1,9 +1,9 @@
 import React from "react";
 import "./styles.scss";
-import type { PropsPokeCard } from "interfaces/PropsPokeCard.interface";
+import type { PokeCardProps } from "interfaces/PokeCardProps.interface";
 import PokeType from "components/PokeType/PokeType";
 
-function PokeCard({ id, name, image, types }: PropsPokeCard): JSX.Element {
+function PokeCard({ id, name, image, types }: PokeCardProps): JSX.Element {
   return (
     <div className="card">
       <div className="poke-image">

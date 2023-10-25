@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./styles.scss";
-import type { PropsSelectInput } from "interfaces/PropsSelecInput.interface";
+import type { SelectMenuProps } from "interfaces/SelectMenuProps.interface";
 import pokeImage from "./pokeball_white.png";
 import downArrow from "./down-arrow.png";
 
@@ -9,7 +9,7 @@ function SelectMenu({
   choices,
   indexFilterOption,
   setIndexFilterOption,
-}: PropsSelectInput): JSX.Element {
+}: SelectMenuProps): JSX.Element {
   const [isShow, setIsShow] = useState(false);
 
   const handleShowDropdown = (): void => {

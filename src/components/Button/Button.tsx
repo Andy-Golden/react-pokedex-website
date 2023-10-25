@@ -1,8 +1,8 @@
 import React from "react";
 import "./styles.scss";
-import type { PropsButton } from "interfaces/PropsButton.interface";
+import type { ButtonProps } from "interfaces/ButtonProps.interface";
 
-function Button({ children, className, onClick }: PropsButton): JSX.Element {
+function Button({ children, className, onClick }: ButtonProps): JSX.Element {
   return (
     <button className={`button ${className}`} onClick={onClick}>
       {children}

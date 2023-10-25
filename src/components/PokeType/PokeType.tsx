@@ -1,9 +1,9 @@
 import "./styles.scss";
 import React from "react";
-import type { PropsPokeType } from "interfaces/PropsPokeType.interface";
+import type { PokeTypeProps } from "interfaces/PokeTypeProps.interface";
 import { typeColor } from "./constants";
 
-function PokeType({ name }: PropsPokeType): JSX.Element {
+function PokeType({ name }: PokeTypeProps): JSX.Element {
   return (
     <div
       className="poke-type"
