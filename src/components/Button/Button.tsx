@@ -10,10 +10,4 @@ function Button({ children, className, onClick }: PropsButton): JSX.Element {
   );
 }
 
-Button.defaultProps = {
-  children: "",
-  className: "",
-  onClick: () => {},
-};
-
 export default Button;

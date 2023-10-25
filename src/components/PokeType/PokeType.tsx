@@ -18,8 +18,4 @@ function PokeType({ name }: PropsPokeType): JSX.Element {
   );
 }
 
-PokeType.defaultProps = {
-  name: "grass",
-};
-
 export default PokeType;
