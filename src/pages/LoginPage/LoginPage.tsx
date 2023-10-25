@@ -2,20 +2,28 @@
 import React from "react";
 import "./styles.scss";
 import { useForm } from "react-hook-form";
+import { useDispatch, useSelector } from "react-redux";
+import { type RootState } from "store";
 import type { ILoginFormInput } from "interfaces/ILoginFormInput.interface";
+import { createUser } from "./user.reducer";
+import { type User } from "./user";
 
 function LoginPage(): JSX.Element {
+  const user = useSelector((state: RootState) => state.userReducer.user);
+  console.log("user: ", user);
+
+  const dispatch = useDispatch();
+
   const {
     register,
     handleSubmit,
-    formState: { errors },
+    // formState: { errors },
   } = useForm<ILoginFormInput>();
 
   const onSubmit = (data: ILoginFormInput): void => {
-    console.log(data);
+    const loginUser: User = { email: data.email, password: data.password };
+    dispatch(createUser(loginUser));
   };
-
-  console.log(errors);
 
   return (
     <div className="login-container">

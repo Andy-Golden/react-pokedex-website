@@ -5,15 +5,19 @@ import reportWebVitals from "reportWebVitals";
 import router from "router";
 import { RouterProvider } from "react-router-dom";
 import { ToggleButtonLayout } from "layout";
+import { Provider } from "react-redux";
+import { store } from "store";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement,
 );
 root.render(
   <React.StrictMode>
-    <ToggleButtonLayout>
-      <RouterProvider router={router} />
-    </ToggleButtonLayout>
+    <Provider store={store}>
+      <ToggleButtonLayout>
+        <RouterProvider router={router} />
+      </ToggleButtonLayout>
+    </Provider>
   </React.StrictMode>,
 );
 
