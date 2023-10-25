@@ -1,9 +1,13 @@
+import type React from "react";
 import { useEffect, useState } from "react";
 import { NUMBERS_OF_POKE } from "./constants";
 import type { PokeDetail } from "interfaces/PokeDetail.interface";
 import { getListPokeDetails } from "apis/pokemon.api";
 
-const usePokemons = (): PokeDetail[] => {
+const usePokemons = (): [
+  PokeDetail[],
+  React.Dispatch<React.SetStateAction<PokeDetail[]>>,
+] => {
   const [pokemons, setPokemons] = useState<PokeDetail[]>([]);
 
   const getPokemons = async (): Promise<void> => {
@@ -19,7 +23,7 @@ const usePokemons = (): PokeDetail[] => {
     void getPokemons();
   }, []);
 
-  return pokemons;
+  return [pokemons, setPokemons];
 };
 
 const getRandomInt = (min: number, max: number): number => {

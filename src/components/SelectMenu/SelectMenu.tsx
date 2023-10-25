@@ -44,6 +44,21 @@ function SelectMenu({
           </option>
         ))}
       </div>
+      {/* <select
+        className="selection-hidden"
+        value={choices[indexFilterOption]}
+        onChange={handleChange}
+      >
+        {choices.map((item, index) => (
+          <option
+            selected={index === indexFilterOption}
+            key={index + 1}
+            value={item}
+          >
+            {item}
+          </option>
+        ))}
+      </select> */}
     </div>
   );
 }
