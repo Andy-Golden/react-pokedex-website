@@ -14,8 +14,7 @@ function LoginPage(): JSX.Element {
   const navigate = useNavigate();
 
   useEffect(() => {
-    // eslint-disable-next-line @typescript-eslint/strict-boolean-expressions
-    if (user.email && user.password) {
+    if (user.email !== null && user.password !== null) {
       navigate("/");
     }
   }, [user]);
