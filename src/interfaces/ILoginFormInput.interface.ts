@@ -3,4 +3,4 @@ interface ILoginFormInput {
   password: string;
 }
 
-export type { ILoginFormInput };
+export { type ILoginFormInput };

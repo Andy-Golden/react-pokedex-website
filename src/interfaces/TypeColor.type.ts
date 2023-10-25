@@ -22,4 +22,4 @@ type TypeColor = {
   [key in TypeName]: string;
 };
 
-export type { TypeColor };
+export { type TypeColor };

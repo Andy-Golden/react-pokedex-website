@@ -1,8 +1,8 @@
-import type { PokeDetailApi } from "./PokeDetailApi.interface";
+import { type PokeDetailApi } from "./PokeDetailApi.interface";
 
 interface PokeData {
   count: number;
   results: PokeDetailApi[];
 }
 
-export type { PokeData };
+export { type PokeData };

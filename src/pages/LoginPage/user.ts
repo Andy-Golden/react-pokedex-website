@@ -1,7 +1,3 @@
-interface User {
-  email: string | null;
-  password: string | null;
-}
+import { type User } from "interfaces/User.interface";
 
 export const initialUser: User = { email: null, password: null };
-export type { User };

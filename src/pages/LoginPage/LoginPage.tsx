@@ -6,7 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { type RootState } from "store";
 import type { ILoginFormInput } from "interfaces/ILoginFormInput.interface";
 import { createUser } from "./user.reducer";
-import { type User } from "./user";
+import { type User } from "interfaces/User.interface";
 import { useNavigate } from "react-router-dom";
 
 function LoginPage(): JSX.Element {

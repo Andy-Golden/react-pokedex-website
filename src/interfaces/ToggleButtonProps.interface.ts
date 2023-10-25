@@ -3,4 +3,4 @@ interface ToggleButtonProps {
   onChange: () => void;
 }
 
-export type { ToggleButtonProps };
+export { type ToggleButtonProps };

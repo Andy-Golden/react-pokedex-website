@@ -5,4 +5,4 @@ interface SelectMenuProps {
   setIndexFilterOption: (index: number) => void;
 }
 
-export type { SelectMenuProps };
+export { type SelectMenuProps };

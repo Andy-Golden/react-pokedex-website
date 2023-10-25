@@ -1,4 +1,4 @@
-import type { ReactNode } from "react";
+import { type ReactNode } from "react";
 
 interface ButtonProps {
   children: ReactNode;
@@ -6,4 +6,4 @@ interface ButtonProps {
   onClick: () => void;
 }
 
-export type { ButtonProps };
+export { type ButtonProps };

@@ -1,11 +1,8 @@
 import React from "react";
 import "./styles.scss";
-import type { ToggleButtonProps } from "interfaces/ToggleButtonProps.interface";
+import { type ToggleButtonProps } from "interfaces/ToggleButtonProps.interface";
 
-function ToggleButton({
-  className,
-  onChange,
-}: Partial<ToggleButtonProps>): JSX.Element {
+function ToggleButton({ className, onChange }: ToggleButtonProps): JSX.Element {
   return (
     <div className={className}>
       <label className="switch">

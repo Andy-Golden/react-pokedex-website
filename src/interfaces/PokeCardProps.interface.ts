@@ -1,4 +1,4 @@
-import type { PokeType } from "interfaces/PokeDetail.interface";
+import { type PokeType } from "interfaces/PokeDetail.interface";
 
 interface PokeCardProps {
   id: number;
@@ -7,4 +7,4 @@ interface PokeCardProps {
   types: PokeType[];
 }
 
-export type { PokeCardProps };
+export { type PokeCardProps };

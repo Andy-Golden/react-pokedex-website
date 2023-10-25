@@ -1,6 +1,6 @@
 import React from "react";
 import "./styles.scss";
-import type { PokeCardProps } from "interfaces/PokeCardProps.interface";
+import { type PokeCardProps } from "interfaces/PokeCardProps.interface";
 import PokeType from "components/PokeType/PokeType";
 
 function PokeCard({ id, name, image, types }: PokeCardProps): JSX.Element {

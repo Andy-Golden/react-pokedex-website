@@ -5,4 +5,4 @@ interface PokeDetailApi {
   prev: string;
 }
 
-export type { PokeDetailApi };
+export { type PokeDetailApi };

@@ -21,4 +21,25 @@ const typeColor: TypeColor = {
   WATER: "#4592c4",
 };
 
-export { typeColor };
+const typeTextColor: TypeColor = {
+  BUG: "#ffff",
+  DRAGON: "#ffff",
+  FAIRY: "#0000",
+  FIRE: "#ffff",
+  GHOST: "#ffff",
+  GROUND: "#0000",
+  NORMAL: "#0000",
+  PSYCHIC: "#ffff",
+  STEEL: "#0000",
+  DARK: "#ffff",
+  ELECTRIC: "#0000",
+  FIGHTING: "#ffff",
+  FLYING: "#0000",
+  GRASS: "#0000",
+  ICE: "#0000",
+  POISON: "#ffff",
+  ROCK: "#ffff",
+  WATER: "#ffff",
+};
+
+export { typeColor, typeTextColor };
