@@ -7,13 +7,11 @@ function PokeType({
   className,
   background,
   textColor,
-  width,
-  height,
 }: PokeTypeProps): JSX.Element {
   return (
     <div
       className={`poke-type ${className}`}
-      style={{ backgroundColor: background, color: textColor, width, height }}
+      style={{ background, color: textColor }}
     >
       {content}
     </div>

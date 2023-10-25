@@ -5,8 +5,6 @@ interface ButtonProps {
   className?: string;
   background?: string;
   textColor?: string;
-  width?: string;
-  height?: string;
   onClick?: () => void;
 }
 

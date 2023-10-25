@@ -137,6 +137,7 @@ function HomePage(): JSX.Element {
                   <div className="poke-types">
                     {poke.types.map((item) => (
                       <PokeType
+                        className={"poke-type"}
                         key={item.slot}
                         content={item.type.name}
                         background={
