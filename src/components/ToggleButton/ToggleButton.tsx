@@ -1,6 +1,6 @@
 import React from "react";
 
-import { type ToggleButtonProps } from "./interface/ToggleButtonProps.interface";
+import { type ToggleButtonProps } from "./interface/toggleButtonProps.interface";
 
 import "./styles.scss";
 

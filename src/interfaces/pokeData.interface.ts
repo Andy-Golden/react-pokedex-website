@@ -1,4 +1,4 @@
-import type { PokeDetailApi } from "./PokeDetailApi.interface";
+import type { PokeDetailApi } from "./pokeDetailApi.interface";
 
 export interface PokeData {
   count: number;

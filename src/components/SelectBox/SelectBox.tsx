@@ -1,6 +1,6 @@
 import React from "react";
 
-import { type SelectBoxProps } from "./interface/SelectBoxProps.interface";
+import { type SelectBoxProps } from "./interface/selectBoxProps.interface";
 import MenuItem from "./MenuItem/MenuItem";
 import Select from "./Select/Select";
 import Image from "./pokeball_white.png";

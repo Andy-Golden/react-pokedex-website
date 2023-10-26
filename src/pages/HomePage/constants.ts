@@ -1,4 +1,4 @@
-import type { TypeColor } from "interfaces/TypeColor.type";
+import type { TypeColor } from "interfaces";
 
 const NUMBERS_OF_POKE = 200;
 const VISIBLE_OF_POKE = 25;

@@ -1,7 +1,7 @@
 import type React from "react";
 import { useEffect, useState } from "react";
 import { getListPokeDetails } from "apis/pokemon.api";
-import type { PokeDetail } from "interfaces/PokeDetail.interface";
+import type { PokeDetail } from "interfaces";
 
 import { NUMBERS_OF_POKE } from "./constants";
 
