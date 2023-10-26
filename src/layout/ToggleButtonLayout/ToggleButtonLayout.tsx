@@ -1,9 +1,12 @@
 import React from "react";
-import "./styles.scss";
-import { ToggleButton } from "components";
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { type RootState } from "store";
+
+import { ToggleButton } from "components";
+
 import { changeTheme } from "./toggleButton.reducer";
+
+import "./styles.scss";
 
 interface ToggleButtonLayoutProps {
   children: React.ReactNode;

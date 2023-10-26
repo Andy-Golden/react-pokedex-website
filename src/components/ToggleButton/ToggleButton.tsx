@@ -1,6 +1,8 @@
 import React from "react";
-import "./styles.scss";
+
 import { type ToggleButtonProps } from "./interface/ToggleButtonProps.interface";
+
+import "./styles.scss";
 
 function ToggleButton({ className, onChange }: ToggleButtonProps): JSX.Element {
   return (

@@ -1,14 +1,17 @@
 import React, { useState } from "react";
-import "./styles.scss";
-import { usePokemons, getRandomInt } from "./helper";
+import { Link } from "react-router-dom";
+
+import { Button, PokeCard, PokeType, SelectBox } from "components";
+
 import {
   SORT_BY_CHOICES,
-  VISIBLE_OF_POKE,
   typeColor,
   typeTextColor,
+  VISIBLE_OF_POKE,
 } from "./constants";
-import { Button, PokeCard, PokeType, SelectBox } from "components";
-import { Link } from "react-router-dom";
+import { getRandomInt, usePokemons } from "./helper";
+
+import "./styles.scss";
 
 function HomePage(): JSX.Element {
   const [pokemons, setPokemons] = usePokemons();

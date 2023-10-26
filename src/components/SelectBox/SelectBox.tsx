@@ -1,9 +1,11 @@
 import React from "react";
-import "./styles.scss";
-import Select from "./Select/Select";
-import MenuItem from "./MenuItem/MenuItem";
-import Image from "./pokeball_white.png";
+
 import { type SelectBoxProps } from "./interface/SelectBoxProps.interface";
+import MenuItem from "./MenuItem/MenuItem";
+import Select from "./Select/Select";
+import Image from "./pokeball_white.png";
+
+import "./styles.scss";
 
 function SelectBox({
   className,

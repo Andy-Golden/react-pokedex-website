@@ -1,11 +1,12 @@
 import React from "react";
 
 import { Button } from "./Button";
+
 import "./header.css";
 
-type User = {
+interface User {
   name: string;
-};
+}
 
 interface HeaderProps {
   user?: User;

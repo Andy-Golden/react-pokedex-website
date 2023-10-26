@@ -1,6 +1,8 @@
 import React from "react";
-import "./styles.scss";
+
 import { type SelectProps } from ".././interface/SelectProps.interface";
+
+import "./styles.scss";
 
 function Select({
   className,

@@ -1,6 +1,8 @@
-import "./styles.scss";
 import React from "react";
+
 import type { PokeTypeProps } from "./interface/PokeTypeProps.interface";
+
+import "./styles.scss";
 
 function PokeType({
   children,

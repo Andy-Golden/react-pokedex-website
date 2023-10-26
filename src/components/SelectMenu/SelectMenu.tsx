@@ -1,8 +1,10 @@
 import React, { useState } from "react";
-import "./styles.scss";
+
 import { type SelectMenuProps } from "./interface/SelectMenuProps.interface";
-import pokeImage from "./pokeball_white.png";
 import downArrow from "./down-arrow.png";
+import pokeImage from "./pokeball_white.png";
+
+import "./styles.scss";
 
 function SelectMenu({
   className,

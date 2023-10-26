@@ -1,5 +1,5 @@
+import type { PokeData, PokeDetail, PokeDetailApi } from "interfaces";
 import { instance } from "server/axios/instance";
-import type { PokeDetail, PokeData, PokeDetailApi } from "interfaces";
 
 const getPokemons = async (num: number): Promise<PokeData> => {
   const pokemons = await instance.get(
@@ -38,4 +38,4 @@ const getListPokeDetails = async (num: number): Promise<PokeDetail[]> => {
   return listPokeDetail;
 };
 
-export { getPokemons, getListPokeDetails };
+export { getListPokeDetails, getPokemons };

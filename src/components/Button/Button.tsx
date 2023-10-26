@@ -1,6 +1,8 @@
 import React from "react";
-import "./styles.scss";
+
 import { type ButtonProps } from "./interface/ButtonProps.interface";
+
+import "./styles.scss";
 
 function Button({
   children,

@@ -54,8 +54,8 @@ const typeTextColor: TypeColor = {
 
 export {
   NUMBERS_OF_POKE,
-  VISIBLE_OF_POKE,
   SORT_BY_CHOICES,
-  typeTextColor,
   typeColor,
+  typeTextColor,
+  VISIBLE_OF_POKE,
 };

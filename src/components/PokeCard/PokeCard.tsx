@@ -1,7 +1,9 @@
 import React from "react";
-import "./styles.scss";
+
 import { type PokeCardProps } from "./interface/PokeCardProps.interface";
 import { generateStringPokeId } from "./utils";
+
+import "./styles.scss";
 
 function PokeCard({
   children,

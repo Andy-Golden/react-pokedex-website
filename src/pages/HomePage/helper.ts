@@ -1,8 +1,9 @@
 import type React from "react";
 import { useEffect, useState } from "react";
-import { NUMBERS_OF_POKE } from "./constants";
-import type { PokeDetail } from "interfaces/PokeDetail.interface";
 import { getListPokeDetails } from "apis/pokemon.api";
+import type { PokeDetail } from "interfaces/PokeDetail.interface";
+
+import { NUMBERS_OF_POKE } from "./constants";
 
 const usePokemons = (): [
   PokeDetail[],
@@ -37,4 +38,4 @@ const getRandomInt = (min: number, max: number): number => {
   return randomNum;
 };
 
-export { usePokemons, getRandomInt };
+export { getRandomInt, usePokemons };

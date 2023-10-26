@@ -1,14 +1,16 @@
 /* eslint-disable @typescript-eslint/no-misused-promises */
 import React, { useEffect } from "react";
-import "./styles.scss";
 import { useForm } from "react-hook-form";
-import { ErrorMessage } from "@hookform/error-message";
 import { useDispatch, useSelector } from "react-redux";
-import type { RootState } from "store";
-import { createUser } from "./user.reducer";
-import type { User } from "interfaces";
-import type { ILoginFormInput } from "./interface/ILoginFormInput.interface";
 import { useNavigate } from "react-router-dom";
+import { ErrorMessage } from "@hookform/error-message";
+import type { User } from "interfaces";
+import type { RootState } from "store";
+
+import type { ILoginFormInput } from "./interface/ILoginFormInput.interface";
+import { createUser } from "./user.reducer";
+
+import "./styles.scss";
 
 function LoginPage(): JSX.Element {
   const user = useSelector((state: RootState) => state.userReducer.user);
