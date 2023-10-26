@@ -5,14 +5,14 @@ import { generateStringPokeId } from "./utils";
 
 import "./styles.scss";
 
-function PokeCard({
+const PokeCard = ({
   children,
   textColor,
   id,
   name,
   image,
   background,
-}: PokeCardProps): JSX.Element {
+}: PokeCardProps): JSX.Element => {
   return (
     <div className="card" style={{ background, color: textColor }}>
       <div className="poke-image">
@@ -29,6 +29,6 @@ function PokeCard({
       </div>
     </div>
   );
-}
+};
 
 export default PokeCard;

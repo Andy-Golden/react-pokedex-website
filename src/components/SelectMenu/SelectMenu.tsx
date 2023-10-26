@@ -6,12 +6,12 @@ import pokeImage from "./pokeball_white.png";
 
 import "./styles.scss";
 
-function SelectMenu({
+const SelectMenu = ({
   className,
   choices,
   indexFilterOption,
   setIndexFilterOption,
-}: SelectMenuProps): JSX.Element {
+}: SelectMenuProps): JSX.Element => {
   const [isShow, setIsShow] = useState(false);
 
   const handleShowDropdown = (): void => {
@@ -44,6 +44,6 @@ function SelectMenu({
       </ul>
     </div>
   );
-}
+};
 
 export default SelectMenu;

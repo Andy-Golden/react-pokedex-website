@@ -4,7 +4,10 @@ import { type ToggleButtonProps } from "./interface/toggleButtonProps.interface"
 
 import "./styles.scss";
 
-function ToggleButton({ className, onChange }: ToggleButtonProps): JSX.Element {
+const ToggleButton = ({
+  className,
+  onChange,
+}: ToggleButtonProps): JSX.Element => {
   return (
     <div className={className}>
       <label className="switch">
@@ -13,6 +16,6 @@ function ToggleButton({ className, onChange }: ToggleButtonProps): JSX.Element {
       </label>
     </div>
   );
-}
+};
 
 export default ToggleButton;

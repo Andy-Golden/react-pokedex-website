@@ -12,7 +12,7 @@ import { createUser } from "./user.reducer";
 
 import "./styles.scss";
 
-function LoginPage(): JSX.Element {
+const LoginPage = (): JSX.Element => {
   const user = useSelector((state: RootState) => state.userReducer.user);
   const navigate = useNavigate();
 
@@ -83,6 +83,6 @@ function LoginPage(): JSX.Element {
       </div>
     </div>
   );
-}
+};
 
 export default LoginPage;

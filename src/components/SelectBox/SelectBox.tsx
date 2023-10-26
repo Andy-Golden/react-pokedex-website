@@ -7,13 +7,13 @@ import Image from "./pokeball_white.png";
 
 import "./styles.scss";
 
-function SelectBox({
+const SelectBox = ({
   className,
   textColor,
   options,
   background,
   onChange,
-}: SelectBoxProps): JSX.Element {
+}: SelectBoxProps): JSX.Element => {
   return (
     <div
       className={`select-box ${className}`}
@@ -29,6 +29,6 @@ function SelectBox({
       </Select>
     </div>
   );
-}
+};
 
 export default SelectBox;

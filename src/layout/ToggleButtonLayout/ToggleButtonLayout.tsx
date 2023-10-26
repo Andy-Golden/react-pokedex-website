@@ -12,9 +12,9 @@ interface ToggleButtonLayoutProps {
   children: React.ReactNode;
 }
 
-function ToggleButtonLayout({
+const ToggleButtonLayout = ({
   children,
-}: ToggleButtonLayoutProps): JSX.Element {
+}: ToggleButtonLayoutProps): JSX.Element => {
   const theme = useSelector(
     (state: RootState) => state.toggleButtonReducer.theme,
   );
@@ -33,6 +33,6 @@ function ToggleButtonLayout({
       {children}
     </div>
   );
-}
+};
 
 export default ToggleButtonLayout;

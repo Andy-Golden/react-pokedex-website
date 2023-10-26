@@ -8,7 +8,7 @@ import { usePrepareHook } from "./helper";
 
 import "./styles.scss";
 
-function HomePage(): JSX.Element {
+const HomePage = (): JSX.Element => {
   const {
     pokemons,
     start,
@@ -91,6 +91,6 @@ function HomePage(): JSX.Element {
       </div>
     </div>
   );
-}
+};
 
 export default HomePage;

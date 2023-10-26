@@ -4,13 +4,13 @@ import { type ButtonProps } from "./interface/buttonProps.interface";
 
 import "./styles.scss";
 
-function Button({
+const Button = ({
   children,
   textColor,
   className,
   background,
   onClick,
-}: ButtonProps): JSX.Element {
+}: ButtonProps): JSX.Element => {
   return (
     <button
       className={`button ${className}`}
@@ -20,6 +20,6 @@ function Button({
       {children}
     </button>
   );
-}
+};
 
 export default Button;

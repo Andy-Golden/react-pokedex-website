@@ -4,13 +4,13 @@ import { type SelectProps } from "../interface/selectProps.interface";
 
 import "./styles.scss";
 
-function Select({
+const Select = ({
   className,
   children,
   value,
   defaultValue,
   onChange,
-}: SelectProps): JSX.Element {
+}: SelectProps): JSX.Element => {
   return (
     <>
       <select
@@ -23,6 +23,6 @@ function Select({
       </select>
     </>
   );
-}
+};
 
 export default Select;
