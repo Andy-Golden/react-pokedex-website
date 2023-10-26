@@ -5,6 +5,8 @@ interface PokeCardProps {
   name: string;
   image: string;
   children: ReactNode;
+  background?: string;
+  textColor?: string;
 }
 
 export { type PokeCardProps };

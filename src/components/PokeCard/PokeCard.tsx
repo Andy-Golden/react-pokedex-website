@@ -2,9 +2,16 @@ import React from "react";
 import "./styles.scss";
 import { type PokeCardProps } from "interfaces/PokeCardProps.interface";
 
-function PokeCard({ id, name, image, children }: PokeCardProps): JSX.Element {
+function PokeCard({
+  id,
+  name,
+  image,
+  children,
+  background,
+  textColor,
+}: PokeCardProps): JSX.Element {
   return (
-    <div className="card">
+    <div className="card" style={{ background, color: textColor }}>
       <div className="poke-image">
         {" "}
         <img src={image} alt={name} />
