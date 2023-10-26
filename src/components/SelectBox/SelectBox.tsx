@@ -21,7 +21,7 @@ function SelectBox({
       style={{ background, color: textColor }}
     >
       <img src={Image} alt="poke ball"></img>
-      <Select onChange={onChange} defaultValue={defaultValue}>
+      <Select onChange={onChange} value={defaultValue}>
         {options?.map((item, index) => (
           <MenuItem key={item} value={index}>
             {item}

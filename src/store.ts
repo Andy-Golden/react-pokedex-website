@@ -1,9 +1,10 @@
 import { configureStore } from "@reduxjs/toolkit";
-import toggleButtonReducer from "layout/ThemeLanguageLayout/toggleButton.reducer";
+import langReducer from "layout/ThemeLanguageLayout/language.reducer";
+import themeReducer from "layout/ThemeLanguageLayout/theme.reducer";
 import userReducer from "pages/LoginPage/user.reducer";
 
 export const store = configureStore({
-  reducer: { userReducer, toggleButtonReducer },
+  reducer: { userReducer, themeReducer, langReducer },
 });
 
 export type RootState = ReturnType<typeof store.getState>;
