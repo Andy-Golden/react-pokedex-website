@@ -1,7 +1,8 @@
+/* eslint-disable */
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
-import { Button, PokeCard, PokeType, SelectBox } from "components";
+import { Button, Loading, PokeCard, PokeType, SelectBox } from "components";
 
 import {
   SORT_BY_CHOICES,
@@ -127,12 +128,6 @@ function HomePage(): JSX.Element {
           </div>
           <div className="select-input-wrapper">
             <span className="label-select">Sort by</span>
-            {/* <SelectMenu
-              className={"select-input-filter"}
-              choices={SORT_BY_CHOICES}
-              indexFilterOption={indexFilterOption}
-              setIndexFilterOption={setIndexFilterOption}
-            /> */}
             <SelectBox
               className={"select-input-filter1"}
               options={SORT_BY_CHOICES}
@@ -143,7 +138,7 @@ function HomePage(): JSX.Element {
       </div>
       <div className="list-wrapper">
         <div className="list-poke">
-          {pokemons?.length > 0 &&
+          {pokemons?.length > 0 ? (
             pokemons.slice(start, visible).map((poke) => (
               <>
                 <PokeCard
@@ -175,7 +170,10 @@ function HomePage(): JSX.Element {
                   </div>
                 </PokeCard>
               </>
-            ))}
+            ))
+          ) : (
+            <Loading></Loading>
+          )}
         </div>
       </div>
       <div className="action-under-wrapper">

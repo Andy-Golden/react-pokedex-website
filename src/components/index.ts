@@ -1,4 +1,5 @@
 export { default as Button } from "./Button/Button";
+export { default as Loading } from "./Loading/Loading";
 export { default as PokeCard } from "./PokeCard/PokeCard";
 export { default as PokeType } from "./PokeType/PokeType";
 export { default as SelectBox } from "./SelectBox/SelectBox";
