@@ -1,5 +1,5 @@
-/* eslint-disable */
 import React, { useState } from "react";
+import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 
 import { Button, Loading, PokeCard, PokeType, SelectBox } from "components";
@@ -11,7 +11,6 @@ import {
   VISIBLE_OF_POKE,
 } from "./constants";
 import { getRandomInt, usePokemons } from "./helper";
-import { useTranslation } from "react-i18next";
 
 import "./styles.scss";
 

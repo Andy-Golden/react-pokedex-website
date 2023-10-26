@@ -3,20 +3,18 @@ import i18n from "i18next";
 import LanguageDetector from "i18next-browser-languagedetector";
 import Backend from "i18next-http-backend";
 
-// eslint-disable-next-line @typescript-eslint/no-floating-promises
-i18n
+void i18n
   .use(Backend)
   .use(LanguageDetector)
   .use(initReactI18next)
   .init({
     fallbackLng: "en",
-    lng: "en",
+    lng: localStorage.getItem("i18nextLng") ?? "en",
     debug: true,
 
     backend: {
       loadPath: `/locales/{{lng}}/{{ns}}.json`,
     },
-
     interpolation: {
       escapeValue: false,
     },

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { useDispatch, useSelector } from "react-redux";
 import { type RootState } from "store";
@@ -25,10 +25,16 @@ function ToggleButtonLayout({
 
   const dispatch = useDispatch();
 
+  useEffect(() => {
+    const theme = localStorage.getItem("theme");
+    document.documentElement.setAttribute("data-theme", theme ?? "dark");
+  }, []);
+
   const handleChange = (): void => {
     const newTheme = theme === "dark" ? "light" : "dark";
     dispatch(changeTheme(newTheme));
     document.documentElement.setAttribute("data-theme", newTheme);
+    localStorage.setItem("theme", newTheme);
   };
 
   const handleSwicthLanguage = async (
@@ -43,6 +49,7 @@ function ToggleButtonLayout({
       <div className="action-layout">
         <ToggleButton className="toggle" onChange={handleChange} />
         <SelectBox
+          defaultValue={localStorage.getItem("i18nextLng") ?? "en"}
           className="language-select-box"
           options={languageOptions}
           // eslint-disable-next-line @typescript-eslint/no-misused-promises

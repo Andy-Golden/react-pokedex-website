@@ -10,6 +10,7 @@ import "./styles.scss";
 function SelectBox({
   className,
   textColor,
+  defaultValue,
   options,
   background,
   onChange,
@@ -20,7 +21,7 @@ function SelectBox({
       style={{ background, color: textColor }}
     >
       <img src={Image} alt="poke ball"></img>
-      <Select onChange={onChange}>
+      <Select onChange={onChange} defaultValue={defaultValue}>
         {options?.map((item, index) => (
           <MenuItem key={item} value={index}>
             {item}
