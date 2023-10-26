@@ -1,7 +1,7 @@
-export { default as Button } from "./Button/Button";
-export { default as Loading } from "./Loading/Loading";
-export { default as PokeCard } from "./PokeCard/PokeCard";
-export { default as PokeType } from "./PokeType/PokeType";
-export { default as SelectBox } from "./SelectBox/SelectBox";
-export { default as SelectMenu } from "./SelectMenu/SelectMenu";
-export { default as ToggleButton } from "./ToggleButton/ToggleButton";
+export { Button } from "./Button";
+export { Loading } from "./Loading";
+export { PokeCard } from "./PokeCard";
+export { PokeType } from "./PokeType";
+export { SelectBox } from "./SelectBox";
+export { SelectMenu } from "./SelectMenu";
+export { ToggleButton } from "./ToggleButton";
