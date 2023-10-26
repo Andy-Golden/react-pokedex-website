@@ -129,7 +129,7 @@ function HomePage(): JSX.Element {
           <div className="select-input-wrapper">
             <span className="label-select">Sort by</span>
             <SelectBox
-              className={"select-input-filter1"}
+              className={"select-input-filter"}
               options={SORT_BY_CHOICES}
               onChange={handleSortByChange}
             />

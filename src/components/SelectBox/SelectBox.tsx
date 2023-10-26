@@ -16,7 +16,7 @@ function SelectBox({
 }: SelectBoxProps): JSX.Element {
   return (
     <div
-      className={`select-menu1 ${className}`}
+      className={`select-box ${className}`}
       style={{ background, color: textColor }}
     >
       <img src={Image} alt="poke ball"></img>
