@@ -20,11 +20,11 @@ function PokeCard({
         <img src={image} alt={name} />
       </div>
       <div className="poke-info">
-        <p className="poke-id">
+        <p className="id">
           <span>#</span>
           {generateStringPokeId(id)}
         </p>
-        <p className="poke-name">{name}</p>
+        <p className="name">{name}</p>
         {children}
       </div>
     </div>

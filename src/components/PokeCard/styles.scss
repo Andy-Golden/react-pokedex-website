@@ -29,7 +29,7 @@
     gap: 15px;
     padding: 10px 10px;
 
-    .poke-id {
+    .id {
       font-family: "Flexo-Bold", arial, sans-serif;
       color: var(--text-poke-id-color);
       margin: 0;
@@ -38,14 +38,14 @@
       font-size: 80%;
     }
 
-    .poke-name {
+    .name {
       margin: 0;
       padding: 0;
       font-size: 145%;
       font-weight: bold;
     }
 
-    .poke-name::first-letter {
+    .name::first-letter {
       text-transform: uppercase;
     }
   }
