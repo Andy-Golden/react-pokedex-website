@@ -1,5 +1,5 @@
 import React from "react";
-import { type MenuItemProps } from "interfaces/MenuItemProps.interface";
+import { type MenuItemProps } from ".././interface/MenuItemProps.interface";
 
 function MenuItem({
   className,

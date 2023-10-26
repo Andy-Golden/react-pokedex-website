@@ -20,6 +20,6 @@ type Story = StoryObj<typeof PokeType>;
 
 export const Primary: Story = {
   args: {
-    content: "poke type",
+    children: "poke type",
   },
 };

@@ -27,7 +27,10 @@ const getPokeDetails = async (url: string): Promise<PokeDetail> => {
 const getListPokeDetails = async (num: number): Promise<PokeDetail[]> => {
   const pokemons = await getPokemons(num);
 
-  const promises = pokemons?.results.map(
+  // eslint-disable-next-line @typescript-eslint/strict-boolean-expressions
+  if (!pokemons) return [];
+
+  const promises = pokemons.results.map(
     async (item: PokeDetailApi): Promise<PokeDetail> =>
       await getPokeDetails(item.url),
   );

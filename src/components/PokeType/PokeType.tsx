@@ -1,9 +1,9 @@
 import "./styles.scss";
 import React from "react";
-import type { PokeTypeProps } from "interfaces/PokeTypeProps.interface";
+import type { PokeTypeProps } from "./interface/PokeTypeProps.interface";
 
 function PokeType({
-  content,
+  children,
   className,
   background,
   textColor,
@@ -13,7 +13,7 @@ function PokeType({
       className={`poke-type ${className}`}
       style={{ background, color: textColor }}
     >
-      {content}
+      {children}
     </div>
   );
 }

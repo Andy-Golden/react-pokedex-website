@@ -1,13 +1,13 @@
 import React from "react";
 import "./styles.scss";
-import { type ButtonProps } from "interfaces/ButtonProps.interface";
+import { type ButtonProps } from "./interface/ButtonProps.interface";
 
 function Button({
   children,
-  className,
-  onClick,
-  background,
   textColor,
+  className,
+  background,
+  onClick,
 }: ButtonProps): JSX.Element {
   return (
     <button

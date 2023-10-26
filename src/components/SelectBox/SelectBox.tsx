@@ -3,13 +3,13 @@ import "./styles.scss";
 import Select from "./Select/Select";
 import MenuItem from "./MenuItem/MenuItem";
 import Image from "./pokeball_white.png";
-import { type SelectBoxProps } from "interfaces/SelectBoxProps.interface";
+import { type SelectBoxProps } from "./interface/SelectBoxProps.interface";
 
 function SelectBox({
   className,
+  textColor,
   options,
   background,
-  textColor,
   onChange,
 }: SelectBoxProps): JSX.Element {
   return (

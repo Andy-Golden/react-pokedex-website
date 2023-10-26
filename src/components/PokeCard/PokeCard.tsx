@@ -1,14 +1,15 @@
 import React from "react";
 import "./styles.scss";
-import { type PokeCardProps } from "interfaces/PokeCardProps.interface";
+import { type PokeCardProps } from "./interface/PokeCardProps.interface";
+import { generateStringPokeId } from "./utils";
 
 function PokeCard({
+  children,
+  textColor,
   id,
   name,
   image,
-  children,
   background,
-  textColor,
 }: PokeCardProps): JSX.Element {
   return (
     <div className="card" style={{ background, color: textColor }}>
@@ -19,7 +20,7 @@ function PokeCard({
       <div className="poke-info">
         <p className="poke-id">
           <span>#</span>
-          {`${"0".repeat(4 - id.toString().length)}${id}`}
+          {generateStringPokeId(id)}
         </p>
         <p className="poke-name">{name}</p>
         {children}

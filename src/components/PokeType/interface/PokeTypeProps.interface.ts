@@ -1,5 +1,5 @@
 interface PokeTypeProps {
-  content: string;
+  children: string;
   className?: string;
   background?: string;
   textColor?: string;

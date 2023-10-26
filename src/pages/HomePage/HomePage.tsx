@@ -155,7 +155,6 @@ function HomePage(): JSX.Element {
                       <PokeType
                         className={"poke-type"}
                         key={item.slot}
-                        content={item.type.name}
                         background={
                           typeColor[
                             item.type.name.toUpperCase() as keyof typeof typeColor
@@ -166,7 +165,9 @@ function HomePage(): JSX.Element {
                             item.type.name.toUpperCase() as keyof typeof typeTextColor
                           ]
                         }
-                      />
+                      >
+                        {item.type.name}
+                      </PokeType>
                     ))}
                   </div>
                 </PokeCard>
