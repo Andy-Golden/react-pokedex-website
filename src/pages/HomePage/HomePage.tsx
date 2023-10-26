@@ -11,6 +11,7 @@ import {
   VISIBLE_OF_POKE,
 } from "./constants";
 import { getRandomInt, usePokemons } from "./helper";
+import { useTranslation } from "react-i18next";
 
 import "./styles.scss";
 
@@ -18,6 +19,7 @@ function HomePage(): JSX.Element {
   const [pokemons, setPokemons] = usePokemons();
   const [visible, setVisible] = useState(VISIBLE_OF_POKE);
   const [start, setStart] = useState(0);
+  const { t } = useTranslation();
 
   const handleLoadMore = (): void => {
     const moreItems = visible + VISIBLE_OF_POKE;
@@ -115,7 +117,7 @@ function HomePage(): JSX.Element {
   return (
     <div className="container">
       <Button className="login-btn">
-        <Link to="/login">Login</Link>
+        <Link to="/login">{t("login")}</Link>
       </Button>
       <div className="filtering"></div>
       <div className="action-above-wrapper">
@@ -123,7 +125,7 @@ function HomePage(): JSX.Element {
           <div className="btn-shuffle-wrapper">
             <Button className="btn-shuffle" onClick={handleSurpriseMe}>
               <i className="fas fa-sync-alt icon"></i>
-              <span>&nbsp; &nbsp;Surprise Me!</span>
+              <span>&nbsp; &nbsp;{t("surpriseMe")}</span>
             </Button>
           </div>
           <div className="select-input-wrapper">
@@ -140,36 +142,34 @@ function HomePage(): JSX.Element {
         <div className="list-poke">
           {pokemons?.length > 0 ? (
             pokemons.slice(start, visible).map((poke) => (
-              <>
-                <PokeCard
-                  key={poke.id}
-                  id={poke.id}
-                  name={poke.name}
-                  image={poke.sprites.frontDefault}
-                >
-                  {" "}
-                  <div className="poke-types">
-                    {poke.types.map((item) => (
-                      <PokeType
-                        className={"poke-type"}
-                        key={item.slot}
-                        background={
-                          typeColor[
-                            item.type.name.toUpperCase() as keyof typeof typeColor
-                          ]
-                        }
-                        textColor={
-                          typeTextColor[
-                            item.type.name.toUpperCase() as keyof typeof typeTextColor
-                          ]
-                        }
-                      >
-                        {item.type.name}
-                      </PokeType>
-                    ))}
-                  </div>
-                </PokeCard>
-              </>
+              <PokeCard
+                key={poke.name}
+                id={poke.id}
+                name={poke.name}
+                image={poke.sprites.frontDefault}
+              >
+                {" "}
+                <div className="poke-types">
+                  {poke.types.map((item) => (
+                    <PokeType
+                      className={"poke-type"}
+                      key={item.slot}
+                      background={
+                        typeColor[
+                          item.type.name.toUpperCase() as keyof typeof typeColor
+                        ]
+                      }
+                      textColor={
+                        typeTextColor[
+                          item.type.name.toUpperCase() as keyof typeof typeTextColor
+                        ]
+                      }
+                    >
+                      {item.type.name}
+                    </PokeType>
+                  ))}
+                </div>
+              </PokeCard>
             ))
           ) : (
             <Loading></Loading>

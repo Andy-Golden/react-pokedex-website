@@ -2,10 +2,12 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { Provider } from "react-redux";
 import { RouterProvider } from "react-router-dom";
-import { ToggleButtonLayout } from "layout";
+import { ThemeLanguageLayout } from "layout";
 import reportWebVitals from "reportWebVitals";
 import router from "router";
 import { store } from "store";
+
+import "./i18n";
 
 import "./index.scss";
 
@@ -15,9 +17,9 @@ const root = ReactDOM.createRoot(
 root.render(
   <React.StrictMode>
     <Provider store={store}>
-      <ToggleButtonLayout>
+      <ThemeLanguageLayout>
         <RouterProvider router={router} />
-      </ToggleButtonLayout>
+      </ThemeLanguageLayout>
     </Provider>
   </React.StrictMode>,
 );
