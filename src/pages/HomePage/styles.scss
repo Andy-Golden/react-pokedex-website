@@ -56,16 +56,16 @@
         width: 50%;
         display: flex;
         align-items: center;
-      }
 
-      .btn-shuffle {
-        color: var(--text-btn-shuffle);
-        background-color: var(--bg-btn-shuffle);
-        margin-left: 15px;
-        width: 70%;
+        .btn-shuffle {
+          color: var(--text-btn-shuffle);
+          background-color: var(--bg-btn-shuffle);
+          margin-left: 15px;
+          width: 70%;
 
-        .icon {
-          transform: rotate(45deg);
+          .icon {
+            transform: rotate(45deg);
+          }
         }
       }
 
@@ -76,24 +76,16 @@
         justify-content: flex-end;
 
         .label-select {
-          margin-right: 10px;
+          margin-right: 5px;
           font-size: 125%;
           color: var(--text-label-select);
-        }
-
-        .select-input-filter {
-          color: var(--text-select-input-filter);
-          background-color: var(--bg-select-input);
-          width: 70%;
-          margin-right: 20px;
-          display: none;
         }
 
         .select-input-filter1 {
           color: var(--text-select-input-filter);
           background-color: var(--bg-select-input);
           width: 70%;
-          margin-right: 20px;
+          margin-right: 15px;
         }
       }
     }
@@ -111,6 +103,13 @@
       display: flex;
       flex-wrap: wrap;
       padding: 20px;
+
+      .card {
+        width: 23%;
+        margin-left: 15px;
+        margin-top: 5px;
+        margin-bottom: 5px;
+      }
     }
   }
 
@@ -134,7 +133,152 @@
     }
 
     .login-btn {
-     width: 30%; 
+      width: 30%;
+    }
+  }
+}
+
+@media only screen and (max-width: 1830px) {
+  .container {
+    .list-wrapper {
+      .list-poke {
+        .card {
+          width: 31%;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 1489px) {
+  .container {
+    .action-above-wrapper {
+      width: 100%;
+
+      .action-above-content {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+
+        .btn-shuffle-wrapper {
+          width: 100%;
+
+          .btn-shuffle {
+            width: 100%;
+            margin-left: 0;
+          }
+        }
+
+        .select-input-wrapper {
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 5px;
+
+          .label-select {
+            text-align: left;
+          }
+
+          .select-input-filter1 {
+            width: 100%;
+            margin-right: 0;
+          }
+
+          .select-menu1 img {
+            left: 1%;
+          }
+        }
+      }
+    }
+
+    .list-wrapper {
+      .list-poke {
+        .card {
+          width: 47%;
+        }
+      }
+    }
+
+    .action-under-wrapper {
+      width: 100%;
+      .action-under-content {
+        width: 100%;
+        .btn-load {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 1152px) {
+  .container {
+    .list-wrapper {
+      .list-poke {
+        justify-content: center;
+        .card {
+          width: 92%;
+          margin-left: 0px;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 391px) {
+  .container {
+    .action-above-wrapper {
+      .action-above-content {
+        .btn-shuffle-wrapper {
+          width: 100%;
+
+          .btn-shuffle {
+            width: 100%;
+            margin-left: 0;
+            font-size: 80%;
+          }
+        }
+
+        .select-input-wrapper {
+          .label-select {
+            font-size: 106%;
+          }
+
+          .select-input-filter1 {
+            width: 100%;
+            margin-right: 0;
+          }
+
+          .select-menu1 {
+            font-size: 70%;
+          }
+
+          .select-menu1 img {
+            left: 1%;
+          }
+        }
+      }
+    }
+
+    .list-wrapper {
+      .list-poke {
+        justify-content: center;
+        .card {
+          width: 92%;
+          margin-left: 0px;
+        }
+      }
+
+      .action-under-wrapper {
+        .action-under-content {
+          .btn-load {
+            width: 100%;
+            font-size: 99%;
+          }
+        }
+      }
     }
   }
 }

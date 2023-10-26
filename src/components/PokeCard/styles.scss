@@ -6,13 +6,9 @@
 }
 
 .card {
-  width: 205px;
+  min-width: 205px;
   background-color: var(--bg-card);
-  margin-top: 5px;
-  margin-bottom: 5px;
   border-radius: 5px;
-  border: none;
-  margin-left: 15px;
 
   .poke-image {
     background-color: var(--bg-image);
@@ -20,6 +16,7 @@
     height: 200px;
     border-radius: inherit;
     display: flex;
+    justify-content: center;
 
     img {
       object-fit: cover;
