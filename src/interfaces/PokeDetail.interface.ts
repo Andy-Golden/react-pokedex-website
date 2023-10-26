@@ -1,22 +1,20 @@
-interface Sprites {
+export interface Sprites {
   frontDefault: string;
 }
 
-interface TypeDetail {
+export interface TypeDetail {
   name: string;
   url: string;
 }
 
-interface PokeType {
+export interface PokeType {
   slot: number;
   type: TypeDetail;
 }
 
-interface PokeDetail {
+export interface PokeDetail {
   id: number;
   name: string;
   sprites: Sprites;
   types: PokeType[];
 }
-
-export { type PokeDetail, type PokeType };

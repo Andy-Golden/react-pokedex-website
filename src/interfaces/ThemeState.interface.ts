@@ -1,5 +1,3 @@
-interface ThemeState {
+export interface ThemeState {
   theme: string;
 }
-
-export { type ThemeState };

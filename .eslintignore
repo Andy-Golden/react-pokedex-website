@@ -3,4 +3,3 @@ src/react-app-env.d.ts
 src/reportWebVitals.ts
 src/App.test.tsx
 src/setupTests.ts
-src/stories/*

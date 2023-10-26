@@ -1,7 +1,5 @@
 import { instance } from "server/axios/instance";
-import type { PokeDetailApi } from "interfaces/PokeDetailApi.interface";
-import type { PokeData } from "interfaces/PokeData.interface";
-import type { PokeDetail } from "interfaces/PokeDetail.interface";
+import type { PokeDetail, PokeData, PokeDetailApi } from "interfaces";
 
 const getPokemons = async (num: number): Promise<PokeData> => {
   const pokemons = await instance.get(

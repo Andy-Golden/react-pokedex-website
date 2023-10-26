@@ -18,8 +18,6 @@ type TypeName =
   | "ROCK"
   | "WATER";
 
-type TypeColor = {
+export type TypeColor = {
   [key in TypeName]: string;
 };
-
-export { type TypeColor };

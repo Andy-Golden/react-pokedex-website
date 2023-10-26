@@ -1,7 +1,5 @@
 import type { User } from "./User.interface";
 
-interface UserState {
+export interface UserState {
   user: User;
 }
-
-export { type UserState };

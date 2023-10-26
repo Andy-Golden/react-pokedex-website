@@ -4,10 +4,10 @@ import "./styles.scss";
 import { useForm } from "react-hook-form";
 import { ErrorMessage } from "@hookform/error-message";
 import { useDispatch, useSelector } from "react-redux";
-import { type RootState } from "store";
-import type { ILoginFormInput } from "interfaces/ILoginFormInput.interface";
+import type { RootState } from "store";
 import { createUser } from "./user.reducer";
-import { type User } from "interfaces/User.interface";
+import type { User } from "interfaces";
+import type { ILoginFormInput } from "./interface/ILoginFormInput.interface";
 import { useNavigate } from "react-router-dom";
 
 function LoginPage(): JSX.Element {
