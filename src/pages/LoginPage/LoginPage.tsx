@@ -2,6 +2,7 @@
 import React, { useEffect } from "react";
 import "./styles.scss";
 import { useForm } from "react-hook-form";
+import { ErrorMessage } from "@hookform/error-message";
 import { useDispatch, useSelector } from "react-redux";
 import { type RootState } from "store";
 import type { ILoginFormInput } from "interfaces/ILoginFormInput.interface";
@@ -24,7 +25,7 @@ function LoginPage(): JSX.Element {
   const {
     register,
     handleSubmit,
-    // formState: { errors },
+    formState: { errors },
   } = useForm<ILoginFormInput>();
 
   const onSubmit = (data: ILoginFormInput): void => {
@@ -47,6 +48,13 @@ function LoginPage(): JSX.Element {
               },
             })}
           />
+          <ErrorMessage
+            errors={errors}
+            name="email"
+            render={({ message }) => (
+              <p style={{ width: "100%", color: "red" }}>{message}</p>
+            )}
+          />
           <input
             type="password"
             placeholder="password"
@@ -57,6 +65,13 @@ function LoginPage(): JSX.Element {
                 message: "Password must have at least 5 characters",
               },
             })}
+          />
+          <ErrorMessage
+            errors={errors}
+            name="password"
+            render={({ message }) => (
+              <p style={{ width: "100%", color: "red" }}>{message}</p>
+            )}
           />
           <button type="submit">login</button>
           <p className="message">

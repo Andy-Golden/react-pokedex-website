@@ -8,6 +8,7 @@ import {
   typeTextColor,
 } from "./constants";
 import { Button, PokeCard, PokeType, SelectBox } from "components";
+import { Link } from "react-router-dom";
 
 function HomePage(): JSX.Element {
   const [pokemons, setPokemons] = usePokemons();
@@ -109,6 +110,9 @@ function HomePage(): JSX.Element {
 
   return (
     <div className="container">
+      <Button className="login-btn">
+        <Link to="/login">Login</Link>
+      </Button>
       <div className="filtering"></div>
       <div className="action-above-wrapper">
         <div className="action-above-content">
