@@ -10,7 +10,7 @@ $ yarn install
 $ yarn start
 ```
 
-## Feature
+## Features
 - Show list pokemon
 - Login
 - Sort pokemone
