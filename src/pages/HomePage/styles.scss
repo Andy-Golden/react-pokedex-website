@@ -97,7 +97,7 @@
           color: var(--text-label-select);
         }
 
-        .select-input-filter1 {
+        .select-input-filter {
           color: var(--text-select-input-filter);
           background-color: var(--bg-select-input);
           width: 70%;
@@ -197,12 +197,12 @@
             text-align: left;
           }
 
-          .select-input-filter1 {
+          .select-input-filter {
             width: 100%;
             margin-right: 0;
           }
 
-          .select-menu1 img {
+          .select-box img {
             left: 1%;
           }
         }
@@ -262,16 +262,16 @@
             font-size: 106%;
           }
 
-          .select-input-filter1 {
+          .select-input-filter {
             width: 100%;
             margin-right: 0;
           }
 
-          .select-menu1 {
+          .select-box {
             font-size: 70%;
           }
 
-          .select-menu1 img {
+          .select-box img {
             left: 1%;
           }
         }

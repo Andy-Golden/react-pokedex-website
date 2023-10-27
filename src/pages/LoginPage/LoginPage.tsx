@@ -1,43 +1,18 @@
-/* eslint-disable @typescript-eslint/no-misused-promises */
-import React, { useEffect } from "react";
-import { useForm } from "react-hook-form";
-import { useDispatch, useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
+import React from "react";
 import { ErrorMessage } from "@hookform/error-message";
-import type { User } from "interfaces";
-import type { RootState } from "store";
 
-import type { ILoginFormInput } from "./interface/ILoginFormInput.interface";
-import { createUser } from "./user.reducer";
+import { useLoginPagePrepareHook } from "./helper";
 
 import "./styles.scss";
 
-function LoginPage(): JSX.Element {
-  const user = useSelector((state: RootState) => state.userReducer.user);
-  const navigate = useNavigate();
-
-  useEffect(() => {
-    if (user.email !== null && user.password !== null) {
-      navigate("/");
-    }
-  }, [user]);
-
-  const dispatch = useDispatch();
-
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm<ILoginFormInput>();
-
-  const onSubmit = (data: ILoginFormInput): void => {
-    const loginUser: User = { email: data.email, password: data.password };
-    dispatch(createUser(loginUser));
-  };
+const LoginPage = (): JSX.Element => {
+  const { errors, onSubmit, register, handleSubmit } =
+    useLoginPagePrepareHook();
 
   return (
     <div className="login-container">
       <div className="form">
+        {/* eslint-disable-next-line @typescript-eslint/no-misused-promises */}
         <form onSubmit={handleSubmit(onSubmit)} className="login-form">
           <input
             type="text"
@@ -83,6 +58,6 @@ function LoginPage(): JSX.Element {
       </div>
     </div>
   );
-}
+};
 
 export default LoginPage;

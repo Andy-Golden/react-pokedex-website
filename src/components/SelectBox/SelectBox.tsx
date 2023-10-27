@@ -1,35 +1,35 @@
 import React from "react";
 
-import { type SelectBoxProps } from "./interface/SelectBoxProps.interface";
-import MenuItem from "./MenuItem/MenuItem";
-import Select from "./Select/Select";
+import { type SelectBoxProps } from "./interfaces";
+import { MenuItem } from "./MenuItem";
 import Image from "./pokeball_white.png";
+import { Select } from "./Select";
 
 import "./styles.scss";
 
-function SelectBox({
+const SelectBox = ({
   className,
   textColor,
   defaultValue,
   options,
   background,
   onChange,
-}: SelectBoxProps): JSX.Element {
+}: SelectBoxProps): JSX.Element => {
   return (
     <div
-      className={`select-menu1 ${className}`}
+      className={`select-box ${className}`}
       style={{ background, color: textColor }}
     >
       <img src={Image} alt="poke ball"></img>
       <Select onChange={onChange} value={defaultValue}>
-        {options?.map((item, index) => (
-          <MenuItem key={item} value={index}>
+        {options.map((item) => (
+          <MenuItem key={item} value={item}>
             {item}
           </MenuItem>
         ))}
       </Select>
     </div>
   );
-}
+};
 
 export default SelectBox;

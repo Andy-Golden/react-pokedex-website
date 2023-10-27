@@ -1,16 +1,16 @@
 import React from "react";
 
-import { type ButtonProps } from "./interface/ButtonProps.interface";
+import { type ButtonProps } from "./interfaces";
 
 import "./styles.scss";
 
-function Button({
+const Button = ({
   children,
   textColor,
   className,
   background,
   onClick,
-}: ButtonProps): JSX.Element {
+}: ButtonProps): JSX.Element => {
   return (
     <button
       className={`button ${className}`}
@@ -20,6 +20,6 @@ function Button({
       {children}
     </button>
   );
-}
+};
 
 export default Button;

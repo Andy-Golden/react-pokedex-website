@@ -1,15 +1,15 @@
 import React from "react";
 
-import type { PokeTypeProps } from "./interface/PokeTypeProps.interface";
+import type { PokeTypeProps } from "./interfaces/pokeTypeProps.interface";
 
 import "./styles.scss";
 
-function PokeType({
+const PokeType = ({
   children,
   className,
   background,
   textColor,
-}: PokeTypeProps): JSX.Element {
+}: PokeTypeProps): JSX.Element => {
   return (
     <div
       className={`poke-type ${className}`}
@@ -18,6 +18,6 @@ function PokeType({
       {children}
     </div>
   );
-}
+};
 
 export default PokeType;

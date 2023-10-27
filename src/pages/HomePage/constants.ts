@@ -1,14 +1,14 @@
-import type { TypeColor } from "interfaces/TypeColor.type";
+import type { TypeColor } from "@interfaces";
 
 const NUMBERS_OF_POKE = 200;
 const VISIBLE_OF_POKE = 25;
 
-const SORT_BY_CHOICES = [
-  "Lowest number (First)",
-  "Highest number (First)",
-  "A-Z",
-  "Z-A",
-];
+const SORT_BY_CHOICES = {
+  lowest: "Lowest number (First)",
+  highest: "Highest number (First)",
+  aToZ: "A-Z",
+  ztoA: "Z-A",
+};
 
 const typeColor: TypeColor = {
   BUG: "#729f3f",

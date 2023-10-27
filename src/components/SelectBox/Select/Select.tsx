@@ -1,28 +1,26 @@
 import React from "react";
 
-import { type SelectProps } from ".././interface/SelectProps.interface";
+import { type SelectProps } from "../interfaces";
 
 import "./styles.scss";
 
-function Select({
-  className,
-  children,
-  value,
+const Select = ({
   defaultValue,
+  value,
+  children,
+  className,
   onChange,
-}: SelectProps): JSX.Element {
+}: SelectProps): JSX.Element => {
   return (
-    <>
-      <select
-        className={`select ${className}`}
-        value={value}
-        defaultValue={defaultValue}
-        onChange={onChange}
-      >
-        {children}
-      </select>
-    </>
+    <select
+      className={`select ${className}`}
+      value={value}
+      defaultValue={defaultValue}
+      onChange={onChange}
+    >
+      {children}
+    </select>
   );
-}
+};
 
 export default Select;

@@ -2,12 +2,13 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { Provider } from "react-redux";
 import { RouterProvider } from "react-router-dom";
-import { ThemeLanguageLayout } from "layout";
 import reportWebVitals from "reportWebVitals";
 import router from "router";
 import { store } from "store";
 
 import "./i18n";
+
+import { ThemeLanguageLayout } from "./layouts/ThemeLanguageLayout";
 
 import "./index.scss";
 
