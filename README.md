@@ -1,10 +1,20 @@
-# Task
+<h1 align="center">Pokedex website</h1>
 
-## Done
+<div align="center">Project uses React Hooks, redux and Typescript.</div>
 
-- [x] React hook form in login
-- [x] Sort by
-- [x] Storybook for each component
-- [x] Redux in change theme and login
-- [x] Show list pokemon
-- [x] Loadmore with button
+## 📦 Install
+
+```bash
+# yarn
+$ yarn install
+$ yarn start
+```
+
+## Features
+- Show list pokemon
+- Login
+- Sort pokemone
+- Switch theme dark, light
+- Switch language english, vietname
+
+For project initialization, create environment-specific files such as `.env` file.

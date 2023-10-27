@@ -35,7 +35,7 @@
   "loginPage": {
     "email": "Email",
     "password": "Password",
-    "lable": "Login",
+    "label": "Login",
     "notRegister": "Not Register",
     "createAnAccount": "Create An Account",
     "error": {

@@ -20,7 +20,9 @@
       "@/*": ["./src/*"],
       "@components": ["./components/index"],
       // "@components/*": ["./components/*"],
-      "@interfaces": ["./interfaces/index"]
+      "@interfaces": ["./interfaces/index"],
+      "@pages": ["./pages/index"],
+      "@layouts": ["./layouts/index"]
     }
   },
   "include": ["src"]

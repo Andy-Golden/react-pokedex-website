@@ -2,11 +2,7 @@ import React from "react";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 
-import { Button } from "components/Button";
-import { Loading } from "components/Loading";
-import { PokeCard } from "components/PokeCard";
-import { PokeType } from "components/PokeType";
-import { SelectBox } from "components/SelectBox";
+import { Button, Loading, PokeCard, PokeType, SelectBox } from "@components";
 
 import { SORT_BY_CHOICES, typeColor, typeTextColor } from "./constants";
 import { useHomePagePrepareHook } from "./helper";
