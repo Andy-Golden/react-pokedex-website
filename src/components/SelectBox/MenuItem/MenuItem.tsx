@@ -1,6 +1,6 @@
 import React from "react";
 
-import { type MenuItemProps } from "../interface/menuItemProps.interface";
+import { type MenuItemProps } from "../interfaces";
 
 const MenuItem = ({
   className,

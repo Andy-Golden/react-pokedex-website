@@ -1,6 +1,6 @@
 import React from "react";
 
-import { type PokeCardProps } from "./interface/pokeCardProps.interface";
+import { type PokeCardProps } from "./interfaces/pokeCardProps.interface";
 import { generateStringPokeId } from "./utils";
 
 import "./styles.scss";

@@ -1,5 +1,5 @@
 import { configureStore } from "@reduxjs/toolkit";
-import toggleButtonReducer from "layout/ToggleButtonLayout/toggleButton.reducer";
+import toggleButtonReducer from "layouts/ToggleButtonLayout/toggleButton.reducer";
 import userReducer from "pages/LoginPage/user.reducer";
 
 export const store = configureStore({

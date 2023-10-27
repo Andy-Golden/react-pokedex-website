@@ -1,5 +1,5 @@
+import type { ThemeState } from "@interfaces";
 import { createAction, createReducer } from "@reduxjs/toolkit";
-import { type ThemeState } from "interfaces";
 
 const initialState: ThemeState = { theme: "dark" };
 

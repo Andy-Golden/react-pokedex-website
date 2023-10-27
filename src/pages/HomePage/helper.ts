@@ -1,10 +1,10 @@
 import type React from "react";
 import { useEffect, useState } from "react";
+import type { PokeDetail } from "@interfaces";
 import { getListPokeDetails } from "apis/pokemon.api";
-import type { PokeDetail } from "interfaces";
 
-import { type HomePagePrepareHook } from "./interfaces/homePagePrepareHook.interface";
 import { NUMBERS_OF_POKE, VISIBLE_OF_POKE } from "./constants";
+import type { HomePagePrepareHook } from "./interfaces";
 
 const getRandomInt = (min: number, max: number): number => {
   if (max < min) {
@@ -130,9 +130,9 @@ const usePrepareHook = (): HomePagePrepareHook => {
   };
 
   return {
-    pokemons,
     start,
     visible,
+    pokemons,
     onClickLoadMore: handleLoadMore,
     onClickSurpriseMe: handleSurpriseMe,
     onChangeSortBy: handleSortByChange,

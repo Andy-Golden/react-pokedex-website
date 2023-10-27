@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
-import { type SelectMenuProps } from "./interface/selectMenuProps.interface";
 import downArrow from "./down-arrow.png";
+import type { SelectMenuProps } from "./interfaces";
 import pokeImage from "./pokeball_white.png";
 
 import "./styles.scss";

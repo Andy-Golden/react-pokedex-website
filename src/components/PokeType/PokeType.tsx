@@ -1,6 +1,6 @@
 import React from "react";
 
-import type { PokeTypeProps } from "./interface/pokeTypeProps.interface";
+import type { PokeTypeProps } from "./interfaces/pokeTypeProps.interface";
 
 import "./styles.scss";
 

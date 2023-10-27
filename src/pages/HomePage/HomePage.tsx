@@ -1,7 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import { Button, Loading, PokeCard, PokeType, SelectBox } from "components";
+import { Button } from "components/Button";
+import { Loading } from "components/Loading";
+import { PokeCard } from "components/PokeCard";
+import { PokeType } from "components/PokeType";
+import { SelectBox } from "components/SelectBox";
 
 import { SORT_BY_CHOICES, typeColor, typeTextColor } from "./constants";
 import { usePrepareHook } from "./helper";
@@ -46,39 +50,37 @@ const HomePage = (): JSX.Element => {
         <div className="list-poke">
           {pokemons?.length > 0 ? (
             pokemons.slice(start, visible).map((poke) => (
-              <>
-                <PokeCard
-                  key={poke.id}
-                  id={poke.id}
-                  name={poke.name}
-                  image={poke.sprites.frontDefault}
-                >
-                  {" "}
-                  <div className="poke-types">
-                    {poke.types.map((item) => (
-                      <PokeType
-                        className={"poke-type"}
-                        key={item.slot}
-                        background={
-                          typeColor[
-                            item.type.name.toUpperCase() as keyof typeof typeColor
-                          ]
-                        }
-                        textColor={
-                          typeTextColor[
-                            item.type.name.toUpperCase() as keyof typeof typeTextColor
-                          ]
-                        }
-                      >
-                        {item.type.name}
-                      </PokeType>
-                    ))}
-                  </div>
-                </PokeCard>
-              </>
+              <PokeCard
+                key={poke.id}
+                id={poke.id}
+                name={poke.name}
+                image={poke.sprites.frontDefault}
+              >
+                {" "}
+                <div className="poke-types">
+                  {poke.types.map((item) => (
+                    <PokeType
+                      className={"poke-type"}
+                      key={item.slot}
+                      background={
+                        typeColor[
+                          item.type.name.toUpperCase() as keyof typeof typeColor
+                        ]
+                      }
+                      textColor={
+                        typeTextColor[
+                          item.type.name.toUpperCase() as keyof typeof typeTextColor
+                        ]
+                      }
+                    >
+                      {item.type.name}
+                    </PokeType>
+                  ))}
+                </div>
+              </PokeCard>
             ))
           ) : (
-            <Loading></Loading>
+            <Loading />
           )}
         </div>
       </div>

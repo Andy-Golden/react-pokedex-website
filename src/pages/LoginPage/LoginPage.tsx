@@ -1,13 +1,12 @@
-/* eslint-disable @typescript-eslint/no-misused-promises */
 import React, { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { ErrorMessage } from "@hookform/error-message";
-import type { User } from "interfaces";
+import type { User } from "@interfaces";
 import type { RootState } from "store";
 
-import type { ILoginFormInput } from "./interface/ILoginFormInput.interface";
+import type { ILoginFormInput } from "./interfaces";
 import { createUser } from "./user.reducer";
 
 import "./styles.scss";
@@ -38,6 +37,7 @@ const LoginPage = (): JSX.Element => {
   return (
     <div className="login-container">
       <div className="form">
+        {/* eslint-disable-next-line @typescript-eslint/no-misused-promises */}
         <form onSubmit={handleSubmit(onSubmit)} className="login-form">
           <input
             type="text"
