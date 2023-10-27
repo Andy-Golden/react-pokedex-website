@@ -4,3 +4,4 @@ src/reportWebVitals.ts
 src/App.test.tsx
 src/setupTests.ts
 src/stories/*
+craco.config.js

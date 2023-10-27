@@ -21,8 +21,8 @@ const SelectBox = ({
     >
       <img src={Image} alt="poke ball"></img>
       <Select onChange={onChange}>
-        {options?.map((item, index) => (
-          <MenuItem key={item} value={index}>
+        {options.map((item) => (
+          <MenuItem key={item} value={item}>
             {item}
           </MenuItem>
         ))}

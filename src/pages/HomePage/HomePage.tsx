@@ -13,14 +13,8 @@ import { useHomePagePrepareHook } from "./helper";
 import "./styles.scss";
 
 const HomePage = (): JSX.Element => {
-  const {
-    start,
-    visible,
-    pokemons,
-    onClickLoadMore,
-    onClickSurpriseMe,
-    onChangeSortBy,
-  } = useHomePagePrepareHook();
+  const { start, visible, pokemons, onLoadMore, onSurpriseMe, onSortByChange } =
+    useHomePagePrepareHook();
 
   return (
     <div className="container">
@@ -31,7 +25,7 @@ const HomePage = (): JSX.Element => {
       <div className="action-above-wrapper">
         <div className="action-above-content">
           <div className="btn-shuffle-wrapper">
-            <Button className="btn-shuffle" onClick={onClickSurpriseMe}>
+            <Button className="btn-shuffle" onClick={onSurpriseMe}>
               <i className="fas fa-sync-alt icon"></i>
               <span>&nbsp; &nbsp;Surprise Me!</span>
             </Button>
@@ -40,15 +34,15 @@ const HomePage = (): JSX.Element => {
             <span className="label-select">Sort by</span>
             <SelectBox
               className={"select-input-filter"}
-              options={SORT_BY_CHOICES}
-              onChange={onChangeSortBy}
+              options={Object.values(SORT_BY_CHOICES)}
+              onChange={onSortByChange}
             />
           </div>
         </div>
       </div>
       <div className="list-wrapper">
         <div className="list-poke">
-          {pokemons?.length > 0 ? (
+          {pokemons.length > 0 ? (
             pokemons.slice(start, visible).map((poke) => (
               <PokeCard
                 key={poke.id}
@@ -86,7 +80,7 @@ const HomePage = (): JSX.Element => {
       </div>
       <div className="action-under-wrapper">
         <div className="action-under-content">
-          <Button className="btn-load" onClick={onClickLoadMore}>
+          <Button className="btn-load" onClick={onLoadMore}>
             Load more Pokemon
           </Button>
         </div>

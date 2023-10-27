@@ -5,7 +5,7 @@ export interface HomePagePrepareHook {
   start: number;
   visible: number;
   pokemons: PokeDetail[];
-  onClickLoadMore: () => void;
-  onClickSurpriseMe: () => void;
-  onChangeSortBy: (e: React.ChangeEvent<HTMLSelectElement>) => void;
+  onLoadMore: () => void;
+  onSurpriseMe: () => void;
+  onSortByChange: (e: React.ChangeEvent<HTMLSelectElement>) => void;
 }
