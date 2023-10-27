@@ -1,5 +1,4 @@
 import React from "react";
-
 import { ToggleButton } from "components/ToggleButton";
 
 import { useToggleButtonLayoutPrepareHook } from "./helper";
