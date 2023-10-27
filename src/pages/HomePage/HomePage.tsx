@@ -8,19 +8,19 @@ import { PokeType } from "components/PokeType";
 import { SelectBox } from "components/SelectBox";
 
 import { SORT_BY_CHOICES, typeColor, typeTextColor } from "./constants";
-import { usePrepareHook } from "./helper";
+import { useHomePagePrepareHook } from "./helper";
 
 import "./styles.scss";
 
 const HomePage = (): JSX.Element => {
   const {
-    pokemons,
     start,
     visible,
+    pokemons,
     onClickLoadMore,
     onClickSurpriseMe,
     onChangeSortBy,
-  } = usePrepareHook();
+  } = useHomePagePrepareHook();
 
   return (
     <div className="container">

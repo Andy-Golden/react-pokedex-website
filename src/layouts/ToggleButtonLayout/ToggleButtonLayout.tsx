@@ -1,10 +1,8 @@
 import React from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { type RootState } from "store";
 
 import { ToggleButton } from "components/ToggleButton";
 
-import { changeTheme } from "./toggleButton.reducer";
+import { useToggleButtonLayoutPrepareHook } from "./helper";
 
 import "./styles.scss";
 
@@ -15,21 +13,10 @@ interface ToggleButtonLayoutProps {
 const ToggleButtonLayout = ({
   children,
 }: ToggleButtonLayoutProps): JSX.Element => {
-  const theme = useSelector(
-    (state: RootState) => state.toggleButtonReducer.theme,
-  );
-
-  const dispatch = useDispatch();
-
-  const handleChange = (): void => {
-    const newTheme = theme === "dark" ? "light" : "dark";
-    dispatch(changeTheme(newTheme));
-    document.documentElement.setAttribute("data-theme", newTheme);
-  };
-
+  const { onChangeTheme } = useToggleButtonLayoutPrepareHook();
   return (
     <div className="toggle-button-layout-container">
-      <ToggleButton className={"toggle"} onChange={handleChange} />
+      <ToggleButton className={"toggle"} onChange={onChangeTheme} />
       {children}
     </div>
   );

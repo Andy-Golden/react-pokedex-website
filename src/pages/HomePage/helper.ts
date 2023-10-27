@@ -17,8 +17,14 @@ const getRandomInt = (min: number, max: number): number => {
   return randomNum;
 };
 
-const usePrepareHook = (): HomePagePrepareHook => {
+const useHomePagePrepareHook = (): HomePagePrepareHook => {
   const [pokemons, setPokemons] = useState<PokeDetail[]>([]);
+  const [visible, setVisible] = useState(VISIBLE_OF_POKE);
+  const [start, setStart] = useState(0);
+
+  useEffect(() => {
+    void getPokemons();
+  }, []);
 
   const getPokemons = async (): Promise<void> => {
     try {
@@ -28,13 +34,6 @@ const usePrepareHook = (): HomePagePrepareHook => {
       console.log(error);
     }
   };
-
-  useEffect(() => {
-    void getPokemons();
-  }, []);
-
-  const [visible, setVisible] = useState(VISIBLE_OF_POKE);
-  const [start, setStart] = useState(0);
 
   const handleLoadMore = (): void => {
     const moreItems = visible + VISIBLE_OF_POKE;
@@ -53,10 +52,12 @@ const usePrepareHook = (): HomePagePrepareHook => {
     setVisible(startIndex + 25);
   };
 
-  const handleFilter = (index: number): void => {
+  const handleSortByChange = (
+    e: React.ChangeEvent<HTMLSelectElement>,
+  ): void => {
     const clonedPokemons = [...pokemons];
 
-    switch (index) {
+    switch (+e.target.value) {
       case 0: {
         const lowestPokemons = clonedPokemons.sort((poke1, poke2) => {
           if (poke1.id < poke2.id) {
@@ -123,12 +124,6 @@ const usePrepareHook = (): HomePagePrepareHook => {
     }
   };
 
-  const handleSortByChange = (
-    e: React.ChangeEvent<HTMLSelectElement>,
-  ): void => {
-    handleFilter(+e.target.value);
-  };
-
   return {
     start,
     visible,
@@ -139,4 +134,4 @@ const usePrepareHook = (): HomePagePrepareHook => {
   };
 };
 
-export { usePrepareHook };
+export { useHomePagePrepareHook };
