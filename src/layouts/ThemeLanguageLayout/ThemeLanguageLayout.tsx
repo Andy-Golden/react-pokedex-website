@@ -5,16 +5,13 @@ import { ToggleButton } from "components/ToggleButton";
 
 import { languageOptions } from "./constants";
 import { useThemeLanguageLayoutPrepareHook } from "./helper";
+import type { ThemeLanguageLayoutProps } from "./interfaces";
 
 import "./styles.scss";
 
-interface ToggleButtonLayoutProps {
-  children: React.ReactNode;
-}
-
-function ToggleButtonLayout({
+function ThemeLanguageLayout({
   children,
-}: ToggleButtonLayoutProps): JSX.Element {
+}: ThemeLanguageLayoutProps): JSX.Element {
   const { theme, lang, onSwitchTheme, onSwitchLang } =
     useThemeLanguageLayoutPrepareHook();
 
@@ -38,4 +35,4 @@ function ToggleButtonLayout({
   );
 }
 
-export default ToggleButtonLayout;
+export default ThemeLanguageLayout;
