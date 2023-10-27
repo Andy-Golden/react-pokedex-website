@@ -1,4 +1,5 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 import { ErrorMessage } from "@hookform/error-message";
 
 import { useLoginPagePrepareHook } from "./helper";
@@ -6,6 +7,7 @@ import { useLoginPagePrepareHook } from "./helper";
 import "./styles.scss";
 
 const LoginPage = (): JSX.Element => {
+  const { t } = useTranslation();
   const { errors, onSubmit, register, handleSubmit } =
     useLoginPagePrepareHook();
 
@@ -16,12 +18,12 @@ const LoginPage = (): JSX.Element => {
         <form onSubmit={handleSubmit(onSubmit)} className="login-form">
           <input
             type="text"
-            placeholder="email"
+            placeholder={t("loginPage.email")}
             {...register("email", {
               required: true,
               pattern: {
                 value: /\S+@\S+\.\S+/,
-                message: "Please enter valid email",
+                message: t(`loginPage.error.invalidEmail`),
               },
             })}
           />
@@ -34,12 +36,12 @@ const LoginPage = (): JSX.Element => {
           />
           <input
             type="password"
-            placeholder="password"
+            placeholder={t("loginPage.password")}
             {...register("password", {
               required: true,
               minLength: {
                 value: 5,
-                message: "Password must have at least 5 characters",
+                message: t("loginPage.error.invalidLengthPassword"),
               },
             })}
           />
@@ -50,9 +52,10 @@ const LoginPage = (): JSX.Element => {
               <p style={{ width: "100%", color: "red" }}>{message}</p>
             )}
           />
-          <button type="submit">login</button>
+          <button type="submit">{t("loginPage.label")}</button>
           <p className="message">
-            Not registered? <span>Create an account</span>
+            {t("loginPage.notRegister")}{" "}
+            <span>{t("loginPage.createAnAccount")}</span>
           </p>
         </form>
       </div>

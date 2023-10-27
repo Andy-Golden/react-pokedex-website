@@ -21,7 +21,7 @@ const HomePage = (): JSX.Element => {
   return (
     <div className="container">
       <Button className="login-btn">
-        <Link to="/login">{t("login")}</Link>
+        <Link to="/login">{t("homePage.login")}</Link>
       </Button>
       <div className="filtering"></div>
       <div className="action-above-wrapper">
@@ -29,11 +29,11 @@ const HomePage = (): JSX.Element => {
           <div className="btn-shuffle-wrapper">
             <Button className="btn-shuffle" onClick={onSurpriseMe}>
               <i className="fas fa-sync-alt icon"></i>
-              <span>&nbsp; &nbsp;{t("surpriseMe")}</span>
+              <span>&nbsp; &nbsp;{t("homePage.surpriseMe")}</span>
             </Button>
           </div>
           <div className="select-input-wrapper">
-            <span className="label-select">Sort by</span>
+            <span className="label-select">{t("homePage.sortBy.label")}</span>
             <SelectBox
               className={"select-input-filter"}
               options={Object.values(SORT_BY_CHOICES)}
@@ -69,7 +69,7 @@ const HomePage = (): JSX.Element => {
                         ]
                       }
                     >
-                      {item.type.name}
+                      {t(`homePage.pokeType.${item.type.name}`)}
                     </PokeType>
                   ))}
                 </div>
@@ -83,7 +83,7 @@ const HomePage = (): JSX.Element => {
       <div className="action-under-wrapper">
         <div className="action-under-content">
           <Button className="btn-load" onClick={onLoadMore}>
-            Load more Pokemon
+            {t("homePage.loadMore")}
           </Button>
         </div>
       </div>

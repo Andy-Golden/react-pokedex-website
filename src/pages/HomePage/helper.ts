@@ -58,7 +58,7 @@ const useHomePagePrepareHook = (): HomePagePrepareHook => {
     const clonedPokemons = [...pokemons];
 
     switch (e.target.value) {
-      case "Lowest number (First)": {
+      case "homePage.sortBy.lowestNum": {
         const lowestPokemons = clonedPokemons.sort((poke1, poke2) => {
           if (poke1.id < poke2.id) {
             return -1;
@@ -73,7 +73,7 @@ const useHomePagePrepareHook = (): HomePagePrepareHook => {
         setPokemons(lowestPokemons);
         break;
       }
-      case "Highest number (First)": {
+      case "homePage.sortBy.highestNum": {
         const highestPokemons = clonedPokemons.sort((poke1, poke2) => {
           if (poke1.id < poke2.id) {
             return 1;
@@ -88,7 +88,7 @@ const useHomePagePrepareHook = (): HomePagePrepareHook => {
         setPokemons(highestPokemons);
         break;
       }
-      case "A-Z": {
+      case "homePage.sortBy.aToZ": {
         const aToZPokemons = clonedPokemons.sort((poke1, poke2) => {
           if (poke1.name < poke2.name) {
             return -1;
@@ -103,7 +103,7 @@ const useHomePagePrepareHook = (): HomePagePrepareHook => {
         setPokemons(aToZPokemons);
         break;
       }
-      case "Z-A": {
+      case "homePage.sortBy.zToA": {
         const aToZPokemons = clonedPokemons.sort((poke1, poke2) => {
           if (poke1.name < poke2.name) {
             return 1;

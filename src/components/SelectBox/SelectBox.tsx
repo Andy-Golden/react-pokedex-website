@@ -1,4 +1,5 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 
 import { type SelectBoxProps } from "./interfaces";
 import { MenuItem } from "./MenuItem";
@@ -15,6 +16,8 @@ const SelectBox = ({
   background,
   onChange,
 }: SelectBoxProps): JSX.Element => {
+  const { t } = useTranslation();
+
   return (
     <div
       className={`select-box ${className}`}
@@ -24,7 +27,7 @@ const SelectBox = ({
       <Select onChange={onChange} value={defaultValue}>
         {options.map((item) => (
           <MenuItem key={item} value={item}>
-            {item}
+            {t(`${item}`)}
           </MenuItem>
         ))}
       </Select>
