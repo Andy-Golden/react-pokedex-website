@@ -5,10 +5,10 @@ import { type SelectProps } from "../interfaces";
 import "./styles.scss";
 
 const Select = ({
-  className,
-  children,
-  value,
   defaultValue,
+  value,
+  children,
+  className,
   onChange,
 }: SelectProps): JSX.Element => {
   return (

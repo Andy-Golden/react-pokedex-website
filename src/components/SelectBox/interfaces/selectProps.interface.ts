@@ -1,9 +1,9 @@
 import type React from "react";
 
 interface SelectProps {
-  children?: React.ReactNode;
-  value?: string | number;
   defaultValue?: string | number;
+  value?: string | number;
+  children?: React.ReactNode;
   className?: string;
   onChange?: (e: React.ChangeEvent<HTMLSelectElement>) => void;
 }
