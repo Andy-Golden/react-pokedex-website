@@ -8,7 +8,7 @@ import { Select } from "./Select";
 
 import "./styles.scss";
 
-const SelectBox = ({
+const SelectMenu = ({
   className,
   textColor,
   defaultValue,
@@ -20,7 +20,7 @@ const SelectBox = ({
 
   return (
     <div
-      className={`select-box ${className}`}
+      className={`select-menu ${className}`}
       style={{ background, color: textColor }}
     >
       <img src={Image} alt="poke ball"></img>
@@ -35,4 +35,4 @@ const SelectBox = ({
   );
 };
 
-export default SelectBox;
+export default SelectMenu;

@@ -2,7 +2,7 @@ import React from "react";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 
-import { Button, Loading, PokeCard, PokeType, SelectBox } from "@components";
+import { Button, Loading, PokeCard, PokeType, SelectMenu } from "@components";
 
 import { SORT_BY_CHOICES, typeColor, typeTextColor } from "./constants";
 import { useHomePagePrepareHook } from "./helper";
@@ -30,7 +30,7 @@ const HomePage = (): JSX.Element => {
           </div>
           <div className="select-input-wrapper">
             <span className="label-select">{t("homePage.sortBy.label")}</span>
-            <SelectBox
+            <SelectMenu
               className={"select-input-filter"}
               options={Object.values(SORT_BY_CHOICES)}
               onChange={onSortByChange}

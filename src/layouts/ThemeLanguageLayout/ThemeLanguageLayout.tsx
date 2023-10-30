@@ -1,6 +1,6 @@
 import React from "react";
-import { SelectBox } from "components/SelectBox";
-import { ToggleButton } from "components/ToggleButton";
+
+import { SelectMenu, ToggleButton } from "@components";
 
 import { languageOptions } from "./constants";
 import { useThemeLanguageLayoutPrepareHook } from "./helper";
@@ -22,7 +22,7 @@ function ThemeLanguageLayout({
           onChange={onSwitchTheme}
           checked={theme === "light"}
         />
-        <SelectBox
+        <SelectMenu
           defaultValue={lang}
           className="language-select-box"
           options={Object.values(languageOptions)}
