@@ -1,1 +1,1 @@
-export { ToggleButtonLayout } from "./ThemeLanguageLayout";
+export { ThemeLanguageLayout } from "./ThemeLanguageLayout";

@@ -6,7 +6,7 @@ import reportWebVitals from "reportWebVitals";
 import router from "router";
 import { store } from "store";
 
-import { ToggleButtonLayout } from "@layouts";
+import { ThemeLanguageLayout } from "@layouts";
 
 import "./index.scss";
 
@@ -16,9 +16,9 @@ const root = ReactDOM.createRoot(
 root.render(
   <React.StrictMode>
     <Provider store={store}>
-      <ToggleButtonLayout>
+      <ThemeLanguageLayout>
         <RouterProvider router={router} />
-      </ToggleButtonLayout>
+      </ThemeLanguageLayout>
     </Provider>
   </React.StrictMode>,
 );
