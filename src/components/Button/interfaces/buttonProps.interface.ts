@@ -1,10 +1,11 @@
-import { type ReactNode } from "react";
+import type React from "react";
 
 interface ButtonProps {
-  children?: ReactNode;
+  children?: React.ReactNode;
   className?: string;
   background?: string;
   textColor?: string;
+  type: "button" | "submit" | "reset";
   onClick?: () => void;
 }
 

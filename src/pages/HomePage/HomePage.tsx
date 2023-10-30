@@ -1,7 +1,14 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import { Button, Loading, PokeCard, PokeType, SelectBox } from "@components";
+import {
+  Button,
+  Container,
+  Loading,
+  PokeCard,
+  PokeType,
+  SelectBox,
+} from "@components";
 
 import { SORT_BY_CHOICES, typeColor, typeTextColor } from "./constants";
 import { useHomePagePrepareHook } from "./helper";
@@ -13,15 +20,19 @@ const HomePage = (): JSX.Element => {
     useHomePagePrepareHook();
 
   return (
-    <div className="container">
-      <Button className="login-btn">
+    <Container>
+      <Button type="button" className="login-btn">
         <Link to="/login">Login</Link>
       </Button>
       <div className="filtering"></div>
       <div className="action-above-wrapper">
         <div className="action-above-content">
           <div className="btn-shuffle-wrapper">
-            <Button className="btn-shuffle" onClick={onSurpriseMe}>
+            <Button
+              type="button"
+              className="btn-shuffle"
+              onClick={onSurpriseMe}
+            >
               <i className="fas fa-sync-alt icon"></i>
               <span>&nbsp; &nbsp;Surprise Me!</span>
             </Button>
@@ -76,12 +87,12 @@ const HomePage = (): JSX.Element => {
       </div>
       <div className="action-under-wrapper">
         <div className="action-under-content">
-          <Button className="btn-load" onClick={onLoadMore}>
+          <Button type="button" className="btn-load" onClick={onLoadMore}>
             Load more Pokemon
           </Button>
         </div>
       </div>
-    </div>
+    </Container>
   );
 };
 

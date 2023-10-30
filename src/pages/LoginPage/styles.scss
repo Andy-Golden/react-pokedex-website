@@ -1,10 +1,7 @@
 :root {
-  --bg-form: #ffff;
   --bg-form-input: #f2f2f2;
   --bg-button: #4caf50;
   --bg-button-hover: #43a047;
-  --shadow1: #faf9f933;
-  --shadow2: #d5c8c83d;
 
   --text-button: #ffff;
   --text-span: #4caf50;
@@ -12,31 +9,20 @@
 }
 
 :root[data-theme="light"] {
-  --shadow1: #00000033;
-  --shadow2: #0000003d;
+  --bg-form-input: #f2f2f2;
+  --bg-button: #4caf50;
+  --bg-button-hover: #43a047;
+
+  --text-button: #ffff;
+  --text-span: #4caf50;
+  --text-message: #b3b3b3;
 }
 
-.login-container {
-  background-color: transparent;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.form {
-  position: relative;
-  z-index: 1;
-  background: var(--bg-form);
-  max-width: 360px;
-  margin: 0 auto 100px;
-  padding: 45px;
-  text-align: center;
-  box-shadow:
-    0 0 20px 0 var(--shadow1),
-    0 5px 5px 0 var(--shadow2);
-  border-radius: 5px;
+.form-control {
+  p {
+    margin: 0 0 15px;
+    padding: 0;
+  }
 
   input {
     font-family: "Roboto", sans-serif;
@@ -44,7 +30,7 @@
     background: var(--bg-form-input);
     width: 100%;
     border: 0;
-    margin: 0 0 15px;
+    margin-bottom: 15px;
     padding: 15px;
     box-sizing: border-box;
     font-size: 14px;
