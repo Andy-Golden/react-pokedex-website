@@ -7,7 +7,7 @@ import {
   Loading,
   PokeCard,
   PokeType,
-  SelectBox,
+  SelectMenu,
 } from "@components";
 
 import { SORT_BY_CHOICES, typeColor, typeTextColor } from "./constants";
@@ -39,7 +39,7 @@ const HomePage = (): JSX.Element => {
           </div>
           <div className="select-input-wrapper">
             <span className="label-select">Sort by</span>
-            <SelectBox
+            <SelectMenu
               className={"select-input-filter"}
               options={Object.values(SORT_BY_CHOICES)}
               onChange={onSortByChange}

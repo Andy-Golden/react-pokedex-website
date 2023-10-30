@@ -5,6 +5,6 @@ export { FormControl } from "./FormControl";
 export { Loading } from "./Loading";
 export { PokeCard } from "./PokeCard";
 export { PokeType } from "./PokeType";
-export { SelectBox } from "./SelectBox";
+export { SelectMenu } from "./SelectMenu";
 export { TextInput } from "./TextInput";
 export { ToggleButton } from "./ToggleButton";
