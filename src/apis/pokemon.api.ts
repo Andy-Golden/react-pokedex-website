@@ -1,4 +1,4 @@
-import type { PokeData, PokeDetail, PokeDetailApi } from "@interfaces";
+import type { PokeData, PokeDetail, PokeDetailApi } from "interfaces";
 import { instance } from "server/axios/instance";
 
 // https://pokeapi.co/api/v2/pokemon/?limit=25&offset=2

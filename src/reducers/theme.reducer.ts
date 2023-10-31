@@ -1,5 +1,5 @@
-import type { ThemeState } from "@interfaces";
 import { createReducer } from "@reduxjs/toolkit";
+import type { ThemeState } from "interfaces";
 
 import { changeTheme } from "@actions";
 
