@@ -1,8 +1,9 @@
 import { useDispatch, useSelector } from "react-redux";
-import type { RootState } from "store";
+import type { RootState } from "store/store";
+
+import { changeTheme } from "@actions";
 
 import type { ThemeLanguageLayoutPrepareHook } from "./interfaces";
-import { changeTheme } from "./theme.reducer";
 
 const useThemeLanguageLayoutPrepareHook =
   (): ThemeLanguageLayoutPrepareHook => {

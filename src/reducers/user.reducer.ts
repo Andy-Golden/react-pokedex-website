@@ -1,13 +1,13 @@
-import { createAction, createReducer } from "@reduxjs/toolkit";
-import type { User, UserState } from "interfaces";
+import { createReducer } from "@reduxjs/toolkit";
+import type { UserState } from "interfaces";
 
-import { initialUser } from "./user";
+import { createUser } from "@actions";
+
+import { initialUser } from "../pages/LoginPage/user";
 
 const initialState: UserState = {
   user: initialUser,
 };
-
-export const createUser = createAction<User>("user/createUser");
 
 const userReducer = createReducer(initialState, (builder) => {
   builder.addCase(createUser, (state, action) => {

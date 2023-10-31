@@ -1,9 +1,9 @@
 import type { ThemeState } from "@interfaces";
-import { createAction, createReducer } from "@reduxjs/toolkit";
+import { createReducer } from "@reduxjs/toolkit";
+
+import { changeTheme } from "@actions";
 
 const initialState: ThemeState = { theme: "dark" };
-
-export const changeTheme = createAction<string>("theme/change");
 
 const themeReducer = createReducer(initialState, (builder) => {
   builder.addCase(changeTheme, (state, action) => {
