@@ -1,0 +1,32 @@
+.dropdown {
+  position: relative;
+  padding: 0 10px;
+  width: 20%;
+  background-color: #7c7c7f;
+
+  i {
+    float: right;
+  }
+
+  .dropdown-content {
+    width: 100%;
+    position: absolute;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    top: 120%;
+    left: 0;
+    padding: 10px 0;
+    z-index: 100;
+    border-radius: 10px;
+
+    &--hide {
+      visibility: hidden;
+    }
+
+    &--show {
+      visibility: visible;
+    }
+  }
+}

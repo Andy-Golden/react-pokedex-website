@@ -5,7 +5,6 @@ import { RouterProvider } from "react-router-dom";
 import reportWebVitals from "reportWebVitals";
 import router from "router";
 
-import { ThemeLanguageLayout } from "@layouts";
 import { store } from "@store";
 
 import "./i18n";
@@ -18,9 +17,7 @@ const root = ReactDOM.createRoot(
 root.render(
   <React.StrictMode>
     <Provider store={store}>
-      <ThemeLanguageLayout>
-        <RouterProvider router={router} />
-      </ThemeLanguageLayout>
+      <RouterProvider router={router} />
     </Provider>
   </React.StrictMode>,
 );

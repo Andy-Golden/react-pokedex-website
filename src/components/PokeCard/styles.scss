@@ -1,4 +1,4 @@
-:root {
+:root[data-theme="dark"] {
   --bg-image: #f2f2f2;
   --bg-card: #ffff;
 
@@ -49,11 +49,11 @@
       text-transform: uppercase;
     }
   }
-}
 
-.card:hover {
-  position: relative;
-  animation: move 0.2s linear;
+  &:hover {
+    position: relative;
+    animation: move 0.2s linear;
+  }
 }
 
 @keyframes move {

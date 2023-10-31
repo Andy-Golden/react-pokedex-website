@@ -1,4 +1,4 @@
-:root {
+:root[data-theme="dark"] {
   --bg-form-input: #f2f2f2;
   --bg-button: #4caf50;
   --bg-button-hover: #43a047;
@@ -49,12 +49,12 @@
     -webkit-transition: all 0.3 ease;
     transition: all 0.3 ease;
     cursor: pointer;
-  }
 
-  button:hover,
-  button:active,
-  button:focus {
-    background: var(--bg-button-hover);
+    &:active,
+    &:hover,
+    &:focus {
+      background: var(--bg-button-hover);
+    }
   }
 
   .message {

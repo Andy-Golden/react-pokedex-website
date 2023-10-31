@@ -1,6 +1,7 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
-import { SelectMenu, ToggleButton } from "@components";
+import { AppBar, Dropdown, SelectMenu, ToggleButton } from "@components";
 
 import { languageOptions } from "./constants";
 import { useThemeLanguageLayoutPrepareHook } from "./helper";
@@ -16,19 +17,35 @@ function ThemeLanguageLayout({
 
   return (
     <div className="theme-language-layout-container ">
-      <div className="action-layout">
-        <ToggleButton
-          className="toggle"
-          onChange={onSwitchTheme}
-          checked={theme === "light"}
-        />
-        <SelectMenu
-          defaultValue={lang}
-          className="language-select-box"
-          options={Object.values(languageOptions)}
-          onChange={onSwitchLang}
-        />
-      </div>
+      <AppBar>
+        <ul className="left">
+          <li>
+            <Link to="/">Home</Link>
+          </li>
+          <li>Contact</li>
+          <li>About</li>
+          <li>New</li>
+        </ul>
+        <ul className="right">
+          <li>
+            <Link to="/login">Login</Link>
+          </li>
+          <li>Register</li>
+          <Dropdown>
+            <ToggleButton
+              className="toggle"
+              onChange={onSwitchTheme}
+              checked={theme === "light"}
+            />
+            <SelectMenu
+              defaultValue={lang}
+              className="language-select-box"
+              options={Object.values(languageOptions)}
+              onChange={onSwitchLang}
+            />
+          </Dropdown>
+        </ul>
+      </AppBar>
       {children}
     </div>
   );
