@@ -4,9 +4,9 @@ import { Provider } from "react-redux";
 import { RouterProvider } from "react-router-dom";
 import reportWebVitals from "reportWebVitals";
 import router from "router";
-import { store } from "store";
 
 import { ThemeLanguageLayout } from "@layouts";
+import { store } from "@store";
 
 import "./index.scss";
 

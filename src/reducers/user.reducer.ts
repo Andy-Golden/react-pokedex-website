@@ -1,9 +1,9 @@
+import type { UserState } from "@interfaces";
 import { createReducer } from "@reduxjs/toolkit";
-import type { UserState } from "interfaces";
 
 import { createUser } from "@actions";
 
-import { initialUser } from "../pages/LoginPage/user";
+import { initialUser } from "./user";
 
 const initialState: UserState = {
   user: initialUser,

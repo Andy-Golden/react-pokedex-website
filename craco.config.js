@@ -8,6 +8,7 @@ module.exports = {
       "@layouts": path.resolve(__dirname, "src/layouts"),
       "@actions": path.resolve(__dirname, "src/actions"),
       "@reducers": path.resolve(__dirname, "src/reducers"),
+      "@store": path.resolve(__dirname, "src/store"),
     },
   },
 };
