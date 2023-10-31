@@ -6,9 +6,9 @@ import reportWebVitals from "reportWebVitals";
 import router from "router";
 import { store } from "store";
 
-import "./i18n";
+import { ThemeLanguageLayout } from "@layouts";
 
-import { ThemeLanguageLayout } from "./layouts/ThemeLanguageLayout";
+import "./i18n";
 
 import "./index.scss";
 
