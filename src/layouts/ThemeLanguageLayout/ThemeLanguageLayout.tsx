@@ -1,8 +1,8 @@
 import React from "react";
 import { ToggleButton } from "components/ToggleButton";
 
-import type { ThemeLanguageLayoutProps } from "./interfaces/themeLanguageLayoutProps.interface";
 import { useThemeLanguageLayoutPrepareHook } from "./helper";
+import type { ThemeLanguageLayoutProps } from "./interfaces";
 
 import "./styles.scss";
 
