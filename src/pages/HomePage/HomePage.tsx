@@ -16,7 +16,7 @@ import { useHomePagePrepareHook } from "./helper";
 import "./styles.scss";
 
 const HomePage = (): JSX.Element => {
-  const { start, visible, pokemons, onLoadMore, onSurpriseMe, onSortByChange } =
+  const { pokemons, onLoadMore, onSurpriseMe, onSortByChange } =
     useHomePagePrepareHook();
 
   return (
@@ -50,7 +50,7 @@ const HomePage = (): JSX.Element => {
       <div className="list-wrapper">
         <div className="list-poke">
           {pokemons.length > 0 ? (
-            pokemons.slice(start, visible).map((poke) => (
+            pokemons.map((poke) => (
               <PokeCard
                 key={poke.id}
                 id={poke.id}
