@@ -1,7 +1,6 @@
 import type { TypeColor } from "@interfaces";
 
-const NUMBERS_OF_POKE = 200;
-const VISIBLE_OF_POKE = 25;
+const NUMBERS_OF_POKE = 12;
 
 const SORT_BY_CHOICES = {
   lowest: "homePage.sortBy.lowestNum",
@@ -52,10 +51,4 @@ const typeTextColor: TypeColor = {
   WATER: "#ffff",
 };
 
-export {
-  NUMBERS_OF_POKE,
-  SORT_BY_CHOICES,
-  typeColor,
-  typeTextColor,
-  VISIBLE_OF_POKE,
-};
+export { NUMBERS_OF_POKE, SORT_BY_CHOICES, typeColor, typeTextColor };

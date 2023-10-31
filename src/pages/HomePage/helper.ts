@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import type { PokeDetail } from "@interfaces";
 import { getListPokeDetails } from "apis/pokemon.api";
 
-import { NUMBERS_OF_POKE, VISIBLE_OF_POKE } from "./constants";
+import { NUMBERS_OF_POKE } from "./constants";
 import type { HomePagePrepareHook } from "./interfaces";
 
 const getRandomInt = (min: number, max: number): number => {
@@ -19,16 +19,27 @@ const getRandomInt = (min: number, max: number): number => {
 
 const useHomePagePrepareHook = (): HomePagePrepareHook => {
   const [pokemons, setPokemons] = useState<PokeDetail[]>([]);
-  const [visible, setVisible] = useState(VISIBLE_OF_POKE);
-  const [start, setStart] = useState(0);
+  const [isLoadMore, setIsLoadMore] = useState(false);
 
   useEffect(() => {
     void getPokemons();
-  }, []);
+  }, [isLoadMore]);
 
   const getPokemons = async (): Promise<void> => {
     try {
-      const data = await getListPokeDetails(NUMBERS_OF_POKE);
+      const offset = pokemons[pokemons.length - 1]?.id ?? 0;
+      const data = await getListPokeDetails(NUMBERS_OF_POKE, offset);
+      const newPokemons = [...pokemons, ...data];
+      setPokemons(newPokemons);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const getRandomPokemons = async (): Promise<void> => {
+    try {
+      const newOffset = getRandomInt(20, 120);
+      const data = await getListPokeDetails(NUMBERS_OF_POKE, newOffset);
       setPokemons(data);
     } catch (error) {
       console.log(error);
@@ -36,20 +47,12 @@ const useHomePagePrepareHook = (): HomePagePrepareHook => {
   };
 
   const handleLoadMore = (): void => {
-    const moreItems = visible + VISIBLE_OF_POKE;
-
-    if (moreItems > pokemons.length) {
-      return;
-    }
-
-    setVisible(moreItems);
+    const isLoad = !isLoadMore;
+    setIsLoadMore(isLoad);
   };
 
   const handleSurpriseMe = (): void => {
-    const startIndex = getRandomInt(0, 100);
-
-    setStart(startIndex);
-    setVisible(startIndex + 25);
+    void getRandomPokemons();
   };
 
   const handleSortByChange = (
@@ -125,8 +128,6 @@ const useHomePagePrepareHook = (): HomePagePrepareHook => {
   };
 
   return {
-    start,
-    visible,
     pokemons,
     onLoadMore: handleLoadMore,
     onSurpriseMe: handleSurpriseMe,
