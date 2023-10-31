@@ -1,4 +1,4 @@
-:root {
+:root[data-theme="dark"] {
   --bg-filtering: #424242;
   --bg-btn-shuffle: #30a7d7;
   --bg-select-input: #313131;
@@ -25,6 +25,22 @@
   --text-btn-shuffle: #ffff;
   --text-label-select: #a4a4a4;
   --text-select-input-filter: #ffff;
+  --text-btn-load: #ffff;
+}
+
+:root[data-theme="light"] {
+  --bg-filtering: #424242;
+  --bg-wrapper: #ffff;
+  --bg-btn-shuffle: #30a7d7;
+  --bg-select-input: #d7d2d2;
+  --bg-action-above-content: #ffff;
+  --bg-list-poke: #ffff;
+  --bg-action-under-content: #ffff;
+
+  --text-sort-by: #a4a4a4;
+  --text-btn-shuffle: #ffff;
+  --text-label-select: #a4a4a4;
+  --text-select-input-filter: #000000b9;
   --text-btn-load: #ffff;
 }
 

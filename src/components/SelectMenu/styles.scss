@@ -1,7 +1,17 @@
+:root[data-theme="dark"] {
+  --bg-select-menu: #313131;
+  --text-color-menu: #ffff;
+}
+
+:root[data-theme="light"] {
+  --bg-select-menu: #d7d2d2;
+  --text-color-menu: #4f4848b9;
+}
+
 .select-menu {
-  background-color: #313131;
+  background-color: var(--bg-select-menu);
   font-size: 105%;
-  color: #ffff;
+  color: var(--text-color-menu);
   border-radius: 5px;
   position: relative;
   width: 250px;
@@ -11,7 +21,6 @@
     padding-right: 10px;
     padding-bottom: 12px;
     padding-top: 12px;
-    position: relative;
     border: none;
     outline: none;
 

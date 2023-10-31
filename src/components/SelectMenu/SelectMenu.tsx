@@ -1,4 +1,5 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 
 import { type SelectBoxProps } from "./interfaces";
 import { MenuItem } from "./MenuItem";
@@ -10,20 +11,23 @@ import "./styles.scss";
 const SelectMenu = ({
   className,
   textColor,
+  defaultValue,
   options,
   background,
   onChange,
 }: SelectBoxProps): JSX.Element => {
+  const { t } = useTranslation();
+
   return (
     <div
       className={`select-menu ${className}`}
       style={{ background, color: textColor }}
     >
       <img src={Image} alt="poke ball"></img>
-      <Select onChange={onChange}>
+      <Select onChange={onChange} value={defaultValue}>
         {options.map((item) => (
           <MenuItem key={item} value={item}>
-            {item}
+            {t(`${item}`)}
           </MenuItem>
         ))}
       </Select>

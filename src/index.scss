@@ -1,11 +1,11 @@
-:root {
+:root[data-theme="dark"] {
   --bg-color: #2e2b2b;
-  --url-bg-color: url("../public/img/body_bg.png")
+  --url-bg-color: url("../public/img/body_bg.png");
 }
 
 :root[data-theme="light"] {
   --bg-color: #f0e8e8;
-  --url-bg-color: url("../public/img/container_bg.png")
+  --url-bg-color: url("../public/img/container_bg.png");
 }
 
 body {

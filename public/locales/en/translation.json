@@ -1,0 +1,46 @@
+{
+  "en": "en",
+  "homePage": {
+    "login": "Login",
+    "surpriseMe": "Surprise Me!",
+    "loadMore": "Load more pokemon",
+    "sortBy": {
+      "label": "Sort By",
+      "lowestNum": "Lowest number (First)",
+      "highestNum": "Highest number (First)",
+      "aToZ": "A-Z",
+      "zToA": "Z-A"
+    },
+    "pokeType": {
+      "bug": "Bug",
+      "dragon": "Dragon",
+      "fairy": "Fairy",
+      "fire": "Fire",
+      "ghost": "Ghost",
+      "ground": "Ground",
+      "normal": "Normal",
+      "psychic": "Psychic",
+      "steel": "Steel",
+      "dark": "Dark",
+      "electric": "Electric",
+      "fighting": "Fighting",
+      "flying": "Flying",
+      "grass": "Grass",
+      "ice": "Ice",
+      "poison": "Poison",
+      "rock": "Rock",
+      "water": "Water"
+    }
+  },
+  "loginPage": {
+    "email": "Email",
+    "password": "Password",
+    "label": "Login",
+    "notRegister": "Not Register",
+    "createAnAccount": "Create An Account",
+    "error": {
+      "invalidEmail": "Please enter valid email",
+      "invalidLengthPassword": "Password must have at least 5 characters"
+    }
+  }
+}

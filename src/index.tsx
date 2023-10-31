@@ -8,6 +8,8 @@ import router from "router";
 import { ThemeLanguageLayout } from "@layouts";
 import { store } from "@store";
 
+import "./i18n";
+
 import "./index.scss";
 
 const root = ReactDOM.createRoot(

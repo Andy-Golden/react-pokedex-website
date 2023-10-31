@@ -1,3 +1,8 @@
+import type React from "react";
+
 export interface ThemeLanguageLayoutPrepareHook {
-  onChangeTheme: () => void;
+  theme: string;
+  lang: string;
+  onSwitchTheme: () => void;
+  onSwitchLang: (e: React.ChangeEvent<HTMLSelectElement>) => void;
 }
