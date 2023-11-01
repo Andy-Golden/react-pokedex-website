@@ -1,4 +1,4 @@
-import type { TypeColor } from "interfaces";
+import type { TypeColor } from "@interfaces";
 
 const NUMBERS_OF_POKE = 12;
 

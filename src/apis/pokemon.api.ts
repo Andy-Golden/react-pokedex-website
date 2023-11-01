@@ -43,4 +43,4 @@ const getListPokeDetails = async (
   return listPokeDetail;
 };
 
-export { getListPokeDetails, getPokemons };
+export { getListPokeDetails, getPokeDetails, getPokemons };

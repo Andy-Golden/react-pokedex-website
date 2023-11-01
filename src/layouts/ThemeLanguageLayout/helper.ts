@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import type { RootState } from "@store";
 
-import { changeTheme } from "@actions";
+import { switchTheme } from "@slices";
 
 import type { ThemeLanguageLayoutPrepareHook } from "./interfaces";
 
@@ -13,7 +13,7 @@ const useThemeLanguageLayoutPrepareHook =
 
     const handleChange = (): void => {
       const newTheme = theme === "dark" ? "light" : "dark";
-      dispatch(changeTheme(newTheme));
+      dispatch(switchTheme(newTheme));
       document.documentElement.setAttribute("data-theme", newTheme);
     };
 

@@ -23,9 +23,10 @@
       "@interfaces": ["./interfaces/index"],
       "@pages": ["./pages/index"],
       "@layouts": ["./layouts/index"],
-      "@reducers": ["./reducers/index"],
-      "@actions": ["./actions/index"],
-      "@store": ["./store/index"]
+      "@slices": ["./slices/index"],
+      "@store": ["./store/index"],
+      "@apis": ["./apis/index"],
+      "@utils": ["./utils/index"]
     }
   },
   "include": ["src"]
