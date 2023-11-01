@@ -1,0 +1,219 @@
+.container {
+  .header {
+    width: 100%;
+    display: flex;
+    gap: 10px;
+    background: url("../../../public/img/container_bg.png");
+
+    .backward {
+      width: 50%;
+      height: 100%;
+      background-color: #a4a4a4;
+      font-size: 1.5rem;
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      align-items: center;
+      padding: 10px 0px;
+      position: relative;
+    }
+
+    .forward {
+      width: 50%;
+      height: 100%;
+      background-color: #a4a4a4;
+      font-size: 1.5rem;
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      align-items: center;
+      padding: 10px 0px;
+    }
+
+    .poke-id {
+      color: #ffff;
+    }
+
+    .poke-name {
+      color: #616161;
+    }
+
+    .arrow {
+      background-color: #ffff;
+      border-radius: 50%;
+      padding: 5px 12px;
+    }
+  }
+
+  .poke-details-wrapper {
+    background: #ffff;
+    width: 70%;
+    margin: auto;
+
+    .title {
+      font-size: 2rem;
+      font-family: "Flexo-Medium,arial,sans-serif";
+      color: #212121;
+      padding: 10px 0px;
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+
+      .name::first-letter {
+        text-transform: uppercase;
+      }
+
+      .id {
+        color: #616161;
+      }
+    }
+
+    .details {
+      display: flex;
+      padding: 15px 0px;
+
+      .left {
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        .image {
+          background-color: #f2f2f2;
+          width: 100%;
+          object-fit: cover;
+          border-radius: 5px;
+        }
+
+        .stats {
+          width: 100%;
+          border-radius: 10px;
+          background-color: #a4a4a4;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          color: #212121;
+
+          h3 {
+            margin-left: 2%;
+          }
+
+          .gauges {
+            list-style-type: none;
+            display: flex;
+            gap: 6%;
+
+            .gauge {
+              width: 10%;
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              text-align: center;
+              gap: 15px;
+              text-decoration: none;
+              font-size: x-small;
+              font-weight: bold;
+              text-wrap: wrap;
+
+              .meters {
+                all: unset;
+                list-style-type: none;
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+                .meter {
+                  width: 40px;
+                  height: 7px;
+                  background-color: #ffff;
+                }
+
+                .filled-meter {
+                  background-color: #30a7d7;
+                }
+              }
+            }
+          }
+        }
+      }
+      .right {
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        color: #000000;
+        justify-content: flex-start;
+
+        .description {
+          width: 100%;
+        }
+
+        .info {
+          width: 100%;
+          border-radius: 10px;
+          background-color: #30a7d7;
+          display: flex;
+
+          ul {
+            all: unset;
+            margin-left: 20px;
+          }
+
+          .appearance {
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+          }
+
+          .strength {
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+
+            .ability--hidden {
+              display: none;
+            }
+          }
+
+          li {
+            list-style-type: none;
+            text-decoration: none;
+
+            &:hover {
+              color: #000000;
+            }
+
+            p:nth-child(1) {
+              color: #ffff;
+              &::first-letter {
+                text-transform: uppercase;
+              }
+            }
+
+            p:nth-child(2) {
+              display: flex;
+              gap: 17px;
+              font-size: 1.3rem;
+            }
+          }
+        }
+
+        .types {
+          width: 100%;
+          display: flex;
+          flex-wrap: wrap;
+          gap: 10px;
+        }
+
+        .weaknesses {
+          width: 100%;
+          display: flex;
+          flex-wrap: wrap;
+          gap: 10px;
+        }
+
+        .poke-type {
+          font-size: 1rem;
+        }
+      }
+    }
+  }
+}

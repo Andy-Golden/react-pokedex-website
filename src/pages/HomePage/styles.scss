@@ -126,6 +126,11 @@
       flex-wrap: wrap;
       padding: 20px;
 
+      a {
+        all: unset;
+        cursor: pointer;
+      }
+
       .card {
         width: 23%;
         margin-left: 15px;

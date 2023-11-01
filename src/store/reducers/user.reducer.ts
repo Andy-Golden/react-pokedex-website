@@ -11,16 +11,8 @@ const initialState: UserState = {
 
 const userReducer = createReducer(initialState, (builder) => {
   builder.addCase(createUser, (state, action) => {
-    switch (action.type) {
-      case "user/createUser": {
-        state.user.email = action.payload.email;
-        state.user.password = action.payload.password;
-        break;
-      }
-      default: {
-        break;
-      }
-    }
+    state.user.email = action.payload.email;
+    state.user.password = action.payload.password;
   });
 });
 
