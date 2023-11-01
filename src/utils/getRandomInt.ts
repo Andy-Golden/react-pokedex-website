@@ -1,4 +1,4 @@
-export const getRandomInt = (min: number, max: number): number => {
+const getRandomInt = (min: number, max: number): number => {
   if (max < min) {
     const temp: number = max;
     max = min;
@@ -8,3 +8,5 @@ export const getRandomInt = (min: number, max: number): number => {
 
   return randomNum;
 };
+
+export default getRandomInt;

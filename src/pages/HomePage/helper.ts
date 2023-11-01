@@ -2,7 +2,7 @@ import type React from "react";
 import { useEffect, useState } from "react";
 import type { PokeDetail } from "@interfaces";
 import { getListPokeDetails } from "apis/pokemon.api";
-import { getRandomInt } from "utils/functions";
+import { getRandomInt } from "utils";
 
 import { NUMBERS_OF_POKE } from "./constants";
 import type { HomePagePrepareHook } from "./interfaces";
