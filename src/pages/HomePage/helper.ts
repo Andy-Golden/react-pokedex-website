@@ -1,5 +1,6 @@
 import type React from "react";
 import { useEffect, useState } from "react";
+import { useErrorBoundary } from "react-error-boundary";
 import type { PokeDetail } from "@interfaces";
 
 import { getListPokeDetails } from "@apis";
@@ -11,6 +12,7 @@ import type { HomePagePrepareHook } from "./interfaces";
 const useHomePagePrepareHook = (): HomePagePrepareHook => {
   const [pokemons, setPokemons] = useState<PokeDetail[]>([]);
   const [isLoadMore, setIsLoadMore] = useState(false);
+  const { showBoundary } = useErrorBoundary();
 
   useEffect(() => {
     void getPokemons();
@@ -23,7 +25,7 @@ const useHomePagePrepareHook = (): HomePagePrepareHook => {
       const newPokemons = [...pokemons, ...data];
       setPokemons(newPokemons);
     } catch (error) {
-      console.log(error);
+      showBoundary(error);
     }
   };
 
@@ -33,7 +35,7 @@ const useHomePagePrepareHook = (): HomePagePrepareHook => {
       const data = await getListPokeDetails(NUMBERS_OF_POKE, newOffset);
       setPokemons(data);
     } catch (error) {
-      console.log(error);
+      showBoundary(error);
     }
   };
 

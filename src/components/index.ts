@@ -1,6 +1,7 @@
 export { AuthContainer } from "./AuthContainer";
 export { Button } from "./Button";
 export { Container } from "./Container";
+export { Error } from "./Error";
 export { FormControl } from "./FormControl";
 export { Loading } from "./Loading";
 export { PokeCard } from "./PokeCard";
