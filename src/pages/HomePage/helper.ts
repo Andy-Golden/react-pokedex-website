@@ -5,7 +5,7 @@ import type { PokeDetail } from "@interfaces";
 import { getListPokeDetails } from "@apis";
 import { getRandomInt } from "@utils";
 
-import { NUMBERS_OF_POKE, SORT_BY_CHOICES } from "./constants";
+import { NUMBERS_OF_POKE, SORT_CHOICES } from "./constants";
 import type { HomePagePrepareHook } from "./interfaces";
 
 const useHomePagePrepareHook = (): HomePagePrepareHook => {
@@ -52,7 +52,7 @@ const useHomePagePrepareHook = (): HomePagePrepareHook => {
     const clonedPokemons = [...pokemons];
 
     switch (e.target.value) {
-      case SORT_BY_CHOICES.lowest: {
+      case SORT_CHOICES.lowest: {
         const lowestPokemons = clonedPokemons.sort((poke1, poke2) => {
           if (poke1.id < poke2.id) {
             return -1;
@@ -67,7 +67,7 @@ const useHomePagePrepareHook = (): HomePagePrepareHook => {
         setPokemons(lowestPokemons);
         break;
       }
-      case SORT_BY_CHOICES.highest: {
+      case SORT_CHOICES.highest: {
         const highestPokemons = clonedPokemons.sort((poke1, poke2) => {
           if (poke1.id < poke2.id) {
             return 1;
@@ -82,7 +82,7 @@ const useHomePagePrepareHook = (): HomePagePrepareHook => {
         setPokemons(highestPokemons);
         break;
       }
-      case SORT_BY_CHOICES.aToZ: {
+      case SORT_CHOICES.aToZ: {
         const aToZPokemons = clonedPokemons.sort((poke1, poke2) => {
           if (poke1.name < poke2.name) {
             return -1;
@@ -97,7 +97,7 @@ const useHomePagePrepareHook = (): HomePagePrepareHook => {
         setPokemons(aToZPokemons);
         break;
       }
-      case SORT_BY_CHOICES.ztoA: {
+      case SORT_CHOICES.ztoA: {
         const aToZPokemons = clonedPokemons.sort((poke1, poke2) => {
           if (poke1.name < poke2.name) {
             return 1;
