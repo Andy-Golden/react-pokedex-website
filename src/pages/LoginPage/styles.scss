@@ -33,7 +33,7 @@
     margin-bottom: 15px;
     padding: 15px;
     box-sizing: border-box;
-    font-size: 14px;
+    font-size: 0.9rem;
   }
 
   button {
@@ -45,7 +45,7 @@
     border: 0;
     padding: 15px;
     color: var(--text-button);
-    font-size: 14px;
+    font-size: 1rem;
     -webkit-transition: all 0.3 ease;
     transition: all 0.3 ease;
     cursor: pointer;
@@ -60,7 +60,7 @@
   .message {
     margin: 15px 0 0;
     color: var(--text-message);
-    font-size: 12px;
+    font-size: 0.8rem;
     span {
       color: var(--text-span);
     }
