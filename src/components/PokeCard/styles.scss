@@ -1,17 +1,10 @@
-:root {
-  --bg-image: #f2f2f2;
-  --bg-card: #ffff;
-
-  --text-poke-id-color: #919191;
-}
-
 .card {
   min-width: 205px;
-  background-color: var(--bg-card);
+  background-color: #ffff;
   border-radius: 5px;
 
   .poke-image {
-    background-color: var(--bg-image);
+    background-color: #f2f2f2;
     width: 100%;
     height: 200px;
     border-radius: inherit;
@@ -31,7 +24,7 @@
 
     .id {
       font-family: "Flexo-Bold", arial, sans-serif;
-      color: var(--text-poke-id-color);
+      color: #919191;
       margin: 0;
       padding: 0;
       font-weight: bold;

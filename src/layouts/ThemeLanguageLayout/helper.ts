@@ -3,8 +3,7 @@ import { useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { useDispatch, useSelector } from "react-redux";
 import type { RootState } from "@store";
-
-import { switchLang, switchTheme } from "@slices";
+import { switchLang, switchTheme } from "store/slices";
 
 import type { ThemeLanguageLayoutPrepareHook } from "./interfaces";
 
