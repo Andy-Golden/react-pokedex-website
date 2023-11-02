@@ -3,10 +3,11 @@ import { useForm } from "react-hook-form";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import type { User } from "@interfaces";
-import type { RootState } from "store";
+import type { RootState } from "@store";
+
+import { createUser } from "@slices";
 
 import type { ILoginFormInput, LoginPagePrepareHook } from "./interfaces";
-import { createUser } from "./user.reducer";
 
 const useLoginPagePrepareHook = (): LoginPagePrepareHook => {
   const user = useSelector((state: RootState) => state.userReducer.user);

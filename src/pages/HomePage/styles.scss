@@ -1,6 +1,20 @@
 :root[data-theme="dark"] {
   --bg-filtering: #424242;
-  --bg-wrapper: #ffff;
+  --bg-btn-shuffle: #30a7d7;
+  --bg-select-input: #313131;
+  --bg-action-above-content: #ffff;
+  --bg-list-poke: #ffff;
+  --bg-action-under-content: #ffff;
+
+  --text-sort-by: #a4a4a4;
+  --text-btn-shuffle: #ffff;
+  --text-label-select: #a4a4a4;
+  --text-select-input-filter: #ffff;
+  --text-btn-load: #ffff;
+}
+
+:root[data-theme="light"] {
+  --bg-filtering: #424242;
   --bg-btn-shuffle: #30a7d7;
   --bg-select-input: #313131;
   --bg-action-above-content: #ffff;
@@ -31,14 +45,6 @@
 }
 
 .container {
-  background: var(--bg-wrapper);
-  width: 70%;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 100px;
-  display: flex;
-  flex-direction: column;
-
   .poke-types {
     display: flex;
     gap: 5px;
@@ -93,7 +99,7 @@
 
         .label-select {
           margin-right: 5px;
-          font-size: 125%;
+          font-size: 1.25rem;
           color: var(--text-label-select);
         }
 
@@ -253,13 +259,13 @@
           .btn-shuffle {
             width: 100%;
             margin-left: 0;
-            font-size: 80%;
+            font-size: 0.8rem;
           }
         }
 
         .select-input-wrapper {
           .label-select {
-            font-size: 106%;
+            font-size: 1.06rem;
           }
 
           .select-input-filter {
@@ -268,7 +274,7 @@
           }
 
           .select-menu {
-            font-size: 70%;
+            font-size: 0.7rem;
           }
 
           .select-menu img {
@@ -291,7 +297,7 @@
         .action-under-content {
           .btn-load {
             width: 100%;
-            font-size: 99%;
+            font-size: 0.7rem;
           }
         }
       }

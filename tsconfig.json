@@ -22,7 +22,11 @@
       // "@components/*": ["./components/*"],
       "@interfaces": ["./interfaces/index"],
       "@pages": ["./pages/index"],
-      "@layouts": ["./layouts/index"]
+      "@layouts": ["./layouts/index"],
+      "@slices": ["./slices/index"],
+      "@store": ["./store/index"],
+      "@apis": ["./apis/index"],
+      "@utils": ["./utils/index"]
     }
   },
   "include": ["src"]

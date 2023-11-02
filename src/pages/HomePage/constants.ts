@@ -2,6 +2,13 @@ import type { TypeColor } from "@interfaces";
 
 const NUMBERS_OF_POKE = 12;
 
+export enum SORT_CHOICES {
+  lowest = "homePage.sortBy.lowestNum",
+  highest = "homePage.sortBy.highestNum",
+  aToZ = "homePage.sortBy.aToZ",
+  ztoA = "homePage.sortBy.zToA",
+}
+
 const SORT_BY_CHOICES = {
   lowest: "homePage.sortBy.lowestNum",
   highest: "homePage.sortBy.highestNum",

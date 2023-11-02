@@ -1,16 +1,14 @@
 import React from "react";
+import { Outlet } from "react-router-dom";
 
 import { SelectMenu, ToggleButton } from "@components";
 
 import { languageOptions } from "./constants";
 import { useThemeLanguageLayoutPrepareHook } from "./helper";
-import type { ThemeLanguageLayoutProps } from "./interfaces";
 
 import "./styles.scss";
 
-function ThemeLanguageLayout({
-  children,
-}: ThemeLanguageLayoutProps): JSX.Element {
+function ThemeLanguageLayout(): JSX.Element {
   const { theme, lang, onSwitchTheme, onSwitchLang } =
     useThemeLanguageLayoutPrepareHook();
 
@@ -29,7 +27,7 @@ function ThemeLanguageLayout({
           onChange={onSwitchLang}
         />
       </div>
-      {children}
+      <Outlet />
     </div>
   );
 }

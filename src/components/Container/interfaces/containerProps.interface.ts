@@ -1,5 +1,5 @@
 import type React from "react";
 
-export interface ThemeLanguageLayoutProps {
+export interface ContainerProps {
   children: React.ReactNode;
 }

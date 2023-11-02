@@ -1,7 +1,6 @@
 import { configureStore } from "@reduxjs/toolkit";
-import langReducer from "layouts/ThemeLanguageLayout/language.reducer";
-import themeReducer from "layouts/ThemeLanguageLayout/theme.reducer";
-import userReducer from "pages/LoginPage/user.reducer";
+
+import { langReducer, themeReducer, userReducer } from "@slices";
 
 export const store = configureStore({
   reducer: { userReducer, themeReducer, langReducer },

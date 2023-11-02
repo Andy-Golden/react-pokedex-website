@@ -2,7 +2,14 @@ import React from "react";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 
-import { Button, Loading, PokeCard, PokeType, SelectMenu } from "@components";
+import {
+  Button,
+  Container,
+  Loading,
+  PokeCard,
+  PokeType,
+  SelectMenu,
+} from "@components";
 
 import { SORT_BY_CHOICES, typeColor, typeTextColor } from "./constants";
 import { useHomePagePrepareHook } from "./helper";
@@ -15,15 +22,19 @@ const HomePage = (): JSX.Element => {
     useHomePagePrepareHook();
 
   return (
-    <div className="container">
-      <Button className="login-btn">
+    <Container>
+      <Button type="button" className="login-btn">
         <Link to="/login">{t("homePage.login")}</Link>
       </Button>
       <div className="filtering"></div>
       <div className="action-above-wrapper">
         <div className="action-above-content">
           <div className="btn-shuffle-wrapper">
-            <Button className="btn-shuffle" onClick={onSurpriseMe}>
+            <Button
+              type="button"
+              className="btn-shuffle"
+              onClick={onSurpriseMe}
+            >
               <i className="fas fa-sync-alt icon"></i>
               <span>&nbsp; &nbsp;{t("homePage.surpriseMe")}</span>
             </Button>
@@ -78,12 +89,12 @@ const HomePage = (): JSX.Element => {
       </div>
       <div className="action-under-wrapper">
         <div className="action-under-content">
-          <Button className="btn-load" onClick={onLoadMore}>
+          <Button type="button" className="btn-load" onClick={onLoadMore}>
             {t("homePage.loadMore")}
           </Button>
         </div>
       </div>
-    </div>
+    </Container>
   );
 };
 
