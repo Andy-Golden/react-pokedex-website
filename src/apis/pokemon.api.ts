@@ -47,7 +47,7 @@ const getListPokeDetails = async (
 
     const promises = pokemons.results.map(
       async (item: PokeDetailApi): Promise<PokeDetail> =>
-        await getPokeDetails(item.url + "test"),
+        await getPokeDetails(item.url),
     );
 
     const listPokeDetail = await Promise.all(promises);
