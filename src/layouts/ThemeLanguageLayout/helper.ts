@@ -3,7 +3,7 @@ import { useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { useDispatch, useSelector } from "react-redux";
 import type { RootState } from "@store";
-import { switchLang, switchTheme } from "store/slices";
+import { deleteUser, switchLang, switchTheme } from "store/slices";
 
 import { LangEnum, ThemeEnum } from "@enums";
 
@@ -15,6 +15,7 @@ const useThemeLanguageLayoutPrepareHook =
 
     const theme = useSelector((state: RootState) => state.themeReducer.theme);
     const lang = useSelector((state: RootState) => state.langReducer.lang);
+    const user = useSelector((state: RootState) => state.userReducer.user);
 
     const dispatch = useDispatch();
 
@@ -48,9 +49,15 @@ const useThemeLanguageLayoutPrepareHook =
       dispatch(switchLang(e.target.value));
     };
 
+    const handleLogout = (): void => {
+      dispatch(deleteUser());
+    };
+
     return {
+      user,
       theme,
       lang,
+      onLogout: handleLogout,
       onSwitchTheme: handleSwitchTheme,
       onSwitchLang: handleSwicthLanguage,
     };
