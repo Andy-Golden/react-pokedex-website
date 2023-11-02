@@ -6,7 +6,7 @@
   }
 
   input {
-    font-family: "Roboto", sans-serif;
+    font-family: var(--font-family2);
     outline: 0;
     background: var(--bg-input);
     width: 100%;
@@ -18,14 +18,14 @@
   }
 
   button {
-    font-family: "Roboto", sans-serif;
+    font-family: var(--font-family2);
     text-transform: uppercase;
     outline: 0;
-    background: var(--bg-btn-login);
+    background: var(--bg-green1);
     width: 100%;
     border: 0;
     padding: 15px;
-    color: var(--text-btn);
+    color: var(--text-white);
     font-size: 1rem;
     -webkit-transition: all 0.3 ease;
     transition: all 0.3 ease;
@@ -35,15 +35,15 @@
   button:hover,
   button:active,
   button:focus {
-    background: var(--bg-btn-login-hover);
+    background: var(--bg-green2);
   }
 
   .message {
     margin: 15px 0 0;
-    color: #4caf50;
+    color: var(--text-green);
     font-size: 0.8rem;
     span {
-      color: #b3b3b3;
+      color: var(--text-gray);
     }
   }
 }
