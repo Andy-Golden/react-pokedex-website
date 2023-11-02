@@ -7,9 +7,9 @@ module.exports = {
       "@pages": path.resolve(__dirname, "src/pages"),
       "@layouts": path.resolve(__dirname, "src/layouts"),
       "@store": path.resolve(__dirname, "src/store"),
-      "@slices": path.resolve(__dirname, "src/slices"),
       "@utils": path.resolve(__dirname, "src/utils"),
       "@apis": path.resolve(__dirname, "src/apis"),
+      "@enums": path.resolve(__dirname, "src/enums"),
     },
   },
 };

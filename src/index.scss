@@ -1,51 +1,66 @@
 :root {
   --bg-color-body: #2e2b2b;
   --url-bg-color-body: url("../public/img/body_bg.png");
-  --bg-color-container: #ffff;
-  --url-bg-color-container: url("../public/img/container_bg.png");
-
+  --bg-color-container: #fff;
   --bg-advanced-search: #424242;
-  --bg-btn: #30a7d7;
-  --bg-select-menu: #313131;
-  --bg-content: #ffff;
-
-  --bg-form: #ffff;
+  --url-bg-color-container: url("../public/img/container_bg.png");
+  --bg-form: #fff;
   --bg-input: #f2f2f2;
-  --bg-btn-login: #4caf50;
-  --bg-btn-login-hover: #43a047;
-  --text-sort-by: #a4a4a4;
-  --text-btn: #ffff;
-  --text-label-select: #a4a4a4;
-  --text-select-menu: #ffff;
+
+  --bg-white1: #fff;
+  --bg-white2: #f2f2f2;
+  --bg-white3: #d7cfcf;
+  --bg-blue1: #30a7d7;
+  --bg-black1: #313131;
+  --bg-black2: #faf9f933;
+  --bg-black3: #d5c8c83d;
+  --bg-black4: #0a0a0a;
+  --bg-green1: #4caf50;
+  --bg-green2: #43a047;
+  --bg-green3: #7fffd4;
+
+  --text-gray: #a4a4a4;
+  --text-white: #fff;
+  --text-green: #4caf50;
+  --text-red: #ff0000;
+
+  --font-family1: "Flexo-Regular", arial, sans-serif;
+  --font-family2: "Roboto", sans-serif;
 }
 
 :root[data-theme="light"] {
   --bg-color-body: #f0e8e8;
   --url-bg-color-body: url("../public/img/container_bg.png");
-
   --bg-color-container: #393131;
   --url-bg-color-container: url("../public/img/container_bg.png");
-
   --bg-advanced-search: #626060;
-  --bg-btn: #30a7d7;
-  --bg-select-menu: #313131;
   --bg-content: #f0e8e8;
-
   --bg-form: #252424;
-  --bg-input: #ffff;
-  --bg-btn-login: #4caf50;
-  --bg-btn-login-hover: #43a047;
-  --text-sort-by: #a4a4a4;
-  --text-btn: #ffff;
-  --text-label-select: #a4a4a4;
-  --text-select-menu: #ffff;
+  --bg-input: #fff;
+
+  --bg-white1: #fff;
+  --bg-white2: #f2f2f2;
+  --bg-blue1: #30a7d7;
+  --bg-black1: #313131;
+  --bg-black2: #faf9f933;
+  --bg-black3: #d5c8c83d;
+  --bg-green1: #4caf50;
+  --bg-green2: #43a047;
+  --bg-green3: #7fffd4;
+
+  --text-gray: #a4a4a4;
+  --text-white: #fff;
+  --text-green: #4caf50;
+
+  --font-family1: "Flexo-Regular", arial, sans-serif;
+  --font-family2: "Roboto", sans-serif;
 }
 
 body {
   margin: 0;
   padding: 0;
   background: var(--bg-color-body) var(--url-bg-color-body);
-  font-family: "Flexo-Regular", arial, sans-serif;
+  font-family: var(--font-family1);
 }
 
 #root {

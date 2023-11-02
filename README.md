@@ -11,10 +11,15 @@ $ yarn start
 ```
 
 ## Features
+
 - Show list pokemon
 - Login
-- Sort pokemone
+- Sort pokemons
 - Switch theme dark, light
-- Switch language english, vietname
+- Switch language english, vietnam
 
 For project initialization, create environment-specific files such as `.env` file.
+
+## To Do
+
+- Sort interface when import
