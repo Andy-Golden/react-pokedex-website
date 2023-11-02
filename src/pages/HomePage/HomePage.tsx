@@ -1,5 +1,6 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
+import { Link } from "react-router-dom";
 
 import { Button, Loading, PokeCard, PokeType, SelectMenu } from "@components";
 
@@ -43,34 +44,36 @@ const HomePage = (): JSX.Element => {
         <div className="list-poke">
           {pokemons.length > 0 ? (
             pokemons.map((poke) => (
-              <PokeCard
-                key={poke.id}
-                id={poke.id}
-                name={poke.name}
-                image={poke.sprites.frontDefault}
-              >
-                {" "}
-                <div className="poke-types">
-                  {poke.types.map((item) => (
-                    <PokeType
-                      className={"poke-type"}
-                      key={item.slot}
-                      background={
-                        typeColor[
-                          item.type.name.toUpperCase() as keyof typeof typeColor
-                        ]
-                      }
-                      textColor={
-                        typeTextColor[
-                          item.type.name.toUpperCase() as keyof typeof typeTextColor
-                        ]
-                      }
-                    >
-                      {t(`homePage.pokeType.${item.type.name}`)}
-                    </PokeType>
-                  ))}
-                </div>
-              </PokeCard>
+              <Link key={poke.id} to={`/poke/${poke.id}`}>
+                <PokeCard
+                  key={poke.id}
+                  id={poke.id}
+                  name={poke.name}
+                  image={poke.sprites.frontDefault}
+                >
+                  {" "}
+                  <div className="poke-types">
+                    {poke.types.map((item) => (
+                      <PokeType
+                        className={"poke-type"}
+                        key={item.slot}
+                        background={
+                          typeColor[
+                            item.type.name.toUpperCase() as keyof typeof typeColor
+                          ]
+                        }
+                        textColor={
+                          typeTextColor[
+                            item.type.name.toUpperCase() as keyof typeof typeTextColor
+                          ]
+                        }
+                      >
+                        {t(`homePage.pokeType.${item.type.name}`)}
+                      </PokeType>
+                    ))}
+                  </div>
+                </PokeCard>
+              </Link>
             ))
           ) : (
             <Loading />
