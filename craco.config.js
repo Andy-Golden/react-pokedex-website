@@ -9,6 +9,7 @@ module.exports = {
       "@store": path.resolve(__dirname, "src/store"),
       "@utils": path.resolve(__dirname, "src/utils"),
       "@apis": path.resolve(__dirname, "src/apis"),
+      "@enums": path.resolve(__dirname, "src/enums"),
     },
   },
 };

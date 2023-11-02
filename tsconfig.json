@@ -19,8 +19,8 @@
     "paths": {
       "@/*": ["./src/*"],
       "@components": ["./components/index"],
-      // "@components/*": ["./components/*"],
       "@interfaces": ["./interfaces/index"],
+      "@enums": ["./enums/index"],
       "@pages": ["./pages/index"],
       "@layouts": ["./layouts/index"],
       "@store": ["./store/index"],
