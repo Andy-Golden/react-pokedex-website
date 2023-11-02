@@ -1,11 +1,17 @@
-import type { Ability, PokeData, PokeDetail, PokeDetailApi } from "@interfaces";
-import type { AxiosError } from "axios";
 import type {
+  Ability,
   AbilityResponse,
+  Bar,
+  PokeData,
+  PokeDetail,
+  PokeDetailApi,
   Stat,
   StatResponse,
-} from "interfaces/pokeDetail.interface";
+} from "@interfaces";
+import type { AxiosError } from "axios";
 import { instance } from "server/axios/instance";
+
+import { calculateStat } from "@utils";
 
 // https://pokeapi.co/api/v2/pokemon/?limit=25&offset=2
 
@@ -40,10 +46,21 @@ const getPokeDetails = async (url: string): Promise<PokeDetail> => {
     );
 
     const stats: Stat[] = pokemon.data.stats.map((item: StatResponse) => {
+      const statGrade = calculateStat(item.base_stat);
+      const bars: Bar[] = [];
+
+      for (let i = 0; i < 15; i++) {
+        bars[i] = { slot: i, isFill: false };
+      }
+
+      for (let i = 0; i < statGrade; i++) {
+        bars[15 - i - 1].isFill = true;
+      }
       return {
         baseStat: item.base_stat,
         effort: item.effort,
         stat: { ...item.stat },
+        bars,
       };
     });
 

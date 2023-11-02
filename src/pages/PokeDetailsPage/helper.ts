@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useErrorBoundary } from "react-error-boundary";
+import { useTranslation } from "react-i18next";
 import { useParams } from "react-router-dom";
 import type { PokeDetail } from "@interfaces";
 import { getPokeDetails } from "apis/pokemon.api";
@@ -7,6 +8,7 @@ import { getPokeDetails } from "apis/pokemon.api";
 import type { PokeDetailPagePrepareHook } from "./interfaces";
 
 const usePokeDetailPagePrepareHook = (): PokeDetailPagePrepareHook => {
+  const { t } = useTranslation();
   const [pokeDetails, setPokeDetails] = useState<PokeDetail>({
     id: 0,
     name: "",
@@ -37,7 +39,7 @@ const usePokeDetailPagePrepareHook = (): PokeDetailPagePrepareHook => {
     }
   };
 
-  return { pokeDetails };
+  return { t, pokeDetails };
 };
 
 export { usePokeDetailPagePrepareHook };

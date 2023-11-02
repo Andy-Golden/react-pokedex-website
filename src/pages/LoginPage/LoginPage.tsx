@@ -1,5 +1,4 @@
 import React from "react";
-import { useTranslation } from "react-i18next";
 import { ErrorMessage } from "@hookform/error-message";
 
 import { Button, FormControl, TextInput } from "@components";
@@ -9,8 +8,7 @@ import { useLoginPagePrepareHook } from "./helper";
 import "./styles.scss";
 
 const LoginPage = (): JSX.Element => {
-  const { t } = useTranslation();
-  const { errors, onSubmit, register, handleSubmit } =
+  const { t, errors, onSubmit, register, handleSubmit } =
     useLoginPagePrepareHook();
 
   return (

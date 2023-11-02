@@ -1,10 +1,9 @@
 import React from "react";
-import { useTranslation } from "react-i18next";
 import { typeColor, typeTextColor } from "pages/constants";
 import {
   covertDecimetersToFeet,
   covertHectogramsToPounds,
-  generateStringPokeId,
+  generatePokeId,
 } from "utils";
 
 import { PokeType } from "@components";
@@ -14,8 +13,7 @@ import { usePokeDetailPagePrepareHook } from "./helper";
 import "./styles.scss";
 
 const PokeDetailPage = (): JSX.Element => {
-  const { t } = useTranslation();
-  const { pokeDetails } = usePokeDetailPagePrepareHook();
+  const { t, pokeDetails } = usePokeDetailPagePrepareHook();
 
   return (
     <div className="container">
@@ -39,7 +37,7 @@ const PokeDetailPage = (): JSX.Element => {
         <div className="title">
           {" "}
           <span className="name">{pokeDetails.name}</span>
-          <span className="id">#{generateStringPokeId(pokeDetails.id)}</span>
+          <span className="id">#{generatePokeId(pokeDetails.id)}</span>
         </div>
         <div className="details">
           <div className="left">
@@ -51,126 +49,21 @@ const PokeDetailPage = (): JSX.Element => {
             <div className="stats">
               <h3>Stats</h3>
               <ul className="gauges">
-                <li className="gauge">
-                  <ul className="meters">
-                    <li className="meter"></li>
-                    <li className="meter"></li>
-                    <li className="meter"></li>
-                    <li className="meter"></li>
-                    <li className="meter"></li>
-                    <li className="meter"></li>
-                    <li className="meter"></li>
-                    <li className="meter"></li>
-                    <li className="meter"></li>
-                    <li className="meter"></li>
-                    <li className="meter"></li>
-                    <li className="meter"></li>
-                    <li className="meter"></li>
-                    <li className="meter"></li>
-                    <li className="meter"></li>
-                  </ul>
-                  <span>HP</span>
-                </li>
-                <li className="gauge">
-                  <ul className="meters">
-                    <li className="meter"></li>
-                    <li className="meter"></li>
-                    <li className="meter"></li>
-                    <li className="meter"></li>
-                    <li className="meter"></li>
-                    <li className="meter"></li>
-                    <li className="meter"></li>
-                    <li className="meter"></li>
-                    <li className="meter"></li>
-                    <li className="meter"></li>
-                    <li className="meter"></li>
-                    <li className="meter"></li>
-                    <li className="meter"></li>
-                    <li className="meter"></li>
-                    <li className="meter"></li>
-                  </ul>
-                  <span>Attack</span>
-                </li>
-                <li className="gauge">
-                  <ul className="meters">
-                    <li className="meter"></li>
-                    <li className="meter"></li>
-                    <li className="meter"></li>
-                    <li className="meter"></li>
-                    <li className="meter"></li>
-                    <li className="meter"></li>
-                    <li className="meter"></li>
-                    <li className="meter"></li>
-                    <li className="meter"></li>
-                    <li className="meter"></li>
-                    <li className="meter"></li>
-                    <li className="meter"></li>
-                    <li className="meter"></li>
-                    <li className="meter"></li>
-                    <li className="meter"></li>
-                  </ul>
-                  <span>Defense</span>
-                </li>
-                <li className="gauge">
-                  <ul className="meters">
-                    <li className="meter"></li>
-                    <li className="meter"></li>
-                    <li className="meter"></li>
-                    <li className="meter"></li>
-                    <li className="meter"></li>
-                    <li className="meter"></li>
-                    <li className="meter"></li>
-                    <li className="meter"></li>
-                    <li className="meter"></li>
-                    <li className="meter"></li>
-                    <li className="meter"></li>
-                    <li className="meter"></li>
-                    <li className="meter"></li>
-                    <li className="meter"></li>
-                    <li className="meter"></li>
-                  </ul>
-                  <span>Special Attack</span>
-                </li>
-                <li className="gauge">
-                  <ul className="meters">
-                    <li className="meter"></li>
-                    <li className="meter"></li>
-                    <li className="meter"></li>
-                    <li className="meter"></li>
-                    <li className="meter"></li>
-                    <li className="meter"></li>
-                    <li className="meter"></li>
-                    <li className="meter"></li>
-                    <li className="meter"></li>
-                    <li className="meter"></li>
-                    <li className="meter"></li>
-                    <li className="meter"></li>
-                    <li className="meter"></li>
-                    <li className="meter"></li>
-                    <li className="meter"></li>
-                  </ul>
-                  <span>Special Defense</span>
-                </li>
-                <li className="gauge">
-                  <ul className="meters">
-                    <li className="meter"></li>
-                    <li className="meter"></li>
-                    <li className="meter"></li>
-                    <li className="meter"></li>
-                    <li className="meter"></li>
-                    <li className="meter"></li>
-                    <li className="meter"></li>
-                    <li className="meter"></li>
-                    <li className="meter"></li>
-                    <li className="meter"></li>
-                    <li className="meter"></li>
-                    <li className="meter"></li>
-                    <li className="meter"></li>
-                    <li className="meter"></li>
-                    <li className="meter"></li>
-                  </ul>
-                  <span>Speed</span>
-                </li>
+                {pokeDetails.stats.map((item) => (
+                  <li key={item.stat.name} className="gauge">
+                    <ul className="meters">
+                      {item.bars.map((bar) => (
+                        <li
+                          key={bar.slot}
+                          className={`meter ${
+                            bar.isFill ? "filled-meter" : ""
+                          }`}
+                        ></li>
+                      ))}
+                    </ul>
+                    <span>{item.stat.name}</span>
+                  </li>
+                ))}
               </ul>
             </div>
           </div>

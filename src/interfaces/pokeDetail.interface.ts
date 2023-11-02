@@ -34,10 +34,16 @@ export interface StatApi {
   url: string;
 }
 
+export interface Bar {
+  slot: number;
+  isFill: boolean;
+}
+
 export interface Stat {
   baseStat: number;
   effort: number;
   stat: StatApi;
+  bars: Bar[];
 }
 
 export interface StatResponse {
