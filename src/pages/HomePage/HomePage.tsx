@@ -17,7 +17,7 @@ const HomePage = (): JSX.Element => {
       <Button type="button" className="login-btn">
         <Link to="/login">Login</Link>
       </Button>
-      <div className="filtering"></div>
+      <div className="advanced-search"></div>
       <div className="action-above-wrapper">
         <div className="action-above-content">
           <div className="btn-shuffle-wrapper">

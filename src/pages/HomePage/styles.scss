@@ -8,8 +8,8 @@
   }
 }
 
-.filtering {
-  background-color: var(--bg-filtering);
+.advanced-search {
+  background-color: var(--bg-advanced-search);
   width: 100%;
   height: 60px;
 }
@@ -25,7 +25,7 @@
     display: flex;
     padding: 20px;
     justify-content: space-between;
-    background: var(--bg-action-above-content);
+    background: var(--bg-content);
 
     .btn-shuffle-wrapper {
       width: 50%;
@@ -33,8 +33,8 @@
       align-items: center;
 
       .btn-shuffle {
-        color: var(--text-btn-shuffle);
-        background-color: var(--bg-btn-shuffle);
+        color: var(--text-btn);
+        background-color: var(--bg-btn);
         margin-left: 15px;
         width: 70%;
 
@@ -57,8 +57,8 @@
       }
 
       .select-input-filter {
-        color: var(--text-select-input-filter);
-        background-color: var(--bg-select-input);
+        color: var(--text-select-menu);
+        background-color: var(--bg-select-menu);
         width: 70%;
         margin-right: 15px;
       }
@@ -74,7 +74,7 @@
 
   .list-poke {
     width: 70%;
-    background-color: var(--bg-list-poke);
+    background-color: var(--bg-content);
     display: flex;
     flex-wrap: wrap;
     padding: 20px;
@@ -96,14 +96,14 @@
 
   .action-under-content {
     width: 70%;
-    background-color: var(--bg-action-under-content);
+    background-color: var(--bg-content);
     padding: 20px;
     display: flex;
     justify-content: center;
 
     .btn-load {
-      color: var(--text-btn-load);
-      background-color: var(--bg-btn-shuffle);
+      color: var(--text-btn);
+      background-color: var(--bg-btn);
     }
   }
 
@@ -242,7 +242,6 @@
       .action-under-content {
         .btn-load {
           width: 100%;
-          font-size: 0.7rem;
         }
       }
     }
