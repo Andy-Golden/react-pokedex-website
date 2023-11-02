@@ -88,7 +88,7 @@ const useHomePagePrepareHook = (): HomePagePrepareHook => {
         setPokemons(highestPokemons);
         break;
       }
-      case SortChoices.ATOZ: {
+      case SortChoices.A_TO_Z: {
         const aToZPokemons = clonedPokemons.sort((poke1, poke2) => {
           if (poke1.name < poke2.name) {
             return -1;
@@ -103,7 +103,7 @@ const useHomePagePrepareHook = (): HomePagePrepareHook => {
         setPokemons(aToZPokemons);
         break;
       }
-      case SortChoices.ZTOA: {
+      case SortChoices.Z_TO_A: {
         const aToZPokemons = clonedPokemons.sort((poke1, poke2) => {
           if (poke1.name < poke2.name) {
             return 1;
