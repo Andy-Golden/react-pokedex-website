@@ -1,7 +1,7 @@
 import React from "react";
 import { ErrorMessage } from "@hookform/error-message";
 
-import { AuthContainer, Button, FormControl, TextInput } from "@components";
+import { Button, FormControl, TextInput } from "@components";
 
 import { useLoginPagePrepareHook } from "./helper";
 
@@ -12,7 +12,7 @@ const LoginPage = (): JSX.Element => {
     useLoginPagePrepareHook();
 
   return (
-    <AuthContainer>
+    <div className="auth-container">
       {/* eslint-disable-next-line @typescript-eslint/no-misused-promises */}
       <FormControl onSubmit={handleSubmit(onSubmit)}>
         <TextInput
@@ -56,7 +56,7 @@ const LoginPage = (): JSX.Element => {
           Not registered? <span>Create an account</span>
         </p>
       </FormControl>
-    </AuthContainer>
+    </div>
   );
 };
 
