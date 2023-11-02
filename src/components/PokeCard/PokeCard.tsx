@@ -2,7 +2,7 @@ import React from "react";
 
 import { generatePokeId } from "@utils";
 
-import { type PokeCardProps } from "./interfaces/pokeCardProps.interface";
+import { type PokeCardProps } from "./interfaces";
 
 import "./styles.scss";
 
