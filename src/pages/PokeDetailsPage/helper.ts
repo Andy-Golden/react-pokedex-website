@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
+import { useErrorBoundary } from "react-error-boundary";
 import { useParams } from "react-router-dom";
+import type { PokeDetail } from "@interfaces";
 import { getPokeDetails } from "apis/pokemon.api";
-import type { PokeDetail } from "interfaces";
 
 import type { PokeDetailPagePrepareHook } from "./interfaces";
 
@@ -18,6 +19,8 @@ const usePokeDetailPagePrepareHook = (): PokeDetailPagePrepareHook => {
 
   const { id } = useParams();
 
+  const { showBoundary } = useErrorBoundary();
+
   useEffect(() => {
     void getPoke();
   }, []);
@@ -29,7 +32,7 @@ const usePokeDetailPagePrepareHook = (): PokeDetailPagePrepareHook => {
       const data = await getPokeDetails(url);
       setPokeDetails(data);
     } catch (err) {
-      console.log("🚀 ~ file: helper.ts:33 ~ getPoke ~ err:", err);
+      showBoundary(err);
     }
   };
 

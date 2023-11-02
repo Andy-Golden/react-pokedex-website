@@ -3,8 +3,9 @@ import { useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { useDispatch, useSelector } from "react-redux";
 import type { RootState } from "@store";
+import { switchLang, switchTheme } from "store/slices";
 
-import { changeLang, changeTheme } from "@actions";
+import { LangEnum, ThemeEnum } from "@enums";
 
 import type { ThemeLanguageLayoutPrepareHook } from "./interfaces";
 
@@ -19,17 +20,22 @@ const useThemeLanguageLayoutPrepareHook =
 
     useEffect(() => {
       const theme = localStorage.getItem("theme");
-      dispatch(changeTheme(theme ?? "dark"));
-      document.documentElement.setAttribute("data-theme", theme ?? "dark");
+      dispatch(switchTheme(theme ?? ThemeEnum.dark));
+      document.documentElement.setAttribute(
+        "data-theme",
+        theme ?? ThemeEnum.dark,
+      );
 
       const lang = localStorage.getItem("i18nextLng");
-      dispatch(changeLang(lang ?? "en"));
+      dispatch(switchLang(lang ?? LangEnum.en));
     }, []);
 
     const handleSwitchTheme = (): void => {
       const newTheme =
-        localStorage.getItem("theme") === "dark" ? "light" : "dark";
-      dispatch(changeTheme(newTheme));
+        localStorage.getItem("theme") === ThemeEnum.dark
+          ? ThemeEnum.light
+          : ThemeEnum.dark;
+      dispatch(switchTheme(newTheme));
       document.documentElement.setAttribute("data-theme", newTheme);
       localStorage.setItem("theme", newTheme);
     };
@@ -39,7 +45,7 @@ const useThemeLanguageLayoutPrepareHook =
     ): void => {
       void i18n.changeLanguage(e.target.value);
 
-      dispatch(changeLang(e.target.value));
+      dispatch(switchLang(e.target.value));
     };
 
     return {

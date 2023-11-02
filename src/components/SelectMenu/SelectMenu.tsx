@@ -1,7 +1,7 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
 
-import { type SelectBoxProps } from "./interfaces";
+import type { SelectMenuProps } from "./interfaces";
 import { MenuItem } from "./MenuItem";
 import Image from "./pokeball_white.png";
 import { Select } from "./Select";
@@ -15,9 +15,8 @@ const SelectMenu = ({
   options,
   background,
   onChange,
-}: SelectBoxProps): JSX.Element => {
+}: SelectMenuProps): JSX.Element => {
   const { t } = useTranslation();
-
   return (
     <div
       className={`select-menu ${className}`}
