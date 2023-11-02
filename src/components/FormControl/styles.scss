@@ -1,25 +1,14 @@
-:root {
-  --bg-form: #ffff;
-  --shadow1: #faf9f933;
-  --shadow2: #d5c8c83d;
-}
-
-:root[data-theme="light"] {
-  --shadow1: #00000033;
-  --shadow2: #0000003d;
-}
-
 .form-control {
   position: relative;
   z-index: 1;
-  background: var(--bg-form);
+  background: var(--bg-white1);
   max-width: 360px;
   width: 100%;
   margin: 0 auto 100px;
   padding: 45px;
   text-align: center;
   box-shadow:
-    0 0 20px 0 var(--shadow1),
-    0 5px 5px 0 var(--shadow2);
+    0 0 20px 0 var(--bg-black2),
+    0 5px 5px 0 var(--bg-black3);
   border-radius: 5px;
 }

@@ -1,8 +1,11 @@
 import type React from "react";
 import { useEffect, useState } from "react";
+import { useErrorBoundary } from "react-error-boundary";
 import type { PokeDetail } from "@interfaces";
-import { getListPokeDetails } from "apis/pokemon.api";
-import { getRandomInt } from "utils";
+
+import { getListPokeDetails } from "@apis";
+import { SortChoicesEnum } from "@enums";
+import { getRandomInt } from "@utils";
 
 import { NUMBERS_OF_POKE } from "./constants";
 import type { HomePagePrepareHook } from "./interfaces";
@@ -10,6 +13,7 @@ import type { HomePagePrepareHook } from "./interfaces";
 const useHomePagePrepareHook = (): HomePagePrepareHook => {
   const [pokemons, setPokemons] = useState<PokeDetail[]>([]);
   const [isLoadMore, setIsLoadMore] = useState(false);
+  const { showBoundary } = useErrorBoundary();
 
   useEffect(() => {
     void getPokemons();
@@ -22,7 +26,7 @@ const useHomePagePrepareHook = (): HomePagePrepareHook => {
       const newPokemons = [...pokemons, ...data];
       setPokemons(newPokemons);
     } catch (error) {
-      console.log(error);
+      showBoundary(error);
     }
   };
 
@@ -32,7 +36,7 @@ const useHomePagePrepareHook = (): HomePagePrepareHook => {
       const data = await getListPokeDetails(NUMBERS_OF_POKE, newOffset);
       setPokemons(data);
     } catch (error) {
-      console.log(error);
+      showBoundary(error);
     }
   };
 
@@ -51,7 +55,7 @@ const useHomePagePrepareHook = (): HomePagePrepareHook => {
     const clonedPokemons = [...pokemons];
 
     switch (e.target.value) {
-      case "homePage.sortBy.lowestNum": {
+      case SortChoicesEnum.lowest: {
         const lowestPokemons = clonedPokemons.sort((poke1, poke2) => {
           if (poke1.id < poke2.id) {
             return -1;
@@ -66,7 +70,7 @@ const useHomePagePrepareHook = (): HomePagePrepareHook => {
         setPokemons(lowestPokemons);
         break;
       }
-      case "homePage.sortBy.highestNum": {
+      case SortChoicesEnum.highest: {
         const highestPokemons = clonedPokemons.sort((poke1, poke2) => {
           if (poke1.id < poke2.id) {
             return 1;
@@ -81,7 +85,7 @@ const useHomePagePrepareHook = (): HomePagePrepareHook => {
         setPokemons(highestPokemons);
         break;
       }
-      case "homePage.sortBy.aToZ": {
+      case SortChoicesEnum.aToZ: {
         const aToZPokemons = clonedPokemons.sort((poke1, poke2) => {
           if (poke1.name < poke2.name) {
             return -1;
@@ -96,7 +100,7 @@ const useHomePagePrepareHook = (): HomePagePrepareHook => {
         setPokemons(aToZPokemons);
         break;
       }
-      case "homePage.sortBy.zToA": {
+      case SortChoicesEnum.ztoA: {
         const aToZPokemons = clonedPokemons.sort((poke1, poke2) => {
           if (poke1.name < poke2.name) {
             return 1;

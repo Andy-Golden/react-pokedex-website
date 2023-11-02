@@ -1,16 +1,27 @@
 import React from "react";
 import { createBrowserRouter } from "react-router-dom";
 
+import { ErrorBoundaryLayout, ThemeLanguageLayout } from "@layouts";
 import { HomePage, LoginPage } from "@pages";
 
 const router = createBrowserRouter([
   {
-    path: "/",
-    element: <HomePage />,
-  },
-  {
-    path: "/login",
-    element: <LoginPage />,
+    element: <ErrorBoundaryLayout />,
+    children: [
+      {
+        element: <ThemeLanguageLayout />,
+        children: [
+          {
+            path: "/",
+            element: <HomePage />,
+          },
+          {
+            path: "/login",
+            element: <LoginPage />,
+          },
+        ],
+      },
+    ],
   },
 ]);
 

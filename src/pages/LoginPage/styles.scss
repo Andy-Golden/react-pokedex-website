@@ -1,68 +1,49 @@
-:root[data-theme="dark"] {
-  --bg-form-input: #f2f2f2;
-  --bg-button: #4caf50;
-  --bg-button-hover: #43a047;
-
-  --text-button: #ffff;
-  --text-span: #4caf50;
-  --text-message: #b3b3b3;
-}
-
-:root[data-theme="light"] {
-  --bg-form-input: #f2f2f2;
-  --bg-button: #4caf50;
-  --bg-button-hover: #43a047;
-
-  --text-button: #ffff;
-  --text-span: #4caf50;
-  --text-message: #b3b3b3;
-}
-
 .form-control {
+  background-color: var(--bg-form);
   p {
     margin: 0 0 15px;
     padding: 0;
   }
 
   input {
-    font-family: "Roboto", sans-serif;
+    font-family: var(--font-family2);
     outline: 0;
-    background: var(--bg-form-input);
+    background: var(--bg-input);
     width: 100%;
     border: 0;
     margin-bottom: 15px;
     padding: 15px;
     box-sizing: border-box;
-    font-size: 14px;
+    font-size: 0.9rem;
   }
 
   button {
-    font-family: "Roboto", sans-serif;
+    font-family: var(--font-family2);
     text-transform: uppercase;
     outline: 0;
-    background: var(--bg-button);
+    background: var(--bg-green1);
     width: 100%;
     border: 0;
     padding: 15px;
-    color: var(--text-button);
-    font-size: 14px;
+    color: var(--text-white);
+    font-size: 1rem;
     -webkit-transition: all 0.3 ease;
     transition: all 0.3 ease;
     cursor: pointer;
 
-    &:active,
-    &:hover,
-    &:focus {
-      background: var(--bg-button-hover);
+    button:hover,
+    button:active,
+    button:focus {
+      background: var(--bg-green2);
     }
-  }
 
-  .message {
-    margin: 15px 0 0;
-    color: var(--text-message);
-    font-size: 12px;
-    span {
-      color: var(--text-span);
+    .message {
+      margin: 15px 0 0;
+      color: var(--text-green);
+      font-size: 0.8rem;
+      span {
+        color: var(--text-gray);
+      }
     }
   }
 }
