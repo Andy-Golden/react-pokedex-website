@@ -32,9 +32,12 @@ const useHomePagePrepareHook = (): HomePagePrepareHook => {
 
   const getRandomPokemons = async (): Promise<void> => {
     try {
+      setIsLoading(true);
+      setPokemons([]);
       const newOffset = getRandomInt(20, 120);
       const data = await getListPokeDetails(NUMBERS_OF_POKE, newOffset);
       setPokemons(data);
+      setIsLoading(false);
     } catch (error) {
       console.log(error);
     }
