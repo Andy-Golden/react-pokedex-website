@@ -2,6 +2,7 @@ import React from "react";
 import { Outlet } from "react-router-dom";
 
 import { SelectMenu, ToggleButton } from "@components";
+import { ThemeEnum } from "@enums";
 
 import { languageOptions } from "./constants";
 import { useThemeLanguageLayoutPrepareHook } from "./helper";
@@ -18,7 +19,7 @@ function ThemeLanguageLayout(): JSX.Element {
         <ToggleButton
           className="toggle"
           onChange={onSwitchTheme}
-          checked={theme === "light"}
+          checked={theme === ThemeEnum.light}
         />
         <SelectMenu
           defaultValue={lang}
