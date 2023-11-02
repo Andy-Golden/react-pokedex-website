@@ -10,7 +10,7 @@ void i18n
   .use(LanguageDetector)
   .use(initReactI18next)
   .init({
-    fallbackLng: "en",
+    fallbackLng: LangEnum.en,
     lng: localStorage.getItem("i18nextLng") ?? LangEnum.en,
     debug: true,
 
