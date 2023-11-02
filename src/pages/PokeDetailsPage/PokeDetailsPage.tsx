@@ -17,8 +17,6 @@ const PokeDetailPage = (): JSX.Element => {
   const { t } = useTranslation();
   const { pokeDetails } = usePokeDetailPagePrepareHook();
 
-  console.log(pokeDetails);
-
   return (
     <div className="container">
       <section className="header">
@@ -211,9 +209,14 @@ const PokeDetailPage = (): JSX.Element => {
                 </li>
                 <li>
                   <p>Abilities</p>
-                  {/* {pokeDetails.abilities.map((item) => (
-                    <p key={item.slot}>{item.ability.name}</p>
-                  ))} */}
+                  {pokeDetails.abilities.map((item) => (
+                    <p
+                      key={item.slot}
+                      className={`${item.isHidden ? "ability--hidden" : ""}`}
+                    >
+                      {item.ability.name}
+                    </p>
+                  ))}
                 </li>
               </ul>
             </div>

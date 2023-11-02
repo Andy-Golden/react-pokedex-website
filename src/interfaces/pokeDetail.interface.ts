@@ -23,6 +23,29 @@ export interface Ability {
   isHidden: boolean;
 }
 
+export interface AbilityResponse {
+  slot: number;
+  ability: AbilityApi;
+  is_hidden: boolean;
+}
+
+export interface StatApi {
+  name: string;
+  url: string;
+}
+
+export interface Stat {
+  baseStat: number;
+  effort: number;
+  stat: StatApi;
+}
+
+export interface StatResponse {
+  base_stat: number;
+  effort: number;
+  stat: StatApi;
+}
+
 export interface PokeDetail {
   id: number;
   name: string;
@@ -31,4 +54,5 @@ export interface PokeDetail {
   sprites: Sprites;
   abilities: Ability[];
   types: PokeType[];
+  stats: Stat[];
 }

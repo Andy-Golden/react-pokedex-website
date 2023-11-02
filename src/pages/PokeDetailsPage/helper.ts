@@ -13,6 +13,7 @@ const usePokeDetailPagePrepareHook = (): PokeDetailPagePrepareHook => {
     height: 0,
     weight: 0,
     sprites: { frontDefault: "" },
+    stats: [],
     abilities: [],
     types: [],
   });
