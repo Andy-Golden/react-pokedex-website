@@ -1,14 +1,6 @@
-:root[data-theme="dark"] {
-  --bg-app-bar: #4f4e4e;
-}
-
-:root[data-theme="light"] {
-  --bg-app-bar: #4f4e4e;
-}
-
 .app-bar {
   width: 100%;
-  background: var(--bg-app-bar);
+  background: var(--bg-black5);
   position: fixed;
   display: flex;
   top: 0;
