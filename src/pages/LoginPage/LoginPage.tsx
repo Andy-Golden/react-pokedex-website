@@ -29,9 +29,7 @@ const LoginPage = (): JSX.Element => {
         <ErrorMessage
           errors={errors}
           name="email"
-          render={({ message }) => (
-            <p style={{ width: "100%", color: "red" }}>{message}</p>
-          )}
+          render={({ message }) => <p className="error-message">{message}</p>}
         />
         <TextInput
           type="password"
@@ -47,9 +45,7 @@ const LoginPage = (): JSX.Element => {
         <ErrorMessage
           errors={errors}
           name="password"
-          render={({ message }) => (
-            <p style={{ width: "100%", color: "red" }}>{message}</p>
-          )}
+          render={({ message }) => <p className="error-message">{message}</p>}
         />
         <Button type="submit">login</Button>
         <p className="message">

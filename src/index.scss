@@ -7,24 +7,25 @@
   --bg-form: #fff;
   --bg-input: #f2f2f2;
 
-  --bg-white1: #fff;
-  --bg-white2: #f2f2f2;
-  --bg-white3: #d7cfcf;
-  --bg-blue1: #30a7d7;
-  --bg-black1: #313131;
-  --bg-black2: #faf9f933;
-  --bg-black3: #d5c8c83d;
-  --bg-black4: #0a0a0a;
-  --bg-green1: #4caf50;
-  --bg-green2: #43a047;
-  --bg-green3: #7fffd4;
+  --bg-white-1: #fff;
+  --bg-white-2: #f2f2f2;
+  --bg-white-3: #d7cfcf;
+  --bg-blue-1: #30a7d7;
+  --bg-black-1: #313131;
+  --bg-black-2: #faf9f933;
+  --bg-black-3: #d5c8c83d;
+  --bg-black-4: #0a0a0a;
+  --bg-green-1: #4caf50;
+  --bg-green-2: #43a047;
+  --bg-green-3: #7fffd4;
 
   --text-gray: #a4a4a4;
   --text-white: #fff;
   --text-green: #4caf50;
+  --text-red: #ff0000;
 
-  --font-family1: "Flexo-Regular", arial, sans-serif;
-  --font-family2: "Roboto", sans-serif;
+  --font-family-1: "Flexo-Regular", arial, sans-serif;
+  --font-family-2: "Roboto", sans-serif;
 }
 
 :root[data-theme="light"] {
@@ -37,29 +38,30 @@
   --bg-form: #252424;
   --bg-input: #fff;
 
-  --bg-white1: #fff;
-  --bg-white2: #f2f2f2;
-  --bg-blue1: #30a7d7;
-  --bg-black1: #313131;
-  --bg-black2: #faf9f933;
-  --bg-black3: #d5c8c83d;
-  --bg-green1: #4caf50;
-  --bg-green2: #43a047;
-  --bg-green3: #7fffd4;
+  --bg-white-1: #fff;
+  --bg-white-2: #f2f2f2;
+  --bg-blue-1: #30a7d7;
+  --bg-black-1: #313131;
+  --bg-black-2: #faf9f933;
+  --bg-black-3: #d5c8c83d;
+  --bg-green-1: #4caf50;
+  --bg-green-2: #43a047;
+  --bg-green-3: #7fffd4;
 
   --text-gray: #a4a4a4;
   --text-white: #fff;
   --text-green: #4caf50;
+  --text-red: #ff0000;
 
-  --font-family1: "Flexo-Regular", arial, sans-serif;
-  --font-family2: "Roboto", sans-serif;
+  --font-family-1: "Flexo-Regular", arial, sans-serif;
+  --font-family-2: "Roboto", sans-serif;
 }
 
 body {
   margin: 0;
   padding: 0;
   background: var(--bg-color-body) var(--url-bg-color-body);
-  font-family: var(--font-family1);
+  font-family: var(--font-family-1);
 }
 
 #root {
@@ -86,4 +88,9 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.error-message {
+  width: 100%;
+  color: var(--text-red);
 }
