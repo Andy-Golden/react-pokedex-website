@@ -4,8 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import type { User } from "@interfaces";
 import type { RootState } from "@store";
-
-import { createUser } from "@slices";
+import { createUser } from "store/slices";
 
 import type { ILoginFormInput, LoginPagePrepareHook } from "./interfaces";
 

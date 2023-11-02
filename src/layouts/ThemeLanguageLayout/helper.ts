@@ -1,7 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
 import type { RootState } from "@store";
-
-import { switchTheme } from "@slices";
+import { switchTheme } from "store/slices";
 
 import type { ThemeLanguageLayoutPrepareHook } from "./interfaces";
 
