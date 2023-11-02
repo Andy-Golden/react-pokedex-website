@@ -12,6 +12,7 @@ import type { HomePagePrepareHook } from "./interfaces";
 const useHomePagePrepareHook = (): HomePagePrepareHook => {
   const [pokemons, setPokemons] = useState<PokeDetail[]>([]);
   const [isLoadMore, setIsLoadMore] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     void getPokemons();
@@ -23,6 +24,7 @@ const useHomePagePrepareHook = (): HomePagePrepareHook => {
       const data = await getListPokeDetails(NUMBERS_OF_POKE, offset);
       const newPokemons = [...pokemons, ...data];
       setPokemons(newPokemons);
+      setIsLoading(false);
     } catch (error) {
       console.log(error);
     }
@@ -121,6 +123,7 @@ const useHomePagePrepareHook = (): HomePagePrepareHook => {
 
   return {
     pokemons,
+    isLoading,
     onLoadMore: handleLoadMore,
     onSurpriseMe: handleSurpriseMe,
     onSortByChange: handleSortByChange,
