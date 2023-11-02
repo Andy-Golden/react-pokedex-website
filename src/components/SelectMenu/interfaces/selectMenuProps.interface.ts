@@ -1,6 +1,6 @@
 import type React from "react";
 
-interface SelectBoxProps {
+export interface SelectMenuProps {
   options: string[];
   defaultValue?: string | number;
   className?: string;
@@ -8,5 +8,3 @@ interface SelectBoxProps {
   textColor?: string;
   onChange?: (e: React.ChangeEvent<HTMLSelectElement>) => void;
 }
-
-export { type SelectBoxProps };
