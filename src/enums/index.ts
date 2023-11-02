@@ -1,2 +1,2 @@
-export { SortChoicesEnum } from "./sortChoicesEnum";
-export { ThemeEnum } from "./themeEnum";
+export { SortChoices } from "./sortChoices";
+export { Theme } from "./theme";

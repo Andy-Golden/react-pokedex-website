@@ -1,9 +1,9 @@
 import type { ThemeState } from "@interfaces";
 import { createSlice } from "@reduxjs/toolkit";
 
-import { ThemeEnum } from "@enums";
+import { Theme } from "@enums";
 
-const initialState: ThemeState = { theme: ThemeEnum.dark };
+const initialState: ThemeState = { theme: Theme.DARK };
 
 const themeSlice = createSlice({
   name: "theme",

@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import type { PokeDetail } from "@interfaces";
 
 import { getListPokeDetails } from "@apis";
-import { SortChoicesEnum } from "@enums";
+import { SortChoices } from "@enums";
 import { getRandomInt } from "@utils";
 
 import { NUMBERS_OF_POKE } from "./constants";
@@ -55,7 +55,7 @@ const useHomePagePrepareHook = (): HomePagePrepareHook => {
     const clonedPokemons = [...pokemons];
 
     switch (e.target.value) {
-      case SortChoicesEnum.lowest: {
+      case SortChoices.LOWEST: {
         const lowestPokemons = clonedPokemons.sort((poke1, poke2) => {
           if (poke1.id < poke2.id) {
             return -1;
@@ -70,7 +70,7 @@ const useHomePagePrepareHook = (): HomePagePrepareHook => {
         setPokemons(lowestPokemons);
         break;
       }
-      case SortChoicesEnum.highest: {
+      case SortChoices.HIGHEST: {
         const highestPokemons = clonedPokemons.sort((poke1, poke2) => {
           if (poke1.id < poke2.id) {
             return 1;
@@ -85,7 +85,7 @@ const useHomePagePrepareHook = (): HomePagePrepareHook => {
         setPokemons(highestPokemons);
         break;
       }
-      case SortChoicesEnum.aToZ: {
+      case SortChoices.ATOZ: {
         const aToZPokemons = clonedPokemons.sort((poke1, poke2) => {
           if (poke1.name < poke2.name) {
             return -1;
@@ -100,7 +100,7 @@ const useHomePagePrepareHook = (): HomePagePrepareHook => {
         setPokemons(aToZPokemons);
         break;
       }
-      case SortChoicesEnum.ztoA: {
+      case SortChoices.ZTOA: {
         const aToZPokemons = clonedPokemons.sort((poke1, poke2) => {
           if (poke1.name < poke2.name) {
             return 1;
