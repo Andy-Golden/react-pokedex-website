@@ -11,7 +11,7 @@ import type { ThemeLanguageLayoutPrepareHook } from "./interfaces";
 
 const useThemeLanguageLayoutPrepareHook =
   (): ThemeLanguageLayoutPrepareHook => {
-    const { i18n } = useTranslation();
+    const { i18n, t } = useTranslation();
 
     const theme = useSelector((state: RootState) => state.themeReducer.theme);
     const lang = useSelector((state: RootState) => state.langReducer.lang);
@@ -49,6 +49,7 @@ const useThemeLanguageLayoutPrepareHook =
     };
 
     return {
+      t,
       user,
       theme,
       lang,

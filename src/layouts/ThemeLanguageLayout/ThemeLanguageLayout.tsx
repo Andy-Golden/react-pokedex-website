@@ -10,7 +10,7 @@ import { useThemeLanguageLayoutPrepareHook } from "./helper";
 import "./styles.scss";
 
 function ThemeLanguageLayout(): JSX.Element {
-  const { user, theme, lang, onLogout, onSwitchTheme, onSwitchLang } =
+  const { t, user, theme, lang, onLogout, onSwitchTheme, onSwitchLang } =
     useThemeLanguageLayoutPrepareHook();
 
   return (
@@ -18,29 +18,29 @@ function ThemeLanguageLayout(): JSX.Element {
       <AppBar>
         <ul className="left">
           <li>
-            <Link to="/">Home</Link>
+            <Link to="/">{t("themeLanguageLayout.home")}</Link>
           </li>
           <li>
-            <Link to="/">News</Link>
+            <Link to="/">{t("themeLanguageLayout.news")}</Link>
           </li>
         </ul>
         <ul className="right">
           {user.email !== null ? (
             <li>
-              <span onClick={onLogout}>Logout</span>
+              <span onClick={onLogout}>{t("themeLanguageLayout.logout")}</span>
             </li>
           ) : (
             <>
               {" "}
               <li>
-                <Link to="/login">Login</Link>
+                <Link to="/login">{t("themeLanguageLayout.login")}</Link>
               </li>
               <li>
-                <Link to="/login">Register</Link>
+                <Link to="/login">{t("themeLanguageLayout.register")}</Link>
               </li>
             </>
           )}
-          <Dropdown>
+          <Dropdown label={t("themeLanguageLayout.setting")}>
             <ToggleButton
               className="toggle"
               onChange={onSwitchTheme}

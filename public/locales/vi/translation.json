@@ -42,5 +42,13 @@
       "invalidEmail": "Xin hãy nhập email hợp lệ",
       "invalidLengthPassword": "Độ dài mật khẩu phải lớn hơn 5"
     }
+  },
+  "themeLanguageLayout": {
+    "home": "Trang chủ",
+    "news": "Tin tức",
+    "login": "Đăng nhập",
+    "logout": "Đăng xuất",
+    "register": "Đăng ký",
+    "setting": "Cài đặt"
   }
 }
