@@ -1,7 +1,8 @@
 import React from "react";
 
-import { type PokeCardProps } from "./interfaces/pokeCardProps.interface";
-import { generateStringPokeId } from "./utils";
+import { generatePokeId } from "@utils";
+
+import { type PokeCardProps } from "./interfaces";
 
 import "./styles.scss";
 
@@ -22,7 +23,7 @@ const PokeCard = ({
       <div className="poke-info">
         <p className="id">
           <span>#</span>
-          {generateStringPokeId(id)}
+          {generatePokeId(id)}
         </p>
         <p className="name">{name}</p>
         {children}

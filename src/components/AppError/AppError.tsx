@@ -3,7 +3,10 @@ import type { FallbackProps } from "react-error-boundary";
 
 import "./styles.scss";
 
-const Error = ({ error, resetErrorBoundary }: FallbackProps): JSX.Element => {
+const AppError = ({
+  error,
+  resetErrorBoundary,
+}: FallbackProps): JSX.Element => {
   return (
     <div className="error">
       <p>{error.message}</p>
@@ -14,4 +17,4 @@ const Error = ({ error, resetErrorBoundary }: FallbackProps): JSX.Element => {
   );
 };
 
-export default Error;
+export default AppError;

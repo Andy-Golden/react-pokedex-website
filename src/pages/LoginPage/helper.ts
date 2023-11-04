@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { useForm } from "react-hook-form";
+import { useTranslation } from "react-i18next";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import type { User } from "@interfaces";
@@ -11,6 +12,7 @@ import type { ILoginFormInput, LoginPagePrepareHook } from "./interfaces";
 const useLoginPagePrepareHook = (): LoginPagePrepareHook => {
   const user = useSelector((state: RootState) => state.userReducer.user);
   const navigate = useNavigate();
+  const { t } = useTranslation();
 
   useEffect(() => {
     if (user.email !== null && user.password !== null) {
@@ -31,7 +33,7 @@ const useLoginPagePrepareHook = (): LoginPagePrepareHook => {
     dispatch(createUser(loginUser));
   };
 
-  return { errors, register, handleSubmit, onSubmit };
+  return { t, errors, register, handleSubmit, onSubmit };
 };
 
 export { useLoginPagePrepareHook };
