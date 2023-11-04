@@ -22,8 +22,8 @@ const SelectMenu = ({
       <img src={Image} alt="poke ball"></img>
       <Select onChange={onChange}>
         {options.map((item) => (
-          <MenuItem key={item} value={item}>
-            {item}
+          <MenuItem key={item.key} value={item.key}>
+            {item.label}
           </MenuItem>
         ))}
       </Select>

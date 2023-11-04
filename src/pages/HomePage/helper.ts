@@ -12,35 +12,36 @@ import type { HomePagePrepareHook } from "./interfaces";
 const useHomePagePrepareHook = (): HomePagePrepareHook => {
   const [pokemons, setPokemons] = useState<PokeDetail[]>([]);
   const [isLoadMore, setIsLoadMore] = useState(false);
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     void getPokemons();
   }, [isLoadMore]);
 
   const getPokemons = async (): Promise<void> => {
+    setIsLoading(true);
     try {
       const offset = pokemons[pokemons.length - 1]?.id ?? 0;
       const data = await getListPokeDetails(NUMBERS_OF_POKE, offset);
       const newPokemons = [...pokemons, ...data];
       setPokemons(newPokemons);
-      setIsLoading(false);
     } catch (error) {
       console.log(error);
     }
+    setIsLoading(false);
   };
 
   const getRandomPokemons = async (): Promise<void> => {
+    setIsLoading(true);
     try {
-      setIsLoading(true);
       setPokemons([]);
       const newOffset = getRandomInt(20, 120);
       const data = await getListPokeDetails(NUMBERS_OF_POKE, newOffset);
       setPokemons(data);
-      setIsLoading(false);
     } catch (error) {
       console.log(error);
     }
+    setIsLoading(false);
   };
 
   const handleLoadMore = (): void => {

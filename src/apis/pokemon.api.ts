@@ -1,8 +1,6 @@
 import type { PokeData, PokeDetail, PokeDetailApi } from "@interfaces";
 import { instance } from "server/axios/instance";
 
-// https://pokeapi.co/api/v2/pokemon/?limit=25&offset=2
-
 const getPokemons = async (
   limit: number,
   offset: number,
@@ -21,7 +19,7 @@ const getPokeDetails = async (url: string): Promise<PokeDetail> => {
     id: pokemon.data.id,
     name: pokemon.data.name,
     sprites: { frontDefault: pokemon.data.sprites.front_default },
-    types: [...pokemon.data.types],
+    types: pokemon.data.types,
   };
 
   return poke;
