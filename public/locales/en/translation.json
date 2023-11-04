@@ -42,5 +42,13 @@
       "invalidEmail": "Please enter valid email",
       "invalidLengthPassword": "Password must have at least 5 characters"
     }
+  },
+  "themeLanguageLayout": {
+    "home": "Home",
+    "news": "News",
+    "login": "Login",
+    "logout": "Logout",
+    "register": "Register",
+    "setting": "Setting"
   }
 }

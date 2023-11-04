@@ -4,7 +4,7 @@ import type { DropdownProps } from "./interfaces";
 
 import "./styles.scss";
 
-const Dropdown = ({ children }: DropdownProps): JSX.Element => {
+const Dropdown = ({ label, children }: DropdownProps): JSX.Element => {
   const [isShow, setIsShow] = useState(false);
 
   const handleShow = (): void => {
@@ -14,7 +14,7 @@ const Dropdown = ({ children }: DropdownProps): JSX.Element => {
 
   return (
     <div className="dropdown" onClick={handleShow}>
-      Setting
+      {label}
       <i className="fa fa-caret-down"></i>
       <div
         className={`dropdown-content dropdown-content--${

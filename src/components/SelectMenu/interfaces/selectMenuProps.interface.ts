@@ -1,7 +1,9 @@
 import type React from "react";
 
+import type { Option } from ".";
+
 export interface SelectMenuProps {
-  options: string[];
+  options: Option[];
   defaultValue?: string | number;
   className?: string;
   background?: string;

@@ -1,3 +1,3 @@
-export { LangEnum } from "./langEnum";
-export { SortChoicesEnum } from "./sortChoicesEnum";
-export { ThemeEnum } from "./themeEnum";
+export { Lang } from "./lang";
+export { SortChoices } from "./sortChoices";
+export { Theme } from "./theme";

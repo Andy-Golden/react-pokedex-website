@@ -6,7 +6,7 @@
   }
 
   input {
-    font-family: var(--font-family2);
+    font-family: var(--font-family-2);
     outline: 0;
     background: var(--bg-input);
     width: 100%;
@@ -18,10 +18,10 @@
   }
 
   button {
-    font-family: var(--font-family2);
+    font-family: var(--font-family-2);
     text-transform: uppercase;
     outline: 0;
-    background: var(--bg-green1);
+    background: var(--bg-green-1);
     width: 100%;
     border: 0;
     padding: 15px;
@@ -34,7 +34,7 @@
     button:hover,
     button:active,
     button:focus {
-      background: var(--bg-green2);
+      background: var(--bg-green-2);
     }
   }
 

@@ -1,6 +1,6 @@
 const languageOptions = {
-  english: "en",
-  vietnam: "vi",
+  english: { key: "en", label: "en" },
+  vietnam: { key: "vi", label: "vi" },
 };
 
 export { languageOptions };

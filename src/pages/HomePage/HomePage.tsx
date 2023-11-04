@@ -1,5 +1,4 @@
 import React from "react";
-import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 
 import { Button, Loading, PokeCard, PokeType, SelectMenu } from "@components";
@@ -11,8 +10,7 @@ import { useHomePagePrepareHook } from "./helper";
 import "./styles.scss";
 
 const HomePage = (): JSX.Element => {
-  const { t } = useTranslation();
-  const { pokemons, onLoadMore, onSurpriseMe, onSortByChange } =
+  const { t, pokemons, isLoading, onLoadMore, onSurpriseMe, onSortByChange } =
     useHomePagePrepareHook();
 
   return (
@@ -42,7 +40,8 @@ const HomePage = (): JSX.Element => {
       </div>
       <div className="list-wrapper">
         <div className="list-poke">
-          {pokemons.length > 0 ? (
+          {isLoading && <Loading />}
+          {pokemons.length > 0 &&
             pokemons.map((poke) => (
               <Link key={poke.id} to={`/poke/${poke.id}`}>
                 <PokeCard
@@ -74,10 +73,7 @@ const HomePage = (): JSX.Element => {
                   </div>
                 </PokeCard>
               </Link>
-            ))
-          ) : (
-            <Loading />
-          )}
+            ))}
         </div>
       </div>
       <div className="action-under-wrapper">

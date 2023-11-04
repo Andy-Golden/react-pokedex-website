@@ -25,7 +25,7 @@
     display: flex;
     padding: 20px;
     justify-content: space-between;
-    background: var(--bg-white1);
+    background: var(--bg-white-1);
 
     .btn-shuffle-wrapper {
       width: 50%;
@@ -34,7 +34,7 @@
 
       .btn-shuffle {
         color: var(--text-white);
-        background-color: var(--bg-blue1);
+        background-color: var(--bg-blue-1);
         margin-left: 15px;
         width: 70%;
 
@@ -58,7 +58,7 @@
 
       .select-input-filter {
         color: var(--text-white);
-        background-color: var(--bg-black1);
+        background-color: var(--bg-black-1);
         width: 70%;
         margin-right: 15px;
       }
@@ -71,6 +71,10 @@
   background-color: transparent;
   display: flex;
   justify-content: center;
+
+  a {
+    all: unset;
+  }
 
   .list-poke {
     width: 70%;
@@ -103,7 +107,7 @@
 
     .btn-load {
       color: var(--text-white);
-      background-color: var(--bg-blue1);
+      background-color: var(--bg-blue-1);
     }
   }
 

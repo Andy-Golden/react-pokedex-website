@@ -2,7 +2,7 @@ import React from "react";
 import { Link, Outlet } from "react-router-dom";
 
 import { AppBar, Dropdown, SelectMenu, ToggleButton } from "@components";
-import { ThemeEnum } from "@enums";
+import { Theme } from "@enums";
 
 import { languageOptions } from "./constants";
 import { useThemeLanguageLayoutPrepareHook } from "./helper";
@@ -10,7 +10,7 @@ import { useThemeLanguageLayoutPrepareHook } from "./helper";
 import "./styles.scss";
 
 function ThemeLanguageLayout(): JSX.Element {
-  const { user, theme, lang, onLogout, onSwitchTheme, onSwitchLang } =
+  const { t, user, theme, lang, onLogout, onSwitchTheme, onSwitchLang } =
     useThemeLanguageLayoutPrepareHook();
 
   return (
@@ -18,33 +18,33 @@ function ThemeLanguageLayout(): JSX.Element {
       <AppBar>
         <ul className="left">
           <li>
-            <Link to="/">Home</Link>
+            <Link to="/">{t("themeLanguageLayout.home")}</Link>
           </li>
-          <li>Contact</li>
-          <li>About</li>
-          <li>New</li>
+          <li>
+            <Link to="/">{t("themeLanguageLayout.news")}</Link>
+          </li>
         </ul>
         <ul className="right">
           {user.email !== null ? (
             <li>
-              <span onClick={onLogout}>Logout</span>
+              <span onClick={onLogout}>{t("themeLanguageLayout.logout")}</span>
             </li>
           ) : (
             <>
               {" "}
               <li>
-                <Link to="/login">Login</Link>
+                <Link to="/login">{t("themeLanguageLayout.login")}</Link>
               </li>
               <li>
-                <Link to="/login">Register</Link>
+                <Link to="/login">{t("themeLanguageLayout.register")}</Link>
               </li>
             </>
           )}
-          <Dropdown>
+          <Dropdown label={t("themeLanguageLayout.setting")}>
             <ToggleButton
               className="toggle"
               onChange={onSwitchTheme}
-              checked={theme === ThemeEnum.light}
+              checked={theme === Theme.LIGHT}
             />
             <SelectMenu
               defaultValue={lang}

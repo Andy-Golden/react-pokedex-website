@@ -72,7 +72,7 @@ const getPokeDetails = async (url: string): Promise<PokeDetail> => {
       sprites: { frontDefault: pokemon.data.sprites.front_default },
       abilities,
       stats,
-      types: [...pokemon.data.types],
+      types: pokemon.data.types,
     };
 
     return poke;

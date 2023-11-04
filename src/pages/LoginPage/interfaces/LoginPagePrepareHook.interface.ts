@@ -8,7 +8,7 @@ import type { TFunction } from "i18next";
 import type { ILoginFormInput } from "./ILoginFormInput.interface";
 
 export interface LoginPagePrepareHook {
-  t: TFunction<"translation", undefined>;
+  t: TFunction<"Translation", undefined>;
   errors: FieldErrors<ILoginFormInput>;
   onSubmit: (data: ILoginFormInput) => void;
   register: UseFormRegister<ILoginFormInput>;
