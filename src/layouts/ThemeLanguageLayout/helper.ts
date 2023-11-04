@@ -2,7 +2,7 @@ import { useDispatch, useSelector } from "react-redux";
 import type { RootState } from "@store";
 import { switchTheme } from "store/slices";
 
-import { ThemeEnum } from "@enums";
+import { Theme } from "@enums";
 
 import type { ThemeLanguageLayoutPrepareHook } from "./interfaces";
 
@@ -13,8 +13,7 @@ const useThemeLanguageLayoutPrepareHook =
     const dispatch = useDispatch();
 
     const handleChange = (): void => {
-      const newTheme =
-        theme === ThemeEnum.dark ? ThemeEnum.light : ThemeEnum.dark;
+      const newTheme = theme === Theme.DARK ? Theme.LIGHT : Theme.DARK;
       dispatch(switchTheme(newTheme));
       document.documentElement.setAttribute("data-theme", newTheme);
     };

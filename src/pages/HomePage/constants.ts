@@ -3,10 +3,10 @@ import type { TypeColor } from "@interfaces";
 const NUMBERS_OF_POKE = 12;
 
 const SORT_BY_CHOICES = {
-  lowest: "Lowest number (First)",
-  highest: "Highest number (First)",
-  aToZ: "A-Z",
-  ztoA: "Z-A",
+  lowest: { key: "lowest", label: "Lowest number (First)" },
+  highest: { key: "highest", label: "Highest number (First)" },
+  aToZ: { key: "aToZ", label: "A-Z" },
+  ztoA: { key: "zToA", label: "Z-A" },
 };
 
 const typeColor: TypeColor = {
