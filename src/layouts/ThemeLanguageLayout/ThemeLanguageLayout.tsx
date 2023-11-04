@@ -2,7 +2,7 @@ import React from "react";
 import { Link, Outlet } from "react-router-dom";
 
 import { AppBar, Dropdown, SelectMenu, ToggleButton } from "@components";
-import { ThemeEnum } from "@enums";
+import { Theme } from "@enums";
 
 import { languageOptions } from "./constants";
 import { useThemeLanguageLayoutPrepareHook } from "./helper";
@@ -20,9 +20,9 @@ function ThemeLanguageLayout(): JSX.Element {
           <li>
             <Link to="/">Home</Link>
           </li>
-          <li>Contact</li>
-          <li>About</li>
-          <li>New</li>
+          <li>
+            <Link to="/">News</Link>
+          </li>
         </ul>
         <ul className="right">
           {user.email !== null ? (
@@ -44,7 +44,7 @@ function ThemeLanguageLayout(): JSX.Element {
             <ToggleButton
               className="toggle"
               onChange={onSwitchTheme}
-              checked={theme === ThemeEnum.light}
+              checked={theme === Theme.LIGHT}
             />
             <SelectMenu
               defaultValue={lang}

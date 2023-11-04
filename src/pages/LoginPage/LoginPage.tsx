@@ -1,5 +1,4 @@
 import React from "react";
-import { useTranslation } from "react-i18next";
 import { ErrorMessage } from "@hookform/error-message";
 
 import { Button, FormControl, TextInput } from "@components";
@@ -9,8 +8,7 @@ import { useLoginPagePrepareHook } from "./helper";
 import "./styles.scss";
 
 const LoginPage = (): JSX.Element => {
-  const { t } = useTranslation();
-  const { errors, onSubmit, register, handleSubmit } =
+  const { t, errors, onSubmit, register, handleSubmit } =
     useLoginPagePrepareHook();
 
   return (
@@ -31,9 +29,7 @@ const LoginPage = (): JSX.Element => {
         <ErrorMessage
           errors={errors}
           name="email"
-          render={({ message }) => (
-            <p style={{ width: "100%", color: "red" }}>{message}</p>
-          )}
+          render={({ message }) => <p className="error-message">{message}</p>}
         />
         <TextInput
           type="password"
@@ -49,9 +45,7 @@ const LoginPage = (): JSX.Element => {
         <ErrorMessage
           errors={errors}
           name="password"
-          render={({ message }) => (
-            <p style={{ width: "100%", color: "red" }}>{message}</p>
-          )}
+          render={({ message }) => <p className="error-message">{message}</p>}
         />
         <Button type="submit">{t("loginPage.label")}</Button>
         <p className="message">
