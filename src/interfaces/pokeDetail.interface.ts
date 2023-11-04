@@ -36,7 +36,7 @@ export interface StatApi {
 
 export interface Bar {
   slot: number;
-  isFill: boolean;
+  isFilled: boolean;
 }
 
 export interface Stat {

@@ -1,5 +1,5 @@
 import React from "react";
-import { typeColor, typeTextColor } from "pages/constants";
+import { TYPE_COLOR, TYPE_TEXT_COLOR } from "@constants";
 import {
   covertDecimetersToFeet,
   covertHectogramsToPounds,
@@ -56,7 +56,7 @@ const PokeDetailPage = (): JSX.Element => {
                         <li
                           key={bar.slot}
                           className={`meter ${
-                            bar.isFill ? "filled-meter" : ""
+                            bar.isFilled ? "filled-meter" : ""
                           }`}
                         ></li>
                       ))}
@@ -120,13 +120,13 @@ const PokeDetailPage = (): JSX.Element => {
                   className={"poke-type"}
                   key={item.slot}
                   background={
-                    typeColor[
-                      item.type.name.toUpperCase() as keyof typeof typeColor
+                    TYPE_COLOR[
+                      item.type.name.toUpperCase() as keyof typeof TYPE_COLOR
                     ]
                   }
                   textColor={
-                    typeTextColor[
-                      item.type.name.toUpperCase() as keyof typeof typeTextColor
+                    TYPE_TEXT_COLOR[
+                      item.type.name.toUpperCase() as keyof typeof TYPE_TEXT_COLOR
                     ]
                   }
                 >

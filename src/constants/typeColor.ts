@@ -1,15 +1,6 @@
 import type { TypeColor } from "@interfaces";
 
-const NUMBERS_OF_POKE = 12;
-
-const SORT_BY_CHOICES = {
-  lowest: { key: "lowest", label: "homePage.sortBy.lowestNum" },
-  highest: { key: "highest", label: "homePage.sortBy.highestNum" },
-  aToZ: { key: "aToZ", label: "homePage.sortBy.aToZ" },
-  ztoA: { key: "zToA", label: "homePage.sortBy.zToA" },
-};
-
-const typeColor: TypeColor = {
+const TYPE_COLOR: TypeColor = {
   BUG: "#729f3f",
   DRAGON: "linear-gradient(180deg, #53a4cf 50%, #f16e57 50%)",
   FAIRY: "#fdb9e9",
@@ -30,7 +21,7 @@ const typeColor: TypeColor = {
   WATER: "#4592c4",
 };
 
-const typeTextColor: TypeColor = {
+const TYPE_TEXT_COLOR: TypeColor = {
   BUG: "#ffff",
   DRAGON: "#ffff",
   FAIRY: "#0a0202",
@@ -51,4 +42,4 @@ const typeTextColor: TypeColor = {
   WATER: "#ffff",
 };
 
-export { NUMBERS_OF_POKE, SORT_BY_CHOICES, typeColor, typeTextColor };
+export { TYPE_COLOR, TYPE_TEXT_COLOR };

@@ -1,3 +1,4 @@
+import { MAX_BAR } from "@constants";
 import type {
   Ability,
   AbilityResponse,
@@ -49,17 +50,16 @@ const getPokeDetails = async (url: string): Promise<PokeDetail> => {
       const statGrade = calculateStat(item.base_stat);
       const bars: Bar[] = [];
 
-      for (let i = 0; i < 15; i++) {
-        bars[i] = { slot: i, isFill: false };
-      }
-
-      for (let i = 0; i < statGrade; i++) {
-        bars[15 - i - 1].isFill = true;
+      for (let i = MAX_BAR - 1; i >= 0; i--) {
+        bars[i] = { slot: i, isFilled: false };
+        if (MAX_BAR - i < statGrade) {
+          bars[i].isFilled = true;
+        }
       }
       return {
         baseStat: item.base_stat,
         effort: item.effort,
-        stat: { ...item.stat },
+        stat: { name: item.stat.name, url: item.stat.url },
         bars,
       };
     });

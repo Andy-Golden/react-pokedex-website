@@ -8,8 +8,7 @@ import { getListPokeDetails } from "@apis";
 import { SortChoices } from "@enums";
 import { getRandomInt } from "@utils";
 
-import { NUMBERS_OF_POKE } from "../constants";
-
+import { NUMBERS_OF_POKE } from "./constants";
 import type { HomePagePrepareHook } from "./interfaces";
 
 const useHomePagePrepareHook = (): HomePagePrepareHook => {

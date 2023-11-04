@@ -25,7 +25,8 @@
       "@layouts": ["./layouts/index"],
       "@store": ["./store/index"],
       "@apis": ["./apis/index"],
-      "@utils": ["./utils/index"]
+      "@utils": ["./utils/index"],
+      "@constants": ["./constants/index"]
     }
   },
   "include": ["src"]
