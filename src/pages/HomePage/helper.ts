@@ -60,7 +60,7 @@ const useHomePagePrepareHook = (): HomePagePrepareHook => {
 
     switch (e.target.value) {
       case SortChoices.LOWEST: {
-        const lowestPokemons = clonedPokemons.sort((poke1, poke2) => {
+        clonedPokemons.sort((poke1, poke2) => {
           if (poke1.id < poke2.id) {
             return -1;
           }
@@ -71,11 +71,10 @@ const useHomePagePrepareHook = (): HomePagePrepareHook => {
 
           return 0;
         });
-        setPokemons(lowestPokemons);
         break;
       }
       case SortChoices.HIGHEST: {
-        const highestPokemons = clonedPokemons.sort((poke1, poke2) => {
+        clonedPokemons.sort((poke1, poke2) => {
           if (poke1.id < poke2.id) {
             return 1;
           }
@@ -86,11 +85,10 @@ const useHomePagePrepareHook = (): HomePagePrepareHook => {
 
           return 0;
         });
-        setPokemons(highestPokemons);
         break;
       }
       case SortChoices.A_TO_Z: {
-        const aToZPokemons = clonedPokemons.sort((poke1, poke2) => {
+        clonedPokemons.sort((poke1, poke2) => {
           if (poke1.name < poke2.name) {
             return -1;
           }
@@ -101,11 +99,10 @@ const useHomePagePrepareHook = (): HomePagePrepareHook => {
 
           return 0;
         });
-        setPokemons(aToZPokemons);
         break;
       }
       case SortChoices.Z_TO_A: {
-        const aToZPokemons = clonedPokemons.sort((poke1, poke2) => {
+        clonedPokemons.sort((poke1, poke2) => {
           if (poke1.name < poke2.name) {
             return 1;
           }
@@ -116,13 +113,14 @@ const useHomePagePrepareHook = (): HomePagePrepareHook => {
 
           return 0;
         });
-        setPokemons(aToZPokemons);
         break;
       }
       default: {
         break;
       }
     }
+
+    setPokemons(clonedPokemons);
   };
 
   return {
