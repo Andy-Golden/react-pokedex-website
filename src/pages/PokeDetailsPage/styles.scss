@@ -15,6 +15,16 @@
     align-items: center;
     padding: 10px 0px;
     position: relative;
+
+    &::before {
+      content: " ";
+      background-color: #a4a4a4;
+      width: 35%;
+      height: 88%;
+      position: absolute;
+      left: 0;
+      top: 100%;
+    }
   }
 
   .forward {
@@ -27,6 +37,17 @@
     gap: 10px;
     align-items: center;
     padding: 10px 0px;
+    position: relative;
+
+    &::after {
+      content: " ";
+      background-color: #a4a4a4;
+      width: 35%;
+      height: 88%;
+      position: absolute;
+      right: 0;
+      top: 100%;
+    }
   }
 
   .poke-id {
@@ -35,6 +56,9 @@
 
   .poke-name {
     color: #616161;
+    &::first-letter {
+      text-transform: uppercase;
+    }
   }
 
   .arrow {
@@ -57,6 +81,7 @@
     display: flex;
     justify-content: center;
     gap: 10px;
+    position: relative;
 
     .name::first-letter {
       text-transform: uppercase;
@@ -64,6 +89,32 @@
 
     .id {
       color: #616161;
+    }
+
+    &::before {
+      content: " ";
+      background-image: url("../../../public/img/notch-white-xxl.png");
+      background-repeat: no-repeat;
+      background-position: 80px 0;
+      background-color: #a4a4a4;
+      width: 18%;
+      height: 90%;
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+
+    &::after {
+      content: " ";
+      background-image: url("../../../public/img/notch-white-xxl.png");
+      background-color: #a4a4a4;
+      background-position: -80px 0;
+      background-repeat: no-repeat;
+      width: 18%;
+      height: 90%;
+      position: absolute;
+      right: 0;
+      top: 0;
     }
   }
 
@@ -145,6 +196,34 @@
         width: 100%;
       }
 
+      .version {
+        display: flex;
+        align-items: center;
+
+        .poke-blue {
+          border-radius: 50%;
+          border: 4px solid #4687c9;
+          visibility: hidden;
+          margin-left: 5px;
+          padding: 0;
+        }
+
+        .poke-red {
+          border-radius: 50%;
+          border: 4px solid #c94646;
+          visibility: hidden;
+          padding: 0;
+        }
+
+        .active {
+          visibility: visible;
+        }
+
+        img {
+          visibility: visible;
+        }
+      }
+
       .info {
         width: 100%;
         border-radius: 10px;
@@ -191,6 +270,9 @@
             display: flex;
             gap: 17px;
             font-size: 1.3rem;
+            &::first-letter {
+              text-transform: uppercase;
+            }
           }
         }
       }

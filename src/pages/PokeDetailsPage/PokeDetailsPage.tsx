@@ -8,12 +8,22 @@ import {
 
 import { PokeType } from "@components";
 
+import pokeBlue from "../../assets/images/poke-blue.png";
+import pokeRed from "../../assets/images/poke-red.png";
+
 import { usePokeDetailPagePrepareHook } from "./helper";
 
 import "./styles.scss";
 
 const PokeDetailPage = (): JSX.Element => {
-  const { t, pokeDetails } = usePokeDetailPagePrepareHook();
+  const {
+    t,
+    pokeActivation,
+    prevPokeDetails,
+    pokeDetails,
+    nextPokeDetails,
+    onActivatePoke,
+  } = usePokeDetailPagePrepareHook();
 
   return (
     <div className="container">
@@ -22,12 +32,12 @@ const PokeDetailPage = (): JSX.Element => {
           <span className="arrow">
             <i className="fas fa-angle-left"></i>
           </span>
-          <span className="poke-id">#1010</span>
-          <span className="poke-name">Iron Leaves</span>
+          <span className="poke-id">#{generatePokeId(prevPokeDetails.id)}</span>
+          <span className="poke-name">{prevPokeDetails.name}</span>
         </div>
         <div className="forward">
-          <span className="poke-name">Ivysaur</span>
-          <span className="poke-id">#0002</span>
+          <span className="poke-name">{nextPokeDetails.name}</span>
+          <span className="poke-id">#{generatePokeId(nextPokeDetails.id)}</span>
           <span className="arrow">
             <i className="fas fa-angle-right"></i>
           </span>
@@ -74,8 +84,23 @@ const PokeDetailPage = (): JSX.Element => {
             </p>
             <div className="version">
               <span>Version: </span>
-              <span>X</span>
-              <span>Y</span>
+              <button
+                id="poke-blue"
+                className={`poke-blue ${
+                  pokeActivation === "blue" ? "active" : ""
+                }`}
+                onClick={onActivatePoke("blue")}
+              >
+                <img id="poke-red" src={pokeBlue} alt="poke blue" />
+              </button>
+              <button
+                className={`poke-red ${
+                  pokeActivation === "red" ? "active" : ""
+                }`}
+                onClick={onActivatePoke("red")}
+              >
+                <img id="poke-red" src={pokeRed} alt="poke red" />
+              </button>
             </div>
             <div className="info">
               <ul className="appearance">
@@ -98,7 +123,7 @@ const PokeDetailPage = (): JSX.Element => {
               <ul className="strength">
                 <li>
                   <p>Category</p>
-                  <p>Seed</p>
+                  <p>seed</p>
                 </li>
                 <li>
                   <p>Abilities</p>
