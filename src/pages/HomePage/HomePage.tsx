@@ -15,7 +15,54 @@ const HomePage = (): JSX.Element => {
 
   return (
     <div className="container">
-      <div className="advanced-search"></div>
+      <div className="advanced-search-wrapper">
+        <div className="advanced-search">
+          <div className="left">
+            <div className="first">
+              <h2>Types & Weakness</h2>
+              <div className="help">
+                <span>
+                  <strong>T</strong> = Type
+                </span>
+                <span>
+                  <strong>W</strong> = Weakness
+                </span>
+              </div>
+            </div>
+            <div className="second">
+              <ul>
+                {Object.entries(TYPE_COLOR).map(([key, value]) => (
+                  <li key={key}>
+                    <span>
+                      <PokeType
+                        background={value}
+                        textColor={
+                          TYPE_TEXT_COLOR[key as keyof typeof TYPE_TEXT_COLOR]
+                        }
+                      >
+                        Grass
+                      </PokeType>
+                    </span>
+                    <span className="type">T</span>
+                    <span className="weakness">W</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+          <div className="right"></div>
+        </div>
+      </div>
+      <div className="advanced-toggle-wrapper">
+        <div className="advanced-toggle">
+          <div className="advanced-toggle-content ">
+            <span>Hide advanced search</span>
+            <span className="advanced-toggle-btn">
+              <i className="fas fa-chevron-up"></i>
+            </span>
+          </div>
+        </div>
+      </div>
       <div className="action-above-wrapper">
         <div className="action-above-content">
           <div className="btn-shuffle-wrapper">

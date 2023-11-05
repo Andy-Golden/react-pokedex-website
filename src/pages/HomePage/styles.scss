@@ -8,10 +8,124 @@
   }
 }
 
-.advanced-search {
+.advanced-search-wrapper {
   background-color: var(--bg-advanced-search);
   width: 100%;
-  height: 60px;
+  display: flex;
+  justify-content: center;
+
+  .advanced-search {
+    width: 70%;
+    padding: 0 20px;
+    border: 1px solid;
+    display: flex;
+
+    .left {
+      width: 60%;
+      display: flex;
+      flex-direction: column;
+
+      .first {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        width: 100%;
+      }
+
+      .second {
+        width: 100%;
+
+        ul {
+          list-style-type: none;
+          all: unset;
+          display: flex;
+          flex-wrap: wrap;
+          gap: 20px;
+
+          li {
+            all: unset;
+            display: flex;
+            gap: 20px;
+            align-items: center;
+
+            .type,
+            .weakness {
+              background-color: var(--bg-white-1);
+              color: var(--text-black);
+              width: 20px;
+              padding: 5px;
+              border-radius: 50%;
+              text-align: center;
+            }
+          }
+        }
+      }
+    }
+
+    .right {
+      width: 40%;
+    }
+  }
+}
+
+.advanced-toggle-wrapper {
+  width: 100%;
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+
+  .advanced-toggle {
+    background-color: var(--bg-white-1);
+    width: 70%;
+    display: flex;
+    justify-content: center;
+    padding: 0 20px;
+
+    .advanced-toggle-content {
+      background-color: var(--bg-advanced-search);
+      padding-bottom: 5px;
+      width: 35%;
+      height: 16px;
+      color: var(--text-white);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      position: relative;
+
+      .advanced-toggle-btn {
+        background-color: var(--bg-white-1);
+        border-radius: 50%;
+        color: var(--text-black);
+      }
+
+      // &::before {
+      //   content: " ";
+      //   background-image: url("../../../public/img//large-notch-darkgray.png");
+      //   background-repeat: no-repeat;
+      //   background-size: 38px 25px;
+      //   position: absolute;
+      //   right: 99%;
+      //   top: 0;
+      //   width: 10%;
+      //   height: 100%;
+      //   transform: rotate(-90deg);
+      // }
+
+      // &::after {
+      //   content: " ";
+      //   background-image: url("../../../public/img//large-notch-darkgray.png");
+      //   background-repeat: no-repeat;
+      //   background-size: 30px 23px;
+      //   position: absolute;
+      //   left: 99%;
+      //   top: 0;
+      //   width: 10%;
+      //   height: 100%;
+      //   transform: rotate(180deg);
+      // }
+    }
+  }
 }
 
 .action-above-wrapper {
@@ -23,7 +137,7 @@
   .action-above-content {
     width: 70%;
     display: flex;
-    padding: 20px;
+    padding: 40px 20px;
     justify-content: space-between;
     background: var(--bg-white-1);
 
