@@ -10,6 +10,7 @@ import type { PokeDetailPagePrepareHook } from "./interfaces";
 const usePokeDetailPagePrepareHook = (): PokeDetailPagePrepareHook => {
   const { t } = useTranslation();
 
+  const [isLoading, setIsLoading] = useState(false);
   const [pokeActivation, setPokeActivation] = useState("blue");
   const [pokeDetails, setPokeDetails] = useState<PokeDetail>({
     id: 0,
@@ -54,6 +55,8 @@ const usePokeDetailPagePrepareHook = (): PokeDetailPagePrepareHook => {
   }, [id]);
 
   const getPoke = async (): Promise<void> => {
+    setIsLoading(true);
+
     try {
       const url = `https://pokeapi.co/api/v2/pokemon/${id}/`;
       const data = await getPokeDetails(url);
@@ -61,9 +64,13 @@ const usePokeDetailPagePrepareHook = (): PokeDetailPagePrepareHook => {
     } catch (err) {
       showBoundary(err);
     }
+
+    setIsLoading(false);
   };
 
   const getNextPoke = async (): Promise<void> => {
+    setIsLoading(true);
+
     try {
       let nextId = id !== undefined ? +id + 1 : 1;
 
@@ -77,9 +84,13 @@ const usePokeDetailPagePrepareHook = (): PokeDetailPagePrepareHook => {
     } catch (err) {
       showBoundary(err);
     }
+
+    setIsLoading(false);
   };
 
   const getPrevPoke = async (): Promise<void> => {
+    setIsLoading(true);
+
     try {
       let prevId = id !== undefined ? +id - 1 : 1;
 
@@ -93,6 +104,8 @@ const usePokeDetailPagePrepareHook = (): PokeDetailPagePrepareHook => {
     } catch (err) {
       showBoundary(err);
     }
+
+    setIsLoading(false);
   };
 
   const handleActivatePoke = (type: string) => (): void => {
@@ -101,9 +114,10 @@ const usePokeDetailPagePrepareHook = (): PokeDetailPagePrepareHook => {
 
   return {
     t,
+    isLoading,
+    pokeDetails,
     pokeActivation,
     prevPokeDetails,
-    pokeDetails,
     nextPokeDetails,
     onActivatePoke: handleActivatePoke,
   };

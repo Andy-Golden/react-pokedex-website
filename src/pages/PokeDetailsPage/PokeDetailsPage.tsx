@@ -7,7 +7,7 @@ import {
   generatePokeId,
 } from "utils";
 
-import { PokeType } from "@components";
+import { Loading, PokeType } from "@components";
 
 import pokeBlue from "../../assets/images/poke-blue.png";
 import pokeRed from "../../assets/images/poke-red.png";
@@ -19,12 +19,15 @@ import "./styles.scss";
 const PokeDetailPage = (): JSX.Element => {
   const {
     t,
+    isLoading,
+    pokeDetails,
     pokeActivation,
     prevPokeDetails,
-    pokeDetails,
     nextPokeDetails,
     onActivatePoke,
   } = usePokeDetailPagePrepareHook();
+
+  if (isLoading) return <Loading />;
 
   return (
     <div className="container">
