@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { TYPE_COLOR, TYPE_TEXT_COLOR } from "@constants";
 import {
   covertDecimetersToFeet,
@@ -30,7 +31,9 @@ const PokeDetailPage = (): JSX.Element => {
       <section className="header">
         <div className="backward">
           <span className="arrow">
-            <i className="fas fa-angle-left"></i>
+            <Link to={`/poke/${prevPokeDetails.id}`}>
+              <i className="fas fa-angle-left"></i>
+            </Link>
           </span>
           <span className="poke-id">#{generatePokeId(prevPokeDetails.id)}</span>
           <span className="poke-name">{prevPokeDetails.name}</span>
@@ -39,7 +42,9 @@ const PokeDetailPage = (): JSX.Element => {
           <span className="poke-name">{nextPokeDetails.name}</span>
           <span className="poke-id">#{generatePokeId(nextPokeDetails.id)}</span>
           <span className="arrow">
-            <i className="fas fa-angle-right"></i>
+            <Link to={`/poke/${nextPokeDetails.id}`}>
+              <i className="fas fa-angle-right"></i>
+            </Link>
           </span>
         </div>
       </section>
@@ -161,9 +166,24 @@ const PokeDetailPage = (): JSX.Element => {
             </div>
             <p>Weaknesses</p>
             <div className="weaknesses">
-              <PokeType>Grass</PokeType>
-              <PokeType>Grass</PokeType>
-              <PokeType>Poison</PokeType>
+              {pokeDetails.weaknesses.doubleDamageFrom.map((item) => (
+                <PokeType
+                  className={"poke-type"}
+                  key={item.slot}
+                  background={
+                    TYPE_COLOR[
+                      item.name.toUpperCase() as keyof typeof TYPE_COLOR
+                    ]
+                  }
+                  textColor={
+                    TYPE_TEXT_COLOR[
+                      item.name.toUpperCase() as keyof typeof TYPE_TEXT_COLOR
+                    ]
+                  }
+                >
+                  {t(`homePage.pokeType.${item.name}`)}
+                </PokeType>
+              ))}
             </div>
           </div>
         </div>

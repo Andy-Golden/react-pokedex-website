@@ -9,6 +9,7 @@ import type { PokeDetailPagePrepareHook } from "./interfaces";
 
 const usePokeDetailPagePrepareHook = (): PokeDetailPagePrepareHook => {
   const { t } = useTranslation();
+
   const [pokeActivation, setPokeActivation] = useState("blue");
   const [pokeDetails, setPokeDetails] = useState<PokeDetail>({
     id: 0,
@@ -19,6 +20,7 @@ const usePokeDetailPagePrepareHook = (): PokeDetailPagePrepareHook => {
     stats: [],
     abilities: [],
     types: [],
+    weaknesses: { doubleDamageFrom: [] },
   });
 
   const [nextPokeDetails, setNextPokeDetails] = useState<
@@ -41,15 +43,15 @@ const usePokeDetailPagePrepareHook = (): PokeDetailPagePrepareHook => {
 
   useEffect(() => {
     void getPoke();
-  }, []);
+  }, [id]);
 
   useEffect(() => {
     void getNextPoke();
-  }, []);
+  }, [id]);
 
   useEffect(() => {
     void getPrevPoke();
-  }, []);
+  }, [id]);
 
   const getPoke = async (): Promise<void> => {
     try {
@@ -63,7 +65,12 @@ const usePokeDetailPagePrepareHook = (): PokeDetailPagePrepareHook => {
 
   const getNextPoke = async (): Promise<void> => {
     try {
-      const nextId = id !== undefined ? +id + 1 : 1;
+      let nextId = id !== undefined ? +id + 1 : 1;
+
+      if (id === "1010") {
+        nextId = 1;
+      }
+
       const url = `https://pokeapi.co/api/v2/pokemon/${nextId}/`;
       const data = await getPokeDetails(url);
       setNextPokeDetails(data);

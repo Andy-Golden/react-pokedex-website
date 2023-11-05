@@ -4,6 +4,10 @@
   gap: 10px;
   background: url("../../../public/img/container_bg.png");
 
+  a {
+    all: unset;
+  }
+
   .backward {
     width: 50%;
     height: 100%;

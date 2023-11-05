@@ -4,10 +4,13 @@ export type {
   Ability,
   AbilityResponse,
   Bar,
+  DoubleDamageFromTypes,
+  DoubleDamageFromTypesResponse,
   PokeDetail,
   PokeType,
   Stat,
   StatResponse,
+  Weaknesses,
 } from "./pokeDetail.interface";
 export type { PokeDetailApi } from "./pokeDetailApi.interface";
 export type { ThemeState } from "./themeState.interface";

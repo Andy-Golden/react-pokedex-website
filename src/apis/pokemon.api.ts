@@ -3,11 +3,15 @@ import type {
   Ability,
   AbilityResponse,
   Bar,
+  DoubleDamageFromTypes,
+  DoubleDamageFromTypesResponse,
   PokeData,
   PokeDetail,
   PokeDetailApi,
+  PokeType,
   Stat,
   StatResponse,
+  Weaknesses,
 } from "@interfaces";
 import type { AxiosError } from "axios";
 import { instance } from "server/axios/instance";
@@ -32,9 +36,49 @@ const getPokemons = async (
   }
 };
 
+const getDoubleDamageFromTypes = async (
+  url: string,
+): Promise<DoubleDamageFromTypes[]> => {
+  try {
+    const weaknessResponse = await instance.get(url);
+
+    const doubleDamageFrom: DoubleDamageFromTypes[] =
+      weaknessResponse.data.damage_relations.double_damage_from.map(
+        (item: DoubleDamageFromTypesResponse) => {
+          return { slot: item.name, name: item.name, url: item.url };
+        },
+      );
+
+    return doubleDamageFrom;
+  } catch (error) {
+    const err = error as AxiosError;
+    throw new Error(err.message);
+  }
+};
+
 const getPokeDetails = async (url: string): Promise<PokeDetail> => {
   try {
     const pokemon = await instance.get(url);
+
+    const promises = pokemon.data.types.map(
+      async (item: PokeType) => await getDoubleDamageFromTypes(item.type.url),
+    );
+
+    const promisesRespones = await Promise.all(promises);
+
+    const weaknesses: Weaknesses = { doubleDamageFrom: [] };
+
+    promisesRespones.forEach((promise) => {
+      promise.forEach((item: DoubleDamageFromTypes) => {
+        if (
+          !weaknesses.doubleDamageFrom.some(
+            (type: DoubleDamageFromTypes) => type.name === item.name,
+          )
+        ) {
+          weaknesses.doubleDamageFrom.push(item);
+        }
+      });
+    });
 
     const abilities: Ability[] = pokemon.data.abilities.map(
       (item: AbilityResponse) => {
@@ -73,6 +117,7 @@ const getPokeDetails = async (url: string): Promise<PokeDetail> => {
       abilities,
       stats,
       types: pokemon.data.types,
+      weaknesses,
     };
 
     return poke;

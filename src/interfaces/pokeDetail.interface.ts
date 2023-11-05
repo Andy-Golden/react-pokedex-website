@@ -52,6 +52,21 @@ export interface StatResponse {
   stat: StatApi;
 }
 
+export interface DoubleDamageFromTypesResponse {
+  name: string;
+  url: string;
+}
+
+export interface DoubleDamageFromTypes {
+  slot: string;
+  name: string;
+  url: string;
+}
+
+export interface Weaknesses {
+  doubleDamageFrom: DoubleDamageFromTypes[];
+}
+
 export interface PokeDetail {
   id: number;
   name: string;
@@ -61,4 +76,5 @@ export interface PokeDetail {
   abilities: Ability[];
   types: PokeType[];
   stats: Stat[];
+  weaknesses: Weaknesses;
 }
