@@ -10,6 +10,8 @@ module.exports = {
       "@utils": path.resolve(__dirname, "src/utils"),
       "@apis": path.resolve(__dirname, "src/apis"),
       "@enums": path.resolve(__dirname, "src/enums"),
+      "@constants": path.resolve(__dirname, "src/constants"),
+      "@server": path.resolve(__dirname, "src/server"),
     },
   },
 };
