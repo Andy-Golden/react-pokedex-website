@@ -1,6 +1,7 @@
 import type { PokeData, PokeDetail, PokeDetailApi } from "@interfaces";
 import type { AxiosError } from "axios";
-import { instance } from "server/axios/instance";
+
+import { instance } from "@server";
 
 const getPokemons = async (
   limit: number,
