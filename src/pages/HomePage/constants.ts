@@ -1,10 +1,10 @@
 const NUMBERS_OF_POKE = 12;
 
 const SORT_BY_CHOICES = {
-  lowest: { key: "lowest", label: "Lowest number (First)" },
-  highest: { key: "highest", label: "Highest number (First)" },
-  aToZ: { key: "aToZ", label: "A-Z" },
-  ztoA: { key: "zToA", label: "Z-A" },
+  lowest: { key: "lowest", label: "homePage.sortBy.lowestNum" },
+  highest: { key: "highest", label: "homePage.sortBy.highestNum" },
+  aToZ: { key: "aToZ", label: "homePage.sortBy.aToZ" },
+  ztoA: { key: "zToA", label: "homePage.sortBy.zToA" },
 };
 
 export { NUMBERS_OF_POKE, SORT_BY_CHOICES };

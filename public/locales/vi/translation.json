@@ -1,0 +1,46 @@
+{
+  "vi": "vi",
+  "homePage": {
+    "login": "Đăng nhập",
+    "surpriseMe": "Tạo bất ngờ!",
+    "loadMore": "Tải thêm pokemon",
+    "sortBy": {
+      "label": "Sắp xếp",
+      "lowestNum": "Tăng dần",
+      "highestNum": "Giảm dần",
+      "aToZ": "A-Z",
+      "zToA": "Z-A"
+    },
+    "pokeType": {
+      "bug": "Bọ",
+      "dragon": "Rồng",
+      "fairy": "Tiên",
+      "fire": "Lửa",
+      "ghost": "Ma",
+      "ground": "Đất",
+      "normal": "Thường",
+      "psychic": "Thôi miên",
+      "steel": "Thép",
+      "dark": "Bóng tối",
+      "electric": "Điện",
+      "fighting": "Chiến đấu",
+      "flying": "Bay",
+      "grass": "Cỏ",
+      "ice": "Băng",
+      "poison": "Độc",
+      "rock": "Đá",
+      "water": "Nước"
+    }
+  },
+  "loginPage": {
+    "email": "Email",
+    "password": "Mật khẩu",
+    "label": "Đăng nhập",
+    "notRegister": "Chưa đăng kí",
+    "createAnAccount": "Tạo tài khoản",
+    "error": {
+      "invalidEmail": "Xin hãy nhập email hợp lệ",
+      "invalidLengthPassword": "Độ dài mật khẩu phải lớn hơn 5"
+    }
+  }
+}

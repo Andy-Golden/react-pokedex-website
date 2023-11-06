@@ -10,13 +10,13 @@ import { useHomePagePrepareHook } from "./helper";
 import "./styles.scss";
 
 const HomePage = (): JSX.Element => {
-  const { pokemons, isLoading, onLoadMore, onSurpriseMe, onSortByChange } =
+  const { t, pokemons, isLoading, onLoadMore, onSurpriseMe, onSortByChange } =
     useHomePagePrepareHook();
 
   return (
     <div className="container">
       <Button type="button" className="login-btn">
-        <Link to="/login">Login</Link>
+        <Link to="/login">{t("homePage.login")}</Link>
       </Button>
       <div className="advanced-search"></div>
       <div className="action-above-wrapper">
@@ -28,11 +28,11 @@ const HomePage = (): JSX.Element => {
               onClick={onSurpriseMe}
             >
               <i className="fas fa-sync-alt icon"></i>
-              <span>&nbsp; &nbsp;Surprise Me!</span>
+              <span>&nbsp; &nbsp;{t("homePage.surpriseMe")}</span>
             </Button>
           </div>
           <div className="select-input-wrapper">
-            <span className="label-select">Sort by</span>
+            <span className="label-select">{t("homePage.sortBy.label")}</span>
             <SelectMenu
               className={"select-input-filter"}
               options={Object.values(SORT_BY_CHOICES)}
@@ -69,7 +69,7 @@ const HomePage = (): JSX.Element => {
                         ]
                       }
                     >
-                      {item.type.name}
+                      {t(`homePage.pokeType.${item.type.name}`)}
                     </PokeType>
                   ))}
                 </div>
@@ -80,7 +80,7 @@ const HomePage = (): JSX.Element => {
       <div className="action-under-wrapper">
         <div className="action-under-content">
           <Button type="button" className="btn-load" onClick={onLoadMore}>
-            Load more Pokemon
+            {t("homePage.loadMore")}
           </Button>
         </div>
       </div>

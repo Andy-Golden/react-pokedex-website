@@ -1,3 +1,4 @@
+export type { LanguageState } from "./languageState.interface";
 export type { PokeData } from "./pokeData.interface";
 export type { PokeDetail, PokeType } from "./pokeDetail.interface";
 export type { PokeDetailApi } from "./pokeDetailApi.interface";

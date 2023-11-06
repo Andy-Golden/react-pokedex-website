@@ -8,7 +8,7 @@ import { useLoginPagePrepareHook } from "./helper";
 import "./styles.scss";
 
 const LoginPage = (): JSX.Element => {
-  const { errors, onSubmit, register, handleSubmit } =
+  const { t, errors, onSubmit, register, handleSubmit } =
     useLoginPagePrepareHook();
 
   return (
@@ -17,12 +17,12 @@ const LoginPage = (): JSX.Element => {
       <FormControl onSubmit={handleSubmit(onSubmit)}>
         <TextInput
           type="text"
-          placeholder="email"
+          placeholder={t("loginPage.email")}
           register={register("email", {
             required: true,
             pattern: {
               value: /\S+@\S+\.\S+/,
-              message: "Please enter valid email",
+              message: t(`loginPage.error.invalidEmail`),
             },
           })}
         />
@@ -33,12 +33,12 @@ const LoginPage = (): JSX.Element => {
         />
         <TextInput
           type="password"
-          placeholder="password"
+          placeholder={t("loginPage.password")}
           register={register("password", {
             required: true,
             minLength: {
               value: 5,
-              message: "Password must have at least 5 characters",
+              message: t("loginPage.error.invalidLengthPassword"),
             },
           })}
         />
@@ -47,9 +47,10 @@ const LoginPage = (): JSX.Element => {
           name="password"
           render={({ message }) => <p className="error-message">{message}</p>}
         />
-        <Button type="submit">login</Button>
+        <Button type="submit">{t("loginPage.label")}</Button>
         <p className="message">
-          Not registered? <span>Create an account</span>
+          {t("loginPage.notRegister")}{" "}
+          <span>{t("loginPage.createAnAccount")}</span>
         </p>
       </FormControl>
     </div>

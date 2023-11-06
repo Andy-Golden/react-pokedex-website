@@ -1,3 +1,4 @@
+export { AppError } from "./AppError";
 export { Button } from "./Button";
 export { FormControl } from "./FormControl";
 export { Loading } from "./Loading";

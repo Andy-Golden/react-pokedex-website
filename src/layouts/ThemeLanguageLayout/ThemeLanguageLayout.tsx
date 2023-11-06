@@ -1,22 +1,36 @@
 import React from "react";
+import { Outlet } from "react-router-dom";
 
-import { ToggleButton } from "@components";
+import { SelectMenu, ToggleButton } from "@components";
+import { Theme } from "@enums";
 
+import { languageOptions } from "./constants";
 import { useThemeLanguageLayoutPrepareHook } from "./helper";
-import type { ThemeLanguageLayoutProps } from "./interfaces";
 
 import "./styles.scss";
 
-const ThemeLanguageLayout = ({
-  children,
-}: ThemeLanguageLayoutProps): JSX.Element => {
-  const { onChangeTheme } = useThemeLanguageLayoutPrepareHook();
+function ThemeLanguageLayout(): JSX.Element {
+  const { theme, lang, onSwitchTheme, onSwitchLang } =
+    useThemeLanguageLayoutPrepareHook();
+
   return (
-    <div className="toggle-button-layout-container">
-      <ToggleButton className={"toggle"} onChange={onChangeTheme} />
-      {children}
+    <div className="theme-language-layout-container ">
+      <div className="action-layout">
+        <ToggleButton
+          className="toggle"
+          onChange={onSwitchTheme}
+          checked={theme === Theme.LIGHT}
+        />
+        <SelectMenu
+          defaultValue={lang}
+          className="language-select-box"
+          options={Object.values(languageOptions)}
+          onChange={onSwitchLang}
+        />
+      </div>
+      <Outlet />
     </div>
   );
-};
+}
 
 export default ThemeLanguageLayout;

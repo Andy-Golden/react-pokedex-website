@@ -4,6 +4,7 @@ import type { Option } from ".";
 
 export interface SelectMenuProps {
   options: Option[];
+  defaultValue?: string | number;
   className?: string;
   background?: string;
   textColor?: string;

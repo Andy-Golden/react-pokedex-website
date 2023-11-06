@@ -4,18 +4,19 @@ import { type ToggleButtonProps } from "./interfaces";
 
 import "./styles.scss";
 
-const ToggleButton = ({
+function ToggleButton({
+  checked,
   className,
   onChange,
-}: ToggleButtonProps): JSX.Element => {
+}: ToggleButtonProps): JSX.Element {
   return (
     <div className={className}>
       <label className="switch">
-        <input type="checkbox" onChange={onChange} />
+        <input type="checkbox" onChange={onChange} checked={checked} />
         <span className="slider round"></span>
       </label>
     </div>
   );
-};
+}
 
 export default ToggleButton;
