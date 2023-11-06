@@ -1,0 +1,13 @@
+.poke-type {
+  padding: 5px;
+  border-radius: 3px;
+  font-size: 0.7rem;
+  text-align: center;
+  width: 100px;
+  font-weight: bold;
+  background-color: var(--bg-green-3);
+}
+
+.poke-type::first-letter {
+  text-transform: uppercase;
+}
