@@ -1,9 +1,16 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useErrorBoundary } from "react-error-boundary";
 import { useTranslation } from "react-i18next";
 import { useParams } from "react-router-dom";
-import type { PokeDetail } from "@interfaces";
+import { TYPE_COLOR, TYPE_TEXT_COLOR } from "@constants";
+import type {
+  DoubleDamageFromTypes,
+  PokeDetail,
+  PokeType as PokeTypeInterface,
+} from "@interfaces";
 import { getPokeDetails } from "apis/pokemon.api";
+
+import { PokeType } from "@components";
 
 import type { PokeDetailPagePrepareHook } from "./interfaces";
 
@@ -112,6 +119,33 @@ const usePokeDetailPagePrepareHook = (): PokeDetailPagePrepareHook => {
     setPokeActivation(type);
   };
 
+  const renderTypes = (
+    types: PokeTypeInterface[] | DoubleDamageFromTypes[],
+  ): JSX.Element => {
+    return (
+      <>
+        {types.map((item) => (
+          <PokeType
+            className={"poke-type"}
+            key={item.slot}
+            background={
+              TYPE_COLOR[
+                item.type.name.toUpperCase() as keyof typeof TYPE_COLOR
+              ]
+            }
+            textColor={
+              TYPE_TEXT_COLOR[
+                item.type.name.toUpperCase() as keyof typeof TYPE_TEXT_COLOR
+              ]
+            }
+          >
+            {t(`homePage.pokeType.${item.type.name}`)}
+          </PokeType>
+        ))}
+      </>
+    );
+  };
+
   return {
     t,
     isLoading,
@@ -119,6 +153,7 @@ const usePokeDetailPagePrepareHook = (): PokeDetailPagePrepareHook => {
     pokeActivation,
     prevPokeDetails,
     nextPokeDetails,
+    renderTypes,
     onActivatePoke: handleActivatePoke,
   };
 };

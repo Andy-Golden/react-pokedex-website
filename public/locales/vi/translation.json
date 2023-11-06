@@ -50,5 +50,15 @@
     "logout": "Đăng xuất",
     "register": "Đăng ký",
     "setting": "Cài đặt"
+  },
+  "detailPage": {
+    "stats": "Năng lượng",
+    "abilities": "Khả năng",
+    "height": "Chiều cao",
+    "weight": "Cân nặng",
+    "gender": "Giới tính",
+    "category": "Loại",
+    "types": "Hệ",
+    "Weaknesses": "Điểm yếu"
   }
 }

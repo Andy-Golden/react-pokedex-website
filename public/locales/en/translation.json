@@ -50,5 +50,15 @@
     "logout": "Logout",
     "register": "Register",
     "setting": "Setting"
+  },
+  "detailPage": {
+    "stats": "Stats",
+    "abilities": "Abilities",
+    "height": "Height",
+    "weight": "Weight",
+    "gender": "Gender",
+    "category": "Category",
+    "types": "Types",
+    "Weaknesses": "Weaknesses"
   }
 }

@@ -59,8 +59,7 @@ export interface DoubleDamageFromTypesResponse {
 
 export interface DoubleDamageFromTypes {
   slot: string;
-  name: string;
-  url: string;
+  type: TypeDetail;
 }
 
 export interface Weaknesses {

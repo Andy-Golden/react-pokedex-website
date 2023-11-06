@@ -45,7 +45,7 @@ const getDoubleDamageFromTypes = async (
     const doubleDamageFrom: DoubleDamageFromTypes[] =
       weaknessResponse.data.damage_relations.double_damage_from.map(
         (item: DoubleDamageFromTypesResponse) => {
-          return { slot: item.name, name: item.name, url: item.url };
+          return { slot: item.name, type: { name: item.name, url: item.url } };
         },
       );
 
@@ -68,11 +68,11 @@ const getPokeDetails = async (url: string): Promise<PokeDetail> => {
 
     const weaknesses: Weaknesses = { doubleDamageFrom: [] };
 
-    promisesRespones.forEach((promise) => {
-      promise.forEach((item: DoubleDamageFromTypes) => {
+    promisesRespones.forEach((promiseResponse) => {
+      promiseResponse.forEach((item: DoubleDamageFromTypes) => {
         if (
           !weaknesses.doubleDamageFrom.some(
-            (type: DoubleDamageFromTypes) => type.name === item.name,
+            (type: DoubleDamageFromTypes) => type.type.name === item.type.name,
           )
         ) {
           weaknesses.doubleDamageFrom.push(item);

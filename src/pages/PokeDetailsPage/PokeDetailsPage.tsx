@@ -1,13 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { TYPE_COLOR, TYPE_TEXT_COLOR } from "@constants";
 import {
   covertDecimetersToFeet,
   covertHectogramsToPounds,
   generatePokeId,
 } from "utils";
 
-import { Loading, PokeType } from "@components";
+import { Loading } from "@components";
 
 import pokeBlue from "../../assets/images/poke-blue.png";
 import pokeRed from "../../assets/images/poke-red.png";
@@ -24,6 +23,7 @@ const PokeDetailPage = (): JSX.Element => {
     pokeActivation,
     prevPokeDetails,
     nextPokeDetails,
+    renderTypes,
     onActivatePoke,
   } = usePokeDetailPagePrepareHook();
 
@@ -65,7 +65,7 @@ const PokeDetailPage = (): JSX.Element => {
               alt={pokeDetails.name}
             />
             <div className="stats">
-              <h3>Stats</h3>
+              <h3>{t("detailPage.stats")}</h3>
               <ul className="gauges">
                 {pokeDetails.stats.map((item) => (
                   <li key={item.stat.name} className="gauge">
@@ -86,10 +86,18 @@ const PokeDetailPage = (): JSX.Element => {
             </div>
           </div>
           <div className="right">
-            <p className="description">
-              There is a plant seed on its back right from the day this Pokémon
-              is born. The seed slowly grows larger.
-            </p>
+            {pokeActivation === "blue" && (
+              <p className="description">
+                There is a plant seed on its back right from the day this
+                Pokémon is born. The seed slowly grows larger.
+              </p>
+            )}
+            {pokeActivation === "red" && (
+              <p className="description">
+                While it is young, it uses the nutrients that are stored in the
+                seed on its back in order to grow.
+              </p>
+            )}
             <div className="version">
               <span>Version: </span>
               <button
@@ -113,15 +121,15 @@ const PokeDetailPage = (): JSX.Element => {
             <div className="info">
               <ul className="appearance">
                 <li>
-                  <p>Height</p>
+                  <p>{t("detailPage.height")}</p>
                   <p>{covertDecimetersToFeet(pokeDetails.height)}</p>
                 </li>
                 <li>
-                  <p>Weight</p>
+                  <p>{t("detailPage.weight")}</p>
                   <p>{covertHectogramsToPounds(pokeDetails.weight)} lbs</p>
                 </li>
                 <li>
-                  <p>Gender</p>
+                  <p>{t("detailPage.gender")}</p>
                   <p>
                     <i className="fas fa-mars"></i>
                     <i className="fas fa-venus"></i>
@@ -130,11 +138,11 @@ const PokeDetailPage = (): JSX.Element => {
               </ul>
               <ul className="strength">
                 <li>
-                  <p>Category</p>
+                  <p>{t("detailPage.category")}</p>
                   <p>seed</p>
                 </li>
                 <li>
-                  <p>Abilities</p>
+                  <p>{t("detailPage.abilities")}</p>
                   {pokeDetails.abilities.map((item) => (
                     <p
                       key={item.slot}
@@ -146,47 +154,11 @@ const PokeDetailPage = (): JSX.Element => {
                 </li>
               </ul>
             </div>
-            <p>Types</p>
-            <div className="types">
-              {pokeDetails.types.map((item) => (
-                <PokeType
-                  className={"poke-type"}
-                  key={item.slot}
-                  background={
-                    TYPE_COLOR[
-                      item.type.name.toUpperCase() as keyof typeof TYPE_COLOR
-                    ]
-                  }
-                  textColor={
-                    TYPE_TEXT_COLOR[
-                      item.type.name.toUpperCase() as keyof typeof TYPE_TEXT_COLOR
-                    ]
-                  }
-                >
-                  {t(`homePage.pokeType.${item.type.name}`)}
-                </PokeType>
-              ))}
-            </div>
-            <p>Weaknesses</p>
+            <p>{t("detailPage.types")}</p>
+            <div className="types">{renderTypes(pokeDetails.types)}</div>
+            <p>{t("detailPage.weaknesses")}</p>
             <div className="weaknesses">
-              {pokeDetails.weaknesses.doubleDamageFrom.map((item) => (
-                <PokeType
-                  className={"poke-type"}
-                  key={item.slot}
-                  background={
-                    TYPE_COLOR[
-                      item.name.toUpperCase() as keyof typeof TYPE_COLOR
-                    ]
-                  }
-                  textColor={
-                    TYPE_TEXT_COLOR[
-                      item.name.toUpperCase() as keyof typeof TYPE_TEXT_COLOR
-                    ]
-                  }
-                >
-                  {t(`homePage.pokeType.${item.name}`)}
-                </PokeType>
-              ))}
+              {renderTypes(pokeDetails.weaknesses.doubleDamageFrom)}
             </div>
           </div>
         </div>

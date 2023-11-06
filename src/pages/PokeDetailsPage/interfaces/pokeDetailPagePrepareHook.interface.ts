@@ -1,4 +1,4 @@
-import type { PokeDetail } from "@interfaces";
+import type { DoubleDamageFromTypes, PokeDetail, PokeType } from "@interfaces";
 import type { TFunction } from "i18next";
 
 export interface PokeDetailPagePrepareHook {
@@ -8,5 +8,6 @@ export interface PokeDetailPagePrepareHook {
   pokeActivation: string;
   prevPokeDetails: Pick<PokeDetail, "id" | "name">;
   nextPokeDetails: Pick<PokeDetail, "id" | "name">;
+  renderTypes: (types: PokeType[] | DoubleDamageFromTypes[]) => JSX.Element;
   onActivatePoke: (type: string) => () => void;
 }
