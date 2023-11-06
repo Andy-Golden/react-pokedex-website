@@ -1,31 +1,25 @@
 import type React from "react";
 import { useEffect, useState } from "react";
 import type { PokeDetail } from "@interfaces";
-import { getListPokeDetails } from "apis/pokemon.api";
+
+import { getListPokeDetails } from "@apis";
+import { SortChoices } from "@enums";
+import { getRandomInt } from "@utils";
 
 import { NUMBERS_OF_POKE } from "./constants";
 import type { HomePagePrepareHook } from "./interfaces";
 
-const getRandomInt = (min: number, max: number): number => {
-  if (max < min) {
-    const temp: number = max;
-    max = min;
-    min = temp;
-  }
-  const randomNum = Math.floor(Math.random() * (max - min) + min);
-
-  return randomNum;
-};
-
 const useHomePagePrepareHook = (): HomePagePrepareHook => {
   const [pokemons, setPokemons] = useState<PokeDetail[]>([]);
   const [isLoadMore, setIsLoadMore] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     void getPokemons();
   }, [isLoadMore]);
 
   const getPokemons = async (): Promise<void> => {
+    setIsLoading(true);
     try {
       const offset = pokemons[pokemons.length - 1]?.id ?? 0;
       const data = await getListPokeDetails(NUMBERS_OF_POKE, offset);
@@ -34,16 +28,20 @@ const useHomePagePrepareHook = (): HomePagePrepareHook => {
     } catch (error) {
       console.log(error);
     }
+    setIsLoading(false);
   };
 
   const getRandomPokemons = async (): Promise<void> => {
+    setIsLoading(true);
     try {
+      setPokemons([]);
       const newOffset = getRandomInt(20, 120);
       const data = await getListPokeDetails(NUMBERS_OF_POKE, newOffset);
       setPokemons(data);
     } catch (error) {
       console.log(error);
     }
+    setIsLoading(false);
   };
 
   const handleLoadMore = (): void => {
@@ -61,8 +59,8 @@ const useHomePagePrepareHook = (): HomePagePrepareHook => {
     const clonedPokemons = [...pokemons];
 
     switch (e.target.value) {
-      case "Lowest number (First)": {
-        const lowestPokemons = clonedPokemons.sort((poke1, poke2) => {
+      case SortChoices.LOWEST: {
+        clonedPokemons.sort((poke1, poke2) => {
           if (poke1.id < poke2.id) {
             return -1;
           }
@@ -73,11 +71,10 @@ const useHomePagePrepareHook = (): HomePagePrepareHook => {
 
           return 0;
         });
-        setPokemons(lowestPokemons);
         break;
       }
-      case "Highest number (First)": {
-        const highestPokemons = clonedPokemons.sort((poke1, poke2) => {
+      case SortChoices.HIGHEST: {
+        clonedPokemons.sort((poke1, poke2) => {
           if (poke1.id < poke2.id) {
             return 1;
           }
@@ -88,11 +85,10 @@ const useHomePagePrepareHook = (): HomePagePrepareHook => {
 
           return 0;
         });
-        setPokemons(highestPokemons);
         break;
       }
-      case "A-Z": {
-        const aToZPokemons = clonedPokemons.sort((poke1, poke2) => {
+      case SortChoices.A_TO_Z: {
+        clonedPokemons.sort((poke1, poke2) => {
           if (poke1.name < poke2.name) {
             return -1;
           }
@@ -103,11 +99,10 @@ const useHomePagePrepareHook = (): HomePagePrepareHook => {
 
           return 0;
         });
-        setPokemons(aToZPokemons);
         break;
       }
-      case "Z-A": {
-        const aToZPokemons = clonedPokemons.sort((poke1, poke2) => {
+      case SortChoices.Z_TO_A: {
+        clonedPokemons.sort((poke1, poke2) => {
           if (poke1.name < poke2.name) {
             return 1;
           }
@@ -118,17 +113,19 @@ const useHomePagePrepareHook = (): HomePagePrepareHook => {
 
           return 0;
         });
-        setPokemons(aToZPokemons);
         break;
       }
       default: {
         break;
       }
     }
+
+    setPokemons(clonedPokemons);
   };
 
   return {
     pokemons,
+    isLoading,
     onLoadMore: handleLoadMore,
     onSurpriseMe: handleSurpriseMe,
     onSortByChange: handleSortByChange,

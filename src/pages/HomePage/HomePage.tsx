@@ -2,26 +2,31 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 import { Button, Loading, PokeCard, PokeType, SelectMenu } from "@components";
+import { TYPE_COLOR, TYPE_TEXT_COLOR } from "@constants";
 
-import { SORT_BY_CHOICES, typeColor, typeTextColor } from "./constants";
+import { SORT_BY_CHOICES } from "./constants";
 import { useHomePagePrepareHook } from "./helper";
 
 import "./styles.scss";
 
 const HomePage = (): JSX.Element => {
-  const { pokemons, onLoadMore, onSurpriseMe, onSortByChange } =
+  const { pokemons, isLoading, onLoadMore, onSurpriseMe, onSortByChange } =
     useHomePagePrepareHook();
 
   return (
     <div className="container">
-      <Button className="login-btn">
+      <Button type="button" className="login-btn">
         <Link to="/login">Login</Link>
       </Button>
-      <div className="filtering"></div>
+      <div className="advanced-search"></div>
       <div className="action-above-wrapper">
         <div className="action-above-content">
           <div className="btn-shuffle-wrapper">
-            <Button className="btn-shuffle" onClick={onSurpriseMe}>
+            <Button
+              type="button"
+              className="btn-shuffle"
+              onClick={onSurpriseMe}
+            >
               <i className="fas fa-sync-alt icon"></i>
               <span>&nbsp; &nbsp;Surprise Me!</span>
             </Button>
@@ -38,7 +43,8 @@ const HomePage = (): JSX.Element => {
       </div>
       <div className="list-wrapper">
         <div className="list-poke">
-          {pokemons.length > 0 ? (
+          {isLoading && <Loading />}
+          {pokemons.length > 0 &&
             pokemons.map((poke) => (
               <PokeCard
                 key={poke.id}
@@ -53,13 +59,13 @@ const HomePage = (): JSX.Element => {
                       className={"poke-type"}
                       key={item.slot}
                       background={
-                        typeColor[
-                          item.type.name.toUpperCase() as keyof typeof typeColor
+                        TYPE_COLOR[
+                          item.type.name.toUpperCase() as keyof typeof TYPE_COLOR
                         ]
                       }
                       textColor={
-                        typeTextColor[
-                          item.type.name.toUpperCase() as keyof typeof typeTextColor
+                        TYPE_TEXT_COLOR[
+                          item.type.name.toUpperCase() as keyof typeof TYPE_TEXT_COLOR
                         ]
                       }
                     >
@@ -68,15 +74,12 @@ const HomePage = (): JSX.Element => {
                   ))}
                 </div>
               </PokeCard>
-            ))
-          ) : (
-            <Loading />
-          )}
+            ))}
         </div>
       </div>
       <div className="action-under-wrapper">
         <div className="action-under-content">
-          <Button className="btn-load" onClick={onLoadMore}>
+          <Button type="button" className="btn-load" onClick={onLoadMore}>
             Load more Pokemon
           </Button>
         </div>

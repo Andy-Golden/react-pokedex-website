@@ -6,16 +6,18 @@ import "./styles.scss";
 
 const Button = ({
   children,
-  textColor,
   className,
   background,
+  textColor,
+  type,
   onClick,
 }: ButtonProps): JSX.Element => {
   return (
     <button
+      type={type}
       className={`button ${className}`}
-      onClick={onClick}
       style={{ backgroundColor: background, color: textColor }}
+      onClick={onClick}
     >
       {children}
     </button>

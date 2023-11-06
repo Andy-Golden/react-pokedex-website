@@ -1,11 +1,11 @@
 import type React from "react";
 
-interface SelectBoxProps {
+import type { Option } from ".";
+
+export interface SelectMenuProps {
+  options: Option[];
   className?: string;
-  options: string[];
   background?: string;
   textColor?: string;
   onChange?: (e: React.ChangeEvent<HTMLSelectElement>) => void;
 }
-
-export { type SelectBoxProps };

@@ -1,6 +1,6 @@
 import React from "react";
 
-import { type SelectBoxProps } from "./interfaces";
+import type { SelectMenuProps } from "./interfaces";
 import { MenuItem } from "./MenuItem";
 import Image from "./pokeball_white.png";
 import { Select } from "./Select";
@@ -13,7 +13,7 @@ const SelectMenu = ({
   options,
   background,
   onChange,
-}: SelectBoxProps): JSX.Element => {
+}: SelectMenuProps): JSX.Element => {
   return (
     <div
       className={`select-menu ${className}`}
@@ -22,8 +22,8 @@ const SelectMenu = ({
       <img src={Image} alt="poke ball"></img>
       <Select onChange={onChange}>
         {options.map((item) => (
-          <MenuItem key={item} value={item}>
-            {item}
+          <MenuItem key={item.key} value={item.key}>
+            {item.label}
           </MenuItem>
         ))}
       </Select>
