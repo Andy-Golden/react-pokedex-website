@@ -2,7 +2,7 @@ import React from "react";
 import { createBrowserRouter } from "react-router-dom";
 
 import { ErrorBoundaryLayout, ThemeLanguageLayout } from "@layouts";
-import { HomePage, LoginPage, PokeDetailsPage } from "@pages";
+import { HomePage, LoginPage, PokeDetailsPage, ProfilePage } from "@pages";
 
 const router = createBrowserRouter([
   {
@@ -22,6 +22,10 @@ const router = createBrowserRouter([
           {
             path: "/poke/:id",
             element: <PokeDetailsPage />,
+          },
+          {
+            path: "/me",
+            element: <ProfilePage />,
           },
         ],
       },

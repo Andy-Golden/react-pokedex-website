@@ -16,7 +16,6 @@ const userSlice = createSlice({
     },
     deleteUser: (state) => {
       state.user.email = null;
-      state.user.accessToken = null;
     },
   },
 });

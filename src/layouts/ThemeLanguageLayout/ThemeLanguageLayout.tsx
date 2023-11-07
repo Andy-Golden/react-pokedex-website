@@ -26,9 +26,16 @@ function ThemeLanguageLayout(): JSX.Element {
         </ul>
         <ul className="right">
           {user.email !== null ? (
-            <li>
-              <span onClick={onLogout}>{t("themeLanguageLayout.logout")}</span>
-            </li>
+            <>
+              <li>
+                <Link to="/me">{t("themeLanguageLayout.profile")}</Link>
+              </li>
+              <li>
+                <span onClick={onLogout}>
+                  {t("themeLanguageLayout.logout")}
+                </span>
+              </li>
+            </>
           ) : (
             <>
               {" "}

@@ -1,5 +1,5 @@
 import type React from "react";
-import type { ILoginResponse as User } from "@interfaces";
+import type { User } from "@interfaces";
 import type { TFunction } from "i18next";
 
 export interface ThemeLanguageLayoutPrepareHook {

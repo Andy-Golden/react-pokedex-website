@@ -17,4 +17,5 @@ export type {
 export type { PokeDetailApi } from "./pokeDetailApi.interface";
 export type { ThemeState } from "./themeState.interface";
 export type { TypeColor } from "./typeColor.type";
+export type { User } from "./user.interface";
 export type { UserState } from "./userState.interface";

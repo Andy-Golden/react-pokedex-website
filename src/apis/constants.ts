@@ -6,4 +6,8 @@ const AUTH = {
   ACTIVATE: `${baseUrl}/auth/activate`,
 };
 
-export { AUTH };
+const USER = {
+  PROFILE: `${baseUrl}/user/me`,
+};
+
+export { AUTH, USER };

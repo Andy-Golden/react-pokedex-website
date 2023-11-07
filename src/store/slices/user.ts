@@ -1,3 +1,3 @@
-import type { ILoginResponse as User } from "@interfaces";
+import type { User } from "@interfaces";
 
-export const initialUser: User = { email: null, accessToken: null };
+export const initialUser: User = { email: null };

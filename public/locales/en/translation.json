@@ -40,7 +40,7 @@
     "createAnAccount": "Create An Account",
     "error": {
       "invalidEmail": "Please enter valid email",
-      "invalidLengthPassword": "Password must have at least 5 characters"
+      "invalidLengthPassword": "Password must have at least 6 characters"
     }
   },
   "themeLanguageLayout": {
@@ -49,7 +49,8 @@
     "login": "Login",
     "logout": "Logout",
     "register": "Register",
-    "setting": "Setting"
+    "setting": "Setting",
+    "profile": "Profile"
   },
   "detailPage": {
     "stats": "Stats",

@@ -20,7 +20,6 @@ const useLoginPagePrepareHook = (): LoginPagePrepareHook => {
 
   useEffect(() => {
     if (user.email !== null) {
-      console.log(user);
       navigate("/");
     }
   }, [user]);
@@ -39,7 +38,7 @@ const useLoginPagePrepareHook = (): LoginPagePrepareHook => {
     mutateLogin(data, {
       onSuccess: (dataResponse) => {
         localStorage.setItem("user", JSON.stringify(dataResponse));
-        dispatch(createUser(dataResponse));
+        dispatch(createUser({ email: dataResponse.email }));
       },
       onError: (error) => {
         showBoundary(error);

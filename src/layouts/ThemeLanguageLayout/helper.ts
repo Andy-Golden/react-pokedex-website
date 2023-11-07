@@ -3,7 +3,7 @@ import { useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { useDispatch, useSelector } from "react-redux";
 import type { RootState } from "@store";
-import { deleteUser, switchLang, switchTheme } from "store/slices";
+import { createUser, deleteUser, switchLang, switchTheme } from "store/slices";
 
 import { Lang, Theme } from "@enums";
 
@@ -26,6 +26,13 @@ const useThemeLanguageLayoutPrepareHook =
 
       const lang = localStorage.getItem("i18nextLng");
       dispatch(switchLang(lang ?? Lang.EN));
+
+      const userToken = JSON.parse(localStorage.getItem("user") ?? "{}");
+
+      if (Object.keys(userToken).length !== 0) {
+        const user = { email: userToken.email };
+        dispatch(createUser(user));
+      }
     }, []);
 
     const handleSwitchTheme = (): void => {
@@ -40,12 +47,12 @@ const useThemeLanguageLayoutPrepareHook =
       e: React.ChangeEvent<HTMLSelectElement>,
     ): void => {
       void i18n.changeLanguage(e.target.value);
-
       dispatch(switchLang(e.target.value));
     };
 
     const handleLogout = (): void => {
       dispatch(deleteUser());
+      localStorage.removeItem("user");
     };
 
     return {

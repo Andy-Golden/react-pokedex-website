@@ -1,4 +1,4 @@
-import type { ILoginResponse as User } from "./ILoginResponse.interface";
+import type { User } from "./user.interface";
 
 export interface UserState {
   user: User;

@@ -40,7 +40,7 @@
     "createAnAccount": "Tạo tài khoản",
     "error": {
       "invalidEmail": "Xin hãy nhập email hợp lệ",
-      "invalidLengthPassword": "Độ dài mật khẩu phải lớn hơn 5"
+      "invalidLengthPassword": "Độ dài mật khẩu phải lớn hơn 6"
     }
   },
   "themeLanguageLayout": {
@@ -49,7 +49,8 @@
     "login": "Đăng nhập",
     "logout": "Đăng xuất",
     "register": "Đăng ký",
-    "setting": "Cài đặt"
+    "setting": "Cài đặt",
+    "profile": "Thông tin"
   },
   "detailPage": {
     "stats": "Năng lượng",
