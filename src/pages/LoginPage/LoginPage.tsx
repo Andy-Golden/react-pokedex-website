@@ -37,7 +37,7 @@ const LoginPage = (): JSX.Element => {
           register={register("password", {
             required: true,
             minLength: {
-              value: 5,
+              value: 6,
               message: t("loginPage.error.invalidLengthPassword"),
             },
           })}

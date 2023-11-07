@@ -14,8 +14,8 @@ import type {
   Weaknesses,
 } from "@interfaces";
 import type { AxiosError } from "axios";
-import { instance } from "server/axios/instance";
 
+import { instance } from "@server";
 import { calculateStat } from "@utils";
 
 // https://pokeapi.co/api/v2/pokemon/?limit=25&offset=2

@@ -1,13 +1,17 @@
 import { useEffect } from "react";
+import { useErrorBoundary } from "react-error-boundary";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
+import { useMutation } from "react-query";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import type { User } from "@interfaces";
+import type { ILoginFormInput } from "@interfaces";
 import type { RootState } from "@store";
 import { createUser } from "store/slices";
 
-import type { ILoginFormInput, LoginPagePrepareHook } from "./interfaces";
+import { login } from "@apis";
+
+import type { LoginPagePrepareHook } from "./interfaces";
 
 const useLoginPagePrepareHook = (): LoginPagePrepareHook => {
   const { t } = useTranslation();
@@ -15,11 +19,14 @@ const useLoginPagePrepareHook = (): LoginPagePrepareHook => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (user.email !== null && user.password !== null) {
+    if (user.email !== null) {
+      console.log(user);
       navigate("/");
     }
   }, [user]);
 
+  const { showBoundary } = useErrorBoundary();
+  const { mutate: mutateLogin } = useMutation(login);
   const dispatch = useDispatch();
 
   const {
@@ -29,8 +36,15 @@ const useLoginPagePrepareHook = (): LoginPagePrepareHook => {
   } = useForm<ILoginFormInput>();
 
   const onSubmit = (data: ILoginFormInput): void => {
-    const loginUser: User = { email: data.email, password: data.password };
-    dispatch(createUser(loginUser));
+    mutateLogin(data, {
+      onSuccess: (dataResponse) => {
+        localStorage.setItem("user", JSON.stringify(dataResponse));
+        dispatch(createUser(dataResponse));
+      },
+      onError: (error) => {
+        showBoundary(error);
+      },
+    });
   };
 
   return { t, errors, register, handleSubmit, onSubmit };

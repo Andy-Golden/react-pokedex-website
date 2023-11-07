@@ -3,9 +3,8 @@ import type {
   UseFormHandleSubmit,
   UseFormRegister,
 } from "react-hook-form";
+import type { ILoginFormInput } from "@interfaces";
 import type { TFunction } from "i18next";
-
-import type { ILoginFormInput } from "./ILoginFormInput.interface";
 
 export interface LoginPagePrepareHook {
   t: TFunction<"Translation", undefined>;

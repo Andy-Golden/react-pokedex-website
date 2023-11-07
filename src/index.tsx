@@ -1,10 +1,12 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
+import { QueryClientProvider } from "react-query";
 import { Provider } from "react-redux";
 import { RouterProvider } from "react-router-dom";
 import reportWebVitals from "reportWebVitals";
 import router from "router";
 
+import { queryClient } from "@server";
 import { store } from "@store";
 
 import "./i18n";
@@ -16,9 +18,11 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <React.StrictMode>
-    <Provider store={store}>
-      <RouterProvider router={router} />
-    </Provider>
+    <QueryClientProvider client={queryClient}>
+      <Provider store={store}>
+        <RouterProvider router={router} />
+      </Provider>
+    </QueryClientProvider>
   </React.StrictMode>,
 );
 
