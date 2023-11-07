@@ -1,6 +1,6 @@
 import React from "react";
 
-import Image from "./pokeball_gray.png";
+import Image from "@assets/images/pokeball-gray.png";
 
 import "./styles.scss";
 

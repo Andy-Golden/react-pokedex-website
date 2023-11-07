@@ -1,9 +1,10 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
 
+import Image from "@assets/images/pokeball-white.png";
+
 import type { SelectMenuProps } from "./interfaces";
 import { MenuItem } from "./MenuItem";
-import Image from "./pokeball_white.png";
 import { Select } from "./Select";
 
 import "./styles.scss";

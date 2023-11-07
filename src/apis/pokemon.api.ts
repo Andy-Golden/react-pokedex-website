@@ -67,14 +67,12 @@ const getPokeDetails = async (url: string): Promise<PokeDetail> => {
     const promisesRespones = await Promise.all(promises);
 
     const weaknesses: Weaknesses = { doubleDamageFrom: [] };
+    const set = new Set();
 
     promisesRespones.forEach((promiseResponse) => {
       promiseResponse.forEach((item: DoubleDamageFromTypes) => {
-        if (
-          !weaknesses.doubleDamageFrom.some(
-            (type: DoubleDamageFromTypes) => type.type.name === item.type.name,
-          )
-        ) {
+        if (!set.has(item.slot)) {
+          set.add(item.slot);
           weaknesses.doubleDamageFrom.push(item);
         }
       });

@@ -6,10 +6,9 @@ import {
   generatePokeId,
 } from "utils";
 
+import pokeBlue from "@assets/images/poke-blue.png";
+import pokeRed from "@assets/images/poke-red.png";
 import { Loading } from "@components";
-
-import pokeBlue from "../../assets/images/poke-blue.png";
-import pokeRed from "../../assets/images/poke-red.png";
 
 import { usePokeDetailPagePrepareHook } from "./helper";
 
