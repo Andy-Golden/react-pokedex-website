@@ -27,7 +27,8 @@
       "@apis": ["./apis/index"],
       "@utils": ["./utils/index"],
       "@constants": ["./constants/index"],
-      "@server": ["./server/index"]
+      "@server": ["./server/index"],
+      "@assets/*": ["./assets/*"]
     }
   },
   "include": ["src"]

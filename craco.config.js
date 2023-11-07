@@ -12,6 +12,7 @@ module.exports = {
       "@enums": path.resolve(__dirname, "src/enums"),
       "@constants": path.resolve(__dirname, "src/constants"),
       "@server": path.resolve(__dirname, "src/server"),
+      "@assets": path.resolve(__dirname, "src/assets"),
     },
   },
 };

@@ -1,13 +1,22 @@
 import React from "react";
 
-import { useProfilePagePrepareHook } from "./helper";
+import userAvatar from "@assets/images/user.png";
+import { ProfileCard } from "@components";
 
-import "./styles.scss";
+import { useProfilePagePrepareHook } from "./helper";
 
 const ProfilePage = (): JSX.Element => {
   const { user } = useProfilePagePrepareHook();
-  console.log("🚀 ~ file: ProfilePage.tsx:7 ~ ProfilePage ~ user:", user.email);
-  return <div className="user-info">{user.email}</div>;
+  return (
+    <div className="auth-container">
+      <ProfileCard
+        email={user.email}
+        name={"John Doe"}
+        role={"User"}
+        image={userAvatar}
+      />
+    </div>
+  );
 };
 
 export default ProfilePage;
