@@ -15,6 +15,7 @@ export type {
   Weaknesses,
 } from "./pokeDetail.interface";
 export type { PokeDetailApi } from "./pokeDetailApi.interface";
+export type { Profile } from "./profile.interface";
 export type { ThemeState } from "./themeState.interface";
 export type { TypeColor } from "./typeColor.type";
 export type { User } from "./user.interface";

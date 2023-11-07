@@ -16,7 +16,7 @@ const useProfilePagePrepareHook = (): ProfilePrepareHook => {
     showBoundary(error);
   }
 
-  return { user: data ?? { email: null } };
+  return { user: data ?? { email: "", name: "", role: "" } };
 };
 
 export { useProfilePagePrepareHook };

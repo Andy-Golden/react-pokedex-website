@@ -11,8 +11,8 @@ const ProfilePage = (): JSX.Element => {
     <div className="auth-container">
       <ProfileCard
         email={user.email}
-        name={"John Doe"}
-        role={"User"}
+        name={user.name}
+        role={user.role}
         image={userAvatar}
       />
     </div>

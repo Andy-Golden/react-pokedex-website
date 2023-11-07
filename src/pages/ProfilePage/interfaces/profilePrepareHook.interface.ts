@@ -1,5 +1,5 @@
-import type { User } from "@interfaces";
+import type { Profile } from "@interfaces";
 
 export interface ProfilePrepareHook {
-  user: User;
+  user: Profile;
 }
